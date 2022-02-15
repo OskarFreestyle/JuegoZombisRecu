@@ -20,6 +20,8 @@ Producido usando nuestro querido Motor Ola. Para más información consultar su 
 ### 0.1.- Versiones del documento
 - Versión 0.1 15/02/2022
 
+-SIN EDITAR-
+
 ## 1.- Menús e interfaz
 ### 1.1.- Menú de inicio
 El menú de inicio del juego consistirá en una pantalla donde se observarán los siguientes botones:
