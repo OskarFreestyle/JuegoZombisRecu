@@ -32,7 +32,7 @@ El menú de inicio del juego consistirá en una pantalla donde se observarán lo
 - **Salir:** para cerrar el juego.
 
 #### 1.1.1.- Jugar
-Iniciará una partida de 0. En principio no hemos hablado de guardado de partidas así que de momento siempre que empieces una partida tendrás que terminarla como en una máquina Arkade.
+Iniciará una partida de 0. En principio no hemos hablado de guardado de partidas así que de momento siempre que empieces una partida tendrás que terminarla como en una máquina Arcade.
 
 #### 1.1.2.- Records
 Muestra un registro con las mejores puntuaciones.
@@ -77,7 +77,7 @@ No tiene
    
 ## 4.Referencias
 
-    Call of Duty Dead Ops Arkade
+    Call of Duty Dead Ops Arcade
     
 
 ## 5.Bibliografía
