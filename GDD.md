@@ -19,28 +19,23 @@ Producido usando nuestro querido Motor Ola. Para más información consultar su 
 
 ### 0.1.- Versiones del documento
 - Versión 0.1 15/02/2022
-
--SIN EDITAR-
+    Los detalles incluidos de momento en este documento han sido sacado de la conversación que tuvimos un día, por tanto no tuvimos tiempo a especificar muchos de ellos y           cualquier cosa puede variar.
 
 ## 1.- Menús e interfaz
 ### 1.1.- Menú de inicio
 El menú de inicio del juego consistirá en una pantalla donde se observarán los siguientes botones:
 
-- **Nueva partida:** para empezar a jugar desde cero. Muestra la **pantalla de selección de partida** para crear/sobreescribir la nueva partida.
-- **Cargar partida:** muestra la **pantalla de selección de partida** para cargar una partida creada. En caso de no existir partidas guardadas se creará una nueva por defecto.
-- **Controles:** muestra la **pantalla de controles**.
-- **Créditos:** muestra la **pantalla de créditos**.
-- **Audio:** para activar o desactivar el audio.(Estará representado con un icono).
+- **Jugar:** para empezar a jugar una nueva partida.
+- **Records:** muestra los records que se tienen dentro del juego.
+- **Controles:** muestra los controles, en principio no configurables.
+- **Opciones:** muestra la pantalla de opciones, de momento solo sonido.
+- **Salir:** para cerrar el juego.
 
-#### 1.1.1.- Pantalla de selección de partida
-Se mostrarán 3 botones que contienen información de la partida guardada en caso de la hubiera, si no es así, entonces se mostrarán botones que incluyan lo siguiente: _"Nueva Partida"_. Una vez se seleccione uno de los botones se cambiará la interfaz para mostrar el contedido del juego.
+#### 1.1.1.- Jugar
+Iniciará una partida de 0. En principio no hemos hablado de guardado de partidas así que de momento siempre que empieces una partida tendrás que terminarla como en una máquina Arkade.
 
-Hay un botón para volver al menú principal además de un fondo (gráfico y musical) coherente a la temática del juego.
-
-####  1.1.1.- Pantalla de controles
-Muestra una imagen con los controles.
-
-Hay un botón para volver al menú anterior(puede ser el menú principal o el menú de pausa) además de un fondo (gráfico y musical) coherente a la temática del juego.
+#### 1.1.1.- Records
+Muestra un registro con las mejores puntuaciones.
 
 #### 1.1.2.- Pantalla de créditos
 Muestra una lista de los nombres de los desarrolladores.
