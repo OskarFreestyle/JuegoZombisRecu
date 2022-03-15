@@ -129,7 +129,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(solutionDir)Src\includes;$(solutionDir)MotorOla_Solution\Src\MotorOla;$(solutionDir)MotorOla_Solution\Dependencies\Ogre\Build\SDL2-2.0.20\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(solutionDir)Src\includes;$(solutionDir)Motor-Ola\MotorOla_Solution\Src\MotorOla;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\SDL2-2.0.20\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
