@@ -5,7 +5,6 @@
 
 // MathLibrary.h - Contains declarations of math functions
 #pragma once
-
 #ifdef JUEGO_EXPORTS
 #define JUEGO_API __declspec(dllexport)
 #else

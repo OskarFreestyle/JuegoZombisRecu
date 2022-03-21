@@ -37,8 +37,3 @@ void CreateEntity() {
 
 	std::cout << "ENTITY CREATED\n";
 }
-//
-//int main() {
-//	LoadGame();
-//	return 0;
-//}

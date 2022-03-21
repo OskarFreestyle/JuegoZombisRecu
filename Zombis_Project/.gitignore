@@ -21,6 +21,7 @@
 *.lastbuildstate
 *.vcxproj.FileListAbsolute.txt
 [Tt]emp/
+DLL/
 
 # /pojects
 *.vcxproj.user

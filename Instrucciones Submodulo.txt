@@ -1,0 +1,16 @@
+
+Para actualizar el motor hay que utilizar el comando 
+
+$ git submodule update --init --remote
+
+De esta forma se actualizará a la última versión del main
+
+----------------------------------------------------------------------
+
+Para cambiar de rama dentro del submódulo
+
+$ cd submodule_name ($ cd Zombis_Project/Motor-Ola/ para nuestro caso).
+
+$ git checkout new_branch_name
+
+Se sabe que está bien hecho porque saldrá el nombre de la rama en color azul
