@@ -4,7 +4,7 @@
 :: Primero tiene que construir el Motor
 echo BUILDING MOTOR
 cd Motor-Ola/MotorOla_Solution
-call MotorOla.bat
+::call MotorOla.bat
 mkdir GameToLoad
 cd ../..
 
