@@ -3,6 +3,9 @@ Para actualizar el motor hay que utilizar el comando
 
 $ git submodule update --init --remote
 
+¡¡ PARA TRABAJAR A PARTIR DE AHORA HACER ESTO!!
+Si no funciona, en Github Desktop puedes hacer File -> Add Local repository -> Seleccionar Carpeta Motor-Ola
+
 De esta forma se actualizará a la última versión del main
 
 ----------------------------------------------------------------------
