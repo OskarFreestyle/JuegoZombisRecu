@@ -5,8 +5,13 @@
 #define JUEGO_API __declspec(dllimport)
 #endif
 
-extern "C" JUEGO_API int LoadGame();
-extern "C" JUEGO_API int AnotherFunction();
-extern "C" JUEGO_API void CreateEntity();
-void FuncionSinC();
+/// <summary>
+/// FUNCIÓN PRINCIPAL PARA CARGAR EL JUEGO
+/// </summary>
+int LoadGame();
+
+/// <summary>
+/// Aquí se registran los componentes únicos de cada juego que por tanto no conoce el motor
+/// </summary>
+void RegistryGameComponents();
 
