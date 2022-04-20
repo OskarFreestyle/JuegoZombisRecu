@@ -6,12 +6,13 @@
 #endif
 
 /// <summary>
-/// FUNCIÓN PRINCIPAL PARA CARGAR EL JUEGO
-/// </summary>
-int LoadGame();
-
-/// <summary>
 /// Aquí se registran los componentes únicos de cada juego que por tanto no conoce el motor
 /// </summary>
 void RegistryGameComponents();
+
+/// <summary>
+/// FUNCIÓN PRINCIPAL PARA CARGAR EL JUEGO
+/// </summary>
+extern "C" JUEGO_API int LoadGame();
+
 

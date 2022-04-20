@@ -19,8 +19,6 @@ void RegistryGameComponents() {
 	std::cout << "GAME COMPONENTS REGISTRY CORRECTLY\n";
 }
 
-
-
 // Simulación de la función de carga
 int LoadGame() {
 	std::cout << "TRYING LOAD GAME\n";
