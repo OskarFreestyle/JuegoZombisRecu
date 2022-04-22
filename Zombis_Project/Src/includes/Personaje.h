@@ -6,7 +6,7 @@
 //Este es el componente generico para el jugador y los zombies
 class Personaje : public Componente {
 public:
-	Personaje() : maxHealth() {};
+	Personaje() : maxHealth(), lifefactor() {};
 	virtual ~Personaje() {};
 
 	bool init(const std::map<std::string, std::string>& mapa) { 
