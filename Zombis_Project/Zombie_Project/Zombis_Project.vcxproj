@@ -22,11 +22,13 @@
     <ClInclude Include="..\Src\includes\framework.h" />
     <ClInclude Include="..\Src\includes\Juego.h" />
     <ClInclude Include="..\Src\includes\pch.h" />
+    <ClInclude Include="LookatMouse.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\dllmain.cpp" />
     <ClCompile Include="..\Src\Juego.cpp" />
     <ClCompile Include="..\Src\pch.cpp" />
+    <ClCompile Include="LookatMouse.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
