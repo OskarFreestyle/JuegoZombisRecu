@@ -22,6 +22,7 @@
     <ClInclude Include="..\Src\includes\framework.h" />
     <ClInclude Include="..\Src\includes\Juego.h" />
     <ClInclude Include="..\Src\includes\pch.h" />
+    <ClInclude Include="..\Src\includes\Personaje.h" />
     <ClInclude Include="LookatMouse.h" />
   </ItemGroup>
   <ItemGroup>
