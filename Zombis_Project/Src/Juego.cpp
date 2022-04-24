@@ -1,8 +1,9 @@
 #include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
 #include <utility>
-#include <limits.h>ç
+#include <limits.h>
 
-#include "Motor.h"
+#include <Motor.h>
+#include <Transform.h>
 #include "ComponenteRegistro.h"
 
 #include "Juego.h"
