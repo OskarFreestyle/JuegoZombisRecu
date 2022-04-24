@@ -7,7 +7,6 @@
 
 #include "Juego.h"
 #include <iostream>
-#include "Juego.h"
 #include "Entidad.h"
 #include "EntidadManager.h"
 
@@ -25,6 +24,7 @@ int LoadGame() {
 
 	// Se registran los componentes
 	RegistryGameComponents();
+	std::cout << Singleton<EntidadManager>::instance() << std::endl;
 
 
 	std::cout << "GAME LOAD CORRECTLY\n";

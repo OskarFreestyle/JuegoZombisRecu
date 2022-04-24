@@ -1,6 +1,6 @@
 #pragma once
 #include "Componente.h"
-#include "SDL.h"
+#include <SDL.h>
 
 class LookatMouse : public Componente
 {

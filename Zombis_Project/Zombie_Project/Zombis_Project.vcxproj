@@ -132,7 +132,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(solutionDir)Src\includes;$(solutionDir)Motor-Ola\MotorOla_Solution\Src\MotorOla;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\SDL-main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\SDL-main\include\;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\SDL2-2.0.20\include\;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\SDL2-build\include\;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Src\OgreMain\include;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\include;$(solutionDir)Motor-Ola\MotorOla_Solution\Src\MotorOla\;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\FMOD\inc;$(SolutionDir)Motor-Ola\MotorOla_Solution\Dependencies\PhysX-4.1\Src\physx\include;$(SolutionDir)Motor-Ola\MotorOla_Solution\Dependencies\PhysX-4.1\Src\pxshared\include;$(SolutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Lua\include;$(solutionDir)Src\includes</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -148,7 +148,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(solutionDir)Src\includes;$(solutionDir)Motor-Ola\MotorOla_Solution\Src\MotorOla;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\SDL-main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\SDL-main\include\;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\SDL2-2.0.20\include\;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\SDL2-build\include\;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Src\OgreMain\include;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Ogre\Build\include;$(solutionDir)Motor-Ola\MotorOla_Solution\Src\MotorOla\;$(solutionDir)Motor-Ola\MotorOla_Solution\Dependencies\FMOD\inc;$(SolutionDir)Motor-Ola\MotorOla_Solution\Dependencies\PhysX-4.1\Src\physx\include;$(SolutionDir)Motor-Ola\MotorOla_Solution\Dependencies\PhysX-4.1\Src\pxshared\include;$(SolutionDir)Motor-Ola\MotorOla_Solution\Dependencies\Lua\include;$(solutionDir)Src\includes</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

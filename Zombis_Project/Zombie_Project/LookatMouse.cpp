@@ -16,6 +16,6 @@ bool LookatMouse::init(const std::map<std::string, std::string>& mapa)
 
 std::pair<int, int> LookatMouse::returnMousePos()
 {
-	SDL_GetGlobalMouseState(&mouseX, &mouseY);
+	//SDL_GetGlobalMouseState(&mouseX, &mouseY);
 	return std::pair<int, int>(mouseX, mouseY);
 }
