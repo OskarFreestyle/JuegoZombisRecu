@@ -14,6 +14,8 @@
 
 #include "grafoConObstaculos.h"
 
+extern EntidadManager* en = Singleton<EntidadManager>::instance();
+
 void RegistryGameComponents() {
 	// Ejemplo
 	//ComponenteRegistro::ComponenteRegistro<Mesh>("mesh");
@@ -30,7 +32,7 @@ int LoadGame() {
 
 	// Se registran los componentes
 	RegistryGameComponents();
-	std::cout << Singleton<EntidadManager>::instance() << std::endl;
+	std::cout << "-------" << en << std::endl;
 
 	std::cout << "GAME LOAD CORRECTLY\n";
 	return 0;
