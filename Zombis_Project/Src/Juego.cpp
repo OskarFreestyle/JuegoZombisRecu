@@ -12,12 +12,14 @@
 #include "EntidadManager.h"
 #include "LookatMouse.h"
 
+#include "grafoConObstaculos.h"
 
 void RegistryGameComponents() {
 	// Ejemplo
 	//ComponenteRegistro::ComponenteRegistro<Mesh>("mesh");
 	ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatmouse");
 
+	ComponenteRegistro::ComponenteRegistro<GrafoConObstaculos>("grafoObstaculo");
 
 	std::cout << "GAME COMPONENTS REGISTRY CORRECTLY\n";
 }
@@ -29,7 +31,6 @@ int LoadGame() {
 	// Se registran los componentes
 	RegistryGameComponents();
 	std::cout << Singleton<EntidadManager>::instance() << std::endl;
-
 
 	std::cout << "GAME LOAD CORRECTLY\n";
 	return 0;
