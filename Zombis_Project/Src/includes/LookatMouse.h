@@ -2,6 +2,8 @@
 #include "Componente.h"
 #include <SDL.h>
 
+class InputManager;
+
 class LookatMouse : public Componente
 {
 public:
@@ -10,11 +12,13 @@ public:
 
 	bool init(const std::map<std::string, std::string>& mapa);
 
-	std::pair<int, int> returnMousePos();
-	//deberiamos girar al padre cada frame para orientarlo
-	void debugMousePos() { std::cout << mouseX << " " << mouseY; };
+	void debugMousePos();
+	void init() {};
+	void update();
+
+
 private:
-	int mouseX, mouseY;
-	SDL_Event e;
+	bool test;
+	InputManager* im;
 };
 

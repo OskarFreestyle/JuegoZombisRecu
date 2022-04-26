@@ -10,10 +10,13 @@
 #include <iostream>
 #include "Entidad.h"
 #include "EntidadManager.h"
+#include "LookatMouse.h"
+
 
 void RegistryGameComponents() {
 	// Ejemplo
 	//ComponenteRegistro::ComponenteRegistro<Mesh>("mesh");
+	ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatmouse");
 
 
 	std::cout << "GAME COMPONENTS REGISTRY CORRECTLY\n";

@@ -24,10 +24,10 @@
     <ClInclude Include="..\Src\includes\pch.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="LookatMouse.h">
+    <ClInclude Include="..\Src\includes\Personaje.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\includes\Personaje.h">
+    <ClInclude Include="..\Src\includes\LookatMouse.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClCompile Include="..\Src\pch.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="LookatMouse.cpp">
+    <ClCompile Include="..\Src\LookatMouse.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
