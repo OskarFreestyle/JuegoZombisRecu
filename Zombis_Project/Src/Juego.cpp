@@ -19,9 +19,9 @@ extern EntidadManager* en = Singleton<EntidadManager>::instance();
 void RegistryGameComponents() {
 	// Ejemplo
 	//ComponenteRegistro::ComponenteRegistro<Mesh>("mesh");
-	ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatmouse");
+	//ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatmouse");
 
-	ComponenteRegistro::ComponenteRegistro<GrafoConObstaculos>("grafoObstaculo");
+	//ComponenteRegistro::ComponenteRegistro<GrafoConObstaculos>("grafoObstaculo");
 
 	std::cout << "GAME COMPONENTS REGISTRY CORRECTLY\n";
 }

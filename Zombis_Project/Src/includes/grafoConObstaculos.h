@@ -22,6 +22,5 @@ private:
 	std::vector<int> matriz;
 
 	void addAristas(int index);
-	//void colocarObstaculos(int i);
 	
 };

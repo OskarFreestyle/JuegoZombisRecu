@@ -5,8 +5,8 @@
 
 
 #include "Entidad.h"
-#include "utils/Singleton.h"
-#include "EntidadManager.h"
+//#include "utils/Vectola3D.h"
+
 #include <string>
 
 GrafoConObstaculos::GrafoConObstaculos()
@@ -39,7 +39,9 @@ bool GrafoConObstaculos::init(const std::map<std::string, std::string>& mapa)
 		}
 		else
 		{
-			//colocarObstaculos(i);
+			//Vectola3D position((i / ancho) * tamVertice, 10, (i % ancho) * tamVertice);
+			//Quaterniola rotacion (0, 0, 0, 0);
+			//Entidad::instantiate("Obstaculo.prefab", position,rotacion);
 		}
 
 	}
@@ -102,40 +104,5 @@ void GrafoConObstaculos::addAristas(int index)
 	}
 
 }
-//
-//void GrafoConObstaculos::colocarObstaculos(int i)
-//{
-//	Entidad* ent = Singleton<EntidadManager>::instance()->addEntidad();
-//	//añadir componente collider;
-//
-//
-//	std::map<std::string, std::string> compMap;
-//	std::string s1 = "parent";
-//	std::string s2 = "-1";
-//	compMap.insert((std::pair<std::string, std::string>(s1, s2)));
-//	s1 = "position";
-//	s2 = "" + std::to_string( (i / ancho)*tamVertice) + ",10," + std::to_string((i % ancho)*tamVertice);
-//	compMap.insert((std::pair<std::string, std::string>(s1, s2)));
-//	s1 = "rotation";
-//	s2 = "0,0,0"; 
-//	compMap.insert((std::pair<std::string, std::string>(s1, s2)));
-//	s1 = "scale";
-//	s2 = "1,1,1";
-//	compMap.insert((std::pair<std::string, std::string>(s1, s2)));
-//
-//	ent->addComponent("transform", compMap);
-//
-//	compMap.clear();
-//
-//	s1= "mesh";
-//	s2= "barril.mesh";
-//	compMap.insert((std::pair<std::string, std::string>(s1, s2)));
-//	s1 = "material";
-//	s2 = "Azul"; //si hay otro color, lo cambiamos
-//	compMap.insert((std::pair<std::string, std::string>(s1, s2)));
-//	s1 = "visible";
-//	s2 = "true"; 
-//	compMap.insert((std::pair<std::string, std::string>(s1, s2)));
-//
-//	ent->addComponent("mesh", compMap);
-//}
+
+
