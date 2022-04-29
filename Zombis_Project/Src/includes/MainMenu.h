@@ -6,12 +6,13 @@
 #endif
 class OverlayManager;
 class Motor;
+class Options;
 using CallBackOnClick = void(Motor* m);
 JUEGO_API class MainMenu
 {
 private:
 	static void newGame(Motor* m);
-	static void options(Motor* m);
+	static void option(Motor* m);
 	static void exit(Motor* m);
 	
 public:

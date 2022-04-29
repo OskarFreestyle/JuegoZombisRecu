@@ -48,6 +48,9 @@
     <ClInclude Include="..\Src\includes\MainMenu.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\includes\Options.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\dllmain.cpp">
@@ -78,6 +81,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="..\Src\MainMenu.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\Options.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
