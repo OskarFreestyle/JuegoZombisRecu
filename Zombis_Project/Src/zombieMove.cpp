@@ -21,9 +21,9 @@ void ZombieMove::update()
 {
 	if (entity_->hasComponent<Transform>())
 	{
-		Transform * tr= entity_->getComponent<Transform>();
-		Vectola3D pos=  tr->getPosition();
-		int index =  GrafoConObstaculos::getMatrizPos(pos);
+		//Transform * tr= entity_->getComponent<Transform>();
+		//Vectola3D pos=  tr->getPosition();
+		//int index =  GrafoConObstaculos::getMatrizPos(pos);
 
 
 	}
