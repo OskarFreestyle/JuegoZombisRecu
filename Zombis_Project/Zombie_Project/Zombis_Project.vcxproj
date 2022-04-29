@@ -28,6 +28,7 @@
     <ClInclude Include="..\Src\includes\LookatMouse.h" />
     <ClInclude Include="..\Src\includes\pch.h" />
     <ClInclude Include="..\Src\includes\Personaje.h" />
+    <ClInclude Include="..\Src\includes\zombieMove.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\bfs.cpp" />
@@ -38,6 +39,7 @@
     <ClCompile Include="..\Src\Juego.cpp" />
     <ClCompile Include="..\Src\LookatMouse.cpp" />
     <ClCompile Include="..\Src\pch.cpp" />
+    <ClCompile Include="..\Src\zombieMove.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

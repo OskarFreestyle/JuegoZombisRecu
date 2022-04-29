@@ -12,6 +12,7 @@ public:
 	GrafoConObstaculos();
 	bool init(const std::map<std::string, std::string>& mapa) override;
 	std::deque<int> getCaminoMasCorto(int ori, int dest);
+	static int getMatrizPos(Vectola3D pos);
 
 private:
 	std::vector<CaminoMasCorto>* arrayCaminos = nullptr;

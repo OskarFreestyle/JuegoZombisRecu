@@ -64,6 +64,13 @@ std::deque<int> GrafoConObstaculos::getCaminoMasCorto(int ori, int dest)
 		return arrayCaminos->at(ori).camino(dest);
 }
 
+int GrafoConObstaculos::getMatrizPos(Vectola3D pos)
+{
+	int x = pos.getX() / tamVertice;
+	int y = pos.getY() / tamVertice;
+	return y*ancho +x;
+}
+
 
 void GrafoConObstaculos::addAristas(int index)
 {
