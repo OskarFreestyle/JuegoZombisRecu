@@ -13,8 +13,8 @@
 #include "LookatMouse.h"
 
 #include "grafoConObstaculos.h"
-
-extern EntidadManager* en = Singleton<EntidadManager>::instance();
+#include "FMODAudioManager.h"
+#include "LoadResources.h"
 
 void RegistryGameComponents() {
 	// Ejemplo
@@ -22,6 +22,18 @@ void RegistryGameComponents() {
 	//ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatmouse");
 
 	//ComponenteRegistro::ComponenteRegistro<GrafoConObstaculos>("grafoObstaculo");
+
+	std::cout << "EM: " << Singleton<EntidadManager>::instance() << "\n";
+	std::cout << "LR " << Singleton<LoadResources>::instance() << "\n";
+	std::cout << "FMOD: " << Singleton<FMODAudioManager>::instance() << "\n";
+
+	Singleton<EntidadManager>::instance()->addEntidad();
+
+	Singleton<FMODAudioManager>::instance()->loadMusic(0, Singleton<LoadResources>::instance()->aud("blind_shift.mp3").c_str());
+
+	Singleton<FMODAudioManager>::instance()->playMusic(0, true);
+
+	
 
 	std::cout << "GAME COMPONENTS REGISTRY CORRECTLY\n";
 }
@@ -32,7 +44,7 @@ int LoadGame() {
 
 	// Se registran los componentes
 	RegistryGameComponents();
-	std::cout << "-------" << en << std::endl;
+	
 
 	std::cout << "GAME LOAD CORRECTLY\n";
 	return 0;
