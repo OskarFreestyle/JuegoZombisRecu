@@ -1,13 +1,13 @@
-﻿#include "LookatMouse.h"
+﻿/*#include "LookatMouse.h"
 #include "InputManager.h"
 #include "Transform.h"
 #include "Entidad.h"
 
 //#include <OgreVector3.h>
 
-LookatMouse::LookatMouse() {}
+LookatMouse::LookatMouse() {}*/
 /*@ - 14, 6 + 14, 7 @@ */
-LookatMouse::~LookatMouse() {}
+/*LookatMouse::~LookatMouse() {}
 
 bool LookatMouse::init(const std::map<std::string, std::string>& mapa)
 {
@@ -16,10 +16,10 @@ bool LookatMouse::init(const std::map<std::string, std::string>& mapa)
 	//poner entre "" los nombres de las variables que estamos asignando del archivo .lua encontrado en Assets->Scenes
 
 /*@ - 30, 22 + 31, 29 @@ */
-}
+//}
 		/*bool LookatMouse::init(const std::map<std::string, std::string>&mapa)*/
 
-void LookatMouse::debugMousePos()
+/*void LookatMouse::debugMousePos()
 {
 	if (im != nullptr) {
 		std::cout << im->getMousePos().first << ", " << im->getMousePos().second; //creo que esta cogiendo algo vacio
@@ -54,4 +54,4 @@ void LookatMouse::update()
 		rotateToMouse2D();
 	}
 
-}
+}*/

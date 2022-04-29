@@ -15,6 +15,7 @@
 #include "grafoConObstaculos.h"
 #include "FMODAudioManager.h"
 #include "LoadResources.h"
+#include "MainMenu.h"
 
 void RegistryGameComponents() {
 	// Ejemplo
@@ -44,6 +45,8 @@ int LoadGame() {
 
 	// Se registran los componentes
 	RegistryGameComponents();
+	MainMenu* m = new MainMenu();
+
 	
 
 	std::cout << "GAME LOAD CORRECTLY\n";
