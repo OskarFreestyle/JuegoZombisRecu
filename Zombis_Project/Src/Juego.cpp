@@ -18,6 +18,8 @@
 #include "MainMenu.h"
 
 #include "Bala.h"
+#include "MoveBullet.h"
+
 
 void RegistryGameComponents() {
 	// Ejemplo
@@ -25,6 +27,8 @@ void RegistryGameComponents() {
 	//ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatmouse");
 
 	//ComponenteRegistro::ComponenteRegistro<GrafoConObstaculos>("grafoObstaculo");
+	ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");
+	
 
 	std::cout << "EM: " << Singleton<EntidadManager>::instance() << "\n";
 	std::cout << "LR " << Singleton<LoadResources>::instance() << "\n";
@@ -49,6 +53,7 @@ int LoadGame() {
 	RegistryGameComponents();
 	MainMenu* m = new MainMenu();
 	Bala* b = new Bala();
+	b->creaBala();
 	
 
 	std::cout << "GAME LOAD CORRECTLY\n";

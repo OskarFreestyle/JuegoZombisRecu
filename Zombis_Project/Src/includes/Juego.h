@@ -6,6 +6,7 @@
 #endif
 class MainMenu;
 class Bala;
+class MoveBullet;
 
 /// <summary>
 /// Aquí se registran los componentes únicos de cada juego que por tanto no conoce el motor

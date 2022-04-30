@@ -28,6 +28,7 @@
     <ClInclude Include="..\Src\includes\Juego.h" />
     <ClInclude Include="..\Src\includes\LookatMouse.h" />
     <ClInclude Include="..\Src\includes\MainMenu.h" />
+    <ClInclude Include="..\Src\includes\MoveBullet.h" />
     <ClInclude Include="..\Src\includes\Options.h" />
     <ClInclude Include="..\Src\includes\pch.h" />
     <ClInclude Include="..\Src\includes\Personaje.h" />
@@ -43,6 +44,7 @@
     <ClCompile Include="..\Src\Juego.cpp" />
     <ClCompile Include="..\Src\LookatMouse.cpp" />
     <ClCompile Include="..\Src\MainMenu.cpp" />
+    <ClCompile Include="..\Src\MoveBullet.cpp" />
     <ClCompile Include="..\Src\Options.cpp" />
     <ClCompile Include="..\Src\pch.cpp" />
     <ClCompile Include="..\Src\zombieMove.cpp" />
