@@ -3,6 +3,7 @@
 #include "OverlayManager.h"
 #include <Motor.h>
 #include "Options.h"
+#include "GameManager.h"
 
 MainMenu::MainMenu() {
 	Singleton<OverlayManager>::instance()->getMotor()->loadMenu("MainMenuScene.lua", "GetMainMenu");
@@ -24,6 +25,8 @@ void MainMenu::newGame(Motor* m)
 	//Singleton<OverlayManager>::close();
 	Singleton<OverlayManager>::instance()->clear();
 	Singleton<OverlayManager>::instance()->getMotor()->loadScene("PlayScene.lua");
+
+	GameManager::GetInstance()->initGame();
 }
 
 void MainMenu::option(Motor* m)

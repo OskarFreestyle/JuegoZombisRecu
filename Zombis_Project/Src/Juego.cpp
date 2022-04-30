@@ -17,6 +17,8 @@
 #include "LoadResources.h"
 #include "MainMenu.h"
 
+#include "GameManager.h"
+
 void RegistryGameComponents() {
 	// Ejemplo
 	//ComponenteRegistro::ComponenteRegistro<Mesh>("mesh");
@@ -45,9 +47,12 @@ int LoadGame() {
 
 	// Se registran los componentes
 	RegistryGameComponents();
-	MainMenu* m = new MainMenu();
 
-	
+	// Se crea el game manager
+	GameManager::Init();
+	GameManager::GetInstance();
+
+	MainMenu* m = new MainMenu();
 
 	std::cout << "GAME LOAD CORRECTLY\n";
 	return 0;

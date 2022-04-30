@@ -117,7 +117,7 @@ material Naranja
 	}
 }
 
-material Cyan
+material Cian
 {
 	technique
 	{
@@ -134,7 +134,7 @@ material Cyan
 	}
 }
 
-material White
+material Blanco
 {
 	technique
 	{
@@ -151,7 +151,7 @@ material White
 	}
 }
 
-material Black
+material Negro
 {
 	technique
 	{

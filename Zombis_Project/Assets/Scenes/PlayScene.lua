@@ -55,7 +55,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Black",
+                    material="Negro",
                     visible="true"
                 }
             }
@@ -72,7 +72,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Black",
+                    material="Negro",
                     visible="true"
                 }
             }
@@ -89,7 +89,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Black",
+                    material="Negro",
                     visible="true"
                 }
             }
@@ -106,7 +106,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Black",
+                    material="Negro",
                     visible="true"
                 }
             }
