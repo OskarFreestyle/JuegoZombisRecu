@@ -7,6 +7,8 @@
 class OverlayManager;
 class Motor;
 class Options;
+class LuaReader;
+class LoadResources;
 using CallBackOnClick = void(Motor* m);
 JUEGO_API class MainMenu
 {

@@ -17,6 +17,8 @@
 #include "LoadResources.h"
 #include "MainMenu.h"
 
+#include "Bala.h"
+
 void RegistryGameComponents() {
 	// Ejemplo
 	//ComponenteRegistro::ComponenteRegistro<Mesh>("mesh");
@@ -46,7 +48,7 @@ int LoadGame() {
 	// Se registran los componentes
 	RegistryGameComponents();
 	MainMenu* m = new MainMenu();
-
+	Bala* b = new Bala();
 	
 
 	std::cout << "GAME LOAD CORRECTLY\n";

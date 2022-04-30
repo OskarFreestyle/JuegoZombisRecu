@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Src\includes\Bala.h" />
     <ClInclude Include="..\Src\includes\bfs.h" />
     <ClInclude Include="..\Src\includes\framework.h" />
     <ClInclude Include="..\Src\includes\generaAleatorio.h" />
@@ -33,6 +34,7 @@
     <ClInclude Include="..\Src\includes\zombieMove.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Src\Bala.cpp" />
     <ClCompile Include="..\Src\bfs.cpp" />
     <ClCompile Include="..\Src\dllmain.cpp" />
     <ClCompile Include="..\Src\generaAleatorio.cpp" />

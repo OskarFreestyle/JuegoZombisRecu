@@ -1,0 +1,22 @@
+local prefab = { 
+    name="Bala",
+    id=1,
+    cursor=0,
+    components={
+        transform={
+            parent="-1",
+            position="0,0,0",
+            rotation="0,0,0",
+            scale="0.1,0.1,0.1"
+        },
+        mesh={
+            mesh="sphere.mesh",
+            material="Rojo",
+            visible="true"
+        },
+    }
+}
+
+function GetPrefab()
+    return prefab
+end

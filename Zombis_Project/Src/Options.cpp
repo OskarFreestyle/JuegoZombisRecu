@@ -4,11 +4,13 @@
 #include "OverlayManager.h"
 #include <Motor.h>
 #include "FMODAudioManager.h"
+#include "LuaReader.h"
+#include "LoadResources.h"
 
 
 Options::Options()
 {
-	Singleton<OverlayManager>::instance()->getMotor()->loadMenu("Options.lua", "GetOptions");
+	readFileMenus(Singleton<LoadResources>::instance()->scene("Options.lua"), "GetOptions");
 	Singleton<OverlayManager>::instance()->setCallBackToButton("VolumePanel", volume);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("ReturnPanel", backToMenu);
 }

@@ -3,13 +3,15 @@
 #include "OverlayManager.h"
 #include <Motor.h>
 #include "Options.h"
+#include "LuaReader.h"
+#include "LoadResources.h"
 
 MainMenu::MainMenu() {
-	Singleton<OverlayManager>::instance()->getMotor()->loadMenu("MainMenuScene.lua", "GetMainMenu");
+	readFileMenus(Singleton<LoadResources>::instance()->scene("MainMenuScene.lua" ), "GetMainMenu");
 	Singleton<OverlayManager>::instance()->setCallBackToButton("NewGamePanel", newGame);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("OptionsPanel", option);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("ExitPanel", exit);
-	std::cout << Singleton<OverlayManager>::instance()->getMotor()<<std::endl;
+	//std::cout << Singleton<OverlayManager>::instance()->getMotor()<<std::endl;
 }
 
 MainMenu::~MainMenu()
@@ -23,7 +25,7 @@ void MainMenu::newGame(Motor* m)
 {
 	//Singleton<OverlayManager>::close();
 	Singleton<OverlayManager>::instance()->clear();
-	Singleton<OverlayManager>::instance()->getMotor()->loadScene("TestScene.lua");
+	readFile(Singleton<LoadResources>::instance()->scene("TestScene.lua"));
 }
 
 void MainMenu::option(Motor* m)

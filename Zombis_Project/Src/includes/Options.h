@@ -3,6 +3,8 @@ class OverlayManager;
 class Motor;
 class MainMenu;
 class FMODAudioManager;
+class LuaReader;
+class LoadResources;
 using CallBackOnClick = void(Motor* m);
 class Options
 {
