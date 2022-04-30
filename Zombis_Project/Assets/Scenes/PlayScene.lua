@@ -1,6 +1,6 @@
 local level = {
     backgroundColor="0.23,0.51,0.74",
-    ambient="0.1,0.1,0.1",
+    ambient="1.0,1.0,1.0",
     gravity="0.0,-9.8,0.0",
     camera = {
         nearClipDistance="1",
@@ -9,6 +9,23 @@ local level = {
         camRotation="0,-1,0"
     },
     entidades = {
+        {
+            name="Player",
+            id=0,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,10,0",
+                    rotation="0,0,0",
+                    scale="1,1,1"
+                },
+                mesh={
+                    mesh="ninja.mesh",
+                    material="",
+                    visible="true"
+                }
+            }
+        },
         {
             name="Suelo",
             id=5,
@@ -21,7 +38,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Verde",
+                    material="Floor",
                     visible="true"
                 }
             }
@@ -38,7 +55,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Azul",
+                    material="Black",
                     visible="true"
                 }
             }
@@ -55,7 +72,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Azul",
+                    material="Black",
                     visible="true"
                 }
             }
@@ -72,7 +89,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Azul",
+                    material="Black",
                     visible="true"
                 }
             }
@@ -89,24 +106,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Azul",
-                    visible="true"
-                }
-            }
-        },
-        {
-            name="Player",
-            id=0,
-            components={
-                transform={
-                    parent="-1",
-                    position="0,-10,0",
-                    rotation="0,0,0",
-                    scale="1,1,1"
-                },
-                mesh={
-                    mesh="ogrehead.mesh",
-                    material="Rojo",
+                    material="Black",
                     visible="true"
                 }
             }
