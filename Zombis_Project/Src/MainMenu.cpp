@@ -23,7 +23,7 @@ void MainMenu::newGame(Motor* m)
 {
 	//Singleton<OverlayManager>::close();
 	Singleton<OverlayManager>::instance()->clear();
-	Singleton<OverlayManager>::instance()->getMotor()->loadScene("TestScene.lua");
+	Singleton<OverlayManager>::instance()->getMotor()->loadScene("PlayScene.lua");
 }
 
 void MainMenu::option(Motor* m)
