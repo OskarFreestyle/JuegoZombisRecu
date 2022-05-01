@@ -5,6 +5,10 @@
 #define JUEGO_API __declspec(dllimport)
 #endif
 class MainMenu;
+class MoveBullet;
+class Shoot;
+class Entidad;
+class EntidadManager;
 
 /// <summary>
 /// Aquí se registran los componentes únicos de cada juego que por tanto no conoce el motor

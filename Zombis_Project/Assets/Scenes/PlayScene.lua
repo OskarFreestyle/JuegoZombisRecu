@@ -33,7 +33,10 @@ local level = {
                 },
                 lookatMouse={
                     test="false"
-                }
+                },
+				shoot={
+					numBullets="10"
+				}
             }
         },
         {
