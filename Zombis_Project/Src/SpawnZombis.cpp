@@ -4,7 +4,10 @@
 #include "Entidad.h"
 #include "EntidadManager.h"
 #include "Transform.h"
+#include <time.h>
 
+const int POS_ZOMBIS = 800;
+const clock_t TIME_TO_SPAWN = 5000;
 
 bool SpawnZombis::init(const std::map<std::string, std::string>& mapa)
 {
@@ -13,17 +16,27 @@ bool SpawnZombis::init(const std::map<std::string, std::string>& mapa)
 
 void SpawnZombis::update()
 {
-	if (ih().isKeyDown(SDL_SCANCODE_Z)) {
+	clock_t auxc = clock();
+	if(auxc > lastZombie + TIME_TO_SPAWN){
+
+		lastZombie = auxc;
+
 		std::cout << "Se crea un Zombie\n";
 		Entidad* zombie = Entidad::instantiate("Zombie.prefab");
 
-		// Voy a ponerles posiciones aleatorias hasta que arreglemos el problema con las isntancias
-		int x = rand() % 600 - 300;
-		int z = rand() % 600 - 300;
+		// Los zombis se generan en las 4 esquinas
+		int x = POS_ZOMBIS;
+		int z = POS_ZOMBIS;
+
+		if (rand() % 2 == 1) {
+			x = -x;
+		}
+
+		if (rand() % 2 == 1) {
+			z = -z;
+		}
+
 		std::cout << "x: " << x << " z: " << z << "\n";
-		zombie->getComponent<Transform>()->setPosition(zombie->getComponent<Transform>()->getPosition() + Vectola3D(x, 10, z));
-		//zombie->getComponent<Transform>()->getPosition().setY(10);
-		//zombie->getComponent<Transform>()->getPosition().setX(x);
-		//zombie->getComponent<Transform>()->getPosition().setZ(z);
+		zombie->getComponent<Transform>()->setPosition(zombie->getComponent<Transform>()->getPosition() + Vectola3D(x, 0, z));
 	}
 }
