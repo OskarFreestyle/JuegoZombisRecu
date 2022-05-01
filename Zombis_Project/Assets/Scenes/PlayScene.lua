@@ -17,7 +17,7 @@ local level = {
                     parent="-1",
                     position="0,10,0",
                     rotation="0,0,0",
-                    scale="1,1,1"
+                    scale="5,5,5"
                 },
                 mesh={
                     mesh="ninja.mesh",

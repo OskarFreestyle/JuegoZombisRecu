@@ -18,24 +18,9 @@ bool LookatMouse::init(const std::map<std::string, std::string>& mapa)
 	if (mapa.find("test") == mapa.end())
 		return false;
 
-	Transform* tr = entity_->getComponent<Transform>();
-	if (tr == nullptr)
+	tr_ = entity_->getComponent<Transform>();
+	if (tr_ == nullptr)
 		return false;
-	tr_ = tr;
-	//std::string me = mapa.at("mesh");
-	//setMesh(me);
-
-	/*std::string ma = mapa.at("material");
-	if (ma != "") setMaterial(ma);
-
-	std::string vi = mapa.at("visible");
-	if (vi == "true") setVisible(true);
-	else if (vi == "false") setVisible(false);
-	else return false;*/
-
-	/*_nodo->setPosition(tr->getPosition().getX(), tr->getPosition().getY(), tr->getPosition().getZ());
-	_nodo->setScale(tr->getScale().getX(), tr->getScale().getY(), tr->getScale().getZ());
-	_nodo->setOrientation(tr->getRotation());*/
 
 	inicializado_ = true;
 
@@ -60,25 +45,37 @@ void LookatMouse::rotateToMouse2D()
 {
 	MP = Singleton<InputManager>::instance()->getMousePosInGame();
 
-
-	//tr_->setPosition(MP.first, 0, MP.second);
-
-	//var startingScreenPos = mainCamera.WorldToScreenPoint(player.position);
-	//playerPos
 	std::pair<int, int> auxRaton = MP;
 
 	auxRaton.first -= tr_->getPosition().getX();
 	auxRaton.second -= tr_->getPosition().getY();
 	//double angle = Mathf.Atan2(mouseScreenPos.y, mouseScreenPos.x) * Mathf.Rad2Deg;
-	auxRaton.first -= entity_->getComponent<Transform>()->getPosition().getX();
-	auxRaton.second -= entity_->getComponent<Transform>()->getPosition().getY();
-	double angle_ = atan2(auxRaton.first, auxRaton.second);
+	double angle_ = atan2(auxRaton.first, auxRaton.second)/* * (360 / (3.14 ))*/;
 	Vectola3D v(0, angle_, 0) ;
 	Quaterniola x(1, v);
-	//player.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-	
+
+
 	entity_->getComponent<Transform>()->setRotation(x);
-	std::cout << angle_ << std::endl;
+	//Vectola3D playerPos = entity_->getComponent<Transform>()->getPosition();
+	////Vector2 playerShipPosition; // x, y position of your ship
+	////Vector2 touchPosition; // x, y position of where your finger touched the screen
+	//Vectola3D diff = Vectola3D(MP.first, MP.second,0) - playerPos; // difference vector
+	//float angle = atan2f(-diff.getY(), diff.getX()); // find the angle in radians as +/- PI
+
+	////Quaterniola x(eulerToQuat(0, angle, 0));
+	//int yaw, pitch, roll;
+	//pitch = angle;
+	//roll = yaw = 0;
+	//double cy = cos(yaw * 0.5);
+	//double sy = sin(yaw * 0.5);
+	//double cp = cos(pitch * 0.5);
+	//double sp = sin(pitch * 0.5);
+	//double cr = cos(roll * 0.5);
+	//double sr = sin(roll * 0.5);
+
+	//Quaterniola q(cr * cp * cy + sr * sp * sy, sr * cp * cy - cr * sp * sy, cr * sp * cy + sr * cp * sy, cr * cp * sy - sr * sp * cy);
+	// 
+	//std::cout << angle_ << std::endl;
 
 	
 }
@@ -92,3 +89,23 @@ void LookatMouse::update()
 	}
 
 }
+
+//Quaterniola LookatMouse::eulerToQuat(int yaw, int pitch, int roll)
+//{
+//	// Abbreviations for the various angular functions
+//	double cy = cos(yaw * 0.5);
+//	double sy = sin(yaw * 0.5);
+//	double cp = cos(pitch * 0.5);
+//	double sp = sin(pitch * 0.5);
+//	double cr = cos(roll * 0.5);
+//	double sr = sin(roll * 0.5);
+//
+//	Quaterniola q(cr * cp * cy + sr * sp * sy, sr * cp * cy - cr * sp * sy, cr * sp * cy + sr * cp * sy, cr * cp * sy - sr * sp * cy);
+//	//q.w = cr * cp * cy + sr * sp * sy;
+//	//q.x = sr * cp * cy - cr * sp * sy;
+//	//q.y = cr * sp * cy + sr * cp * sy;
+//	//q.z = cr * cp * sy - sr * sp * cy;
+//	std::cout << "<<<<<<<<<<<<<<<<<<";
+//
+//	return q;
+//}
