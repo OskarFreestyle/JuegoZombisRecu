@@ -18,13 +18,12 @@
 #include "MainMenu.h"
 
 
-
+// Componentes
 #include "MoveBullet.h"
 #include "Shoot.h"
-
+#include "SpawnZombis.h"
 #include "Personaje.h"
 #include "Jugador.h"
-
 #include "GameManager.h"
 
 
@@ -36,6 +35,7 @@ void RegistryGameComponents() {
 		ComponenteRegistro::ComponenteRegistro<Shoot>("shoot");
 		ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
 		ComponenteRegistro::ComponenteRegistro<Jugador>("jugador");
+		ComponenteRegistro::ComponenteRegistro<SpawnZombis>("spawnZombis");
 	}
 	catch (...) {
 		std::cerr << "ERROR CARGANDO LOS COMPONENTES DEL JUEGO\n";
@@ -70,7 +70,7 @@ int LoadGame() {
 
 	MainMenu* m = new MainMenu();
 
-	loadMusic();
+	//loadMusic();
 	
 
 	std::cout << "GAME LOAD CORRECTLY\n";
