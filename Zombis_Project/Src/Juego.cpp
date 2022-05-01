@@ -27,13 +27,14 @@
 void RegistryGameComponents() {
 	// Ejemplo
 	//ComponenteRegistro::ComponenteRegistro<Mesh>("mesh");
-	//ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatmouse");
 
 	//ComponenteRegistro::ComponenteRegistro<GrafoConObstaculos>("grafoObstaculo");
 
 	ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
 	ComponenteRegistro::ComponenteRegistro<Jugador>("jugador");
+	ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatMouse");
 
+	
 	std::cout << "EM: " << Singleton<EntidadManager>::instance() << "\n";
 	std::cout << "LR " << Singleton<LoadResources>::instance() << "\n";
 	std::cout << "FMOD: " << Singleton<FMODAudioManager>::instance() << "\n";

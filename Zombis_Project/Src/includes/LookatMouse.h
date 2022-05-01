@@ -1,8 +1,10 @@
 #pragma once
+#define _SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING
 #include "Componente.h"
 #include <SDL.h>
 
 class InputManager;
+class Transform;
 
 class LookatMouse : public Componente
 {
@@ -21,4 +23,5 @@ public:
 private:
 	bool test;
 	std::pair<double, double> MP;
+	Transform *tr_;
 };
