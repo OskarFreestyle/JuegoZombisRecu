@@ -2,8 +2,8 @@
 #include "Componente.h"
 //#include <vector>
 class InputManager;
-class Bala;
 class Entidad;
+class Transform;
 class EntidadManager;
 
 class Shoot :
@@ -18,6 +18,6 @@ public:
     ~Shoot();
     bool init(const std::map<std::string, std::string>& mapa);
     void update();
-    void setBala(Bala* ba);
+    //void setBala(Bala* ba);
 };
 

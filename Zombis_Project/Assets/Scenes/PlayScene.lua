@@ -23,14 +23,17 @@ local level = {
                     mesh="ninja.mesh",
                     material="",
                     visible="true"
-                }
+                },
                 personaje={
                     maxHealth="3",
                     lifefactor="0.05"
                 },
                 jugador={
                     speed="10.0"
-                }
+                },
+				shoot={
+					numBullets="10"
+				}
             }
         },
         {

@@ -18,8 +18,9 @@
 #include "MainMenu.h"
 
 
-#include "Bala.h"
+
 #include "MoveBullet.h"
+#include "Shoot.h"
 
 #include "Personaje.h"
 #include "Jugador.h"
@@ -36,6 +37,7 @@ void RegistryGameComponents() {
 
 	//ComponenteRegistro::ComponenteRegistro<GrafoConObstaculos>("grafoObstaculo");
 	ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");
+	ComponenteRegistro::ComponenteRegistro<Shoot>("shoot");
 	
 
 	ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
@@ -68,6 +70,7 @@ int LoadGame() {
 	GameManager::GetInstance();
 
 	MainMenu* m = new MainMenu();
+	
 
 	std::cout << "GAME LOAD CORRECTLY\n";
 	return 0;

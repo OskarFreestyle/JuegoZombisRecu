@@ -1,116 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="..\Src\bfs.cpp" />
+    <ClCompile Include="..\Src\dllmain.cpp" />
+    <ClCompile Include="..\Src\GameManager.cpp" />
+    <ClCompile Include="..\Src\generaAleatorio.cpp" />
+    <ClCompile Include="..\Src\grafo.cpp" />
+    <ClCompile Include="..\Src\grafoConObstaculos.cpp" />
+    <ClCompile Include="..\Src\Juego.cpp" />
+    <ClCompile Include="..\Src\Jugador.cpp" />
+    <ClCompile Include="..\Src\LookatMouse.cpp" />
+    <ClCompile Include="..\Src\MainMenu.cpp" />
+    <ClCompile Include="..\Src\MoveBullet.cpp" />
+    <ClCompile Include="..\Src\Options.cpp" />
+    <ClCompile Include="..\Src\pch.cpp" />
+    <ClCompile Include="..\Src\Shoot.cpp" />
+    <ClCompile Include="..\Src\zombieMove.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\includes\framework.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\Juego.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\pch.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\Personaje.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\LookatMouse.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\bfs.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\generaAleatorio.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\grafo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\grafoConObstaculos.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\zombieMove.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\MainMenu.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\Options.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\Bala.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\MoveBullet.h">
-    <ClInclude Include="..\Src\includes\GameManager.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\Jugador.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\Shoot.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Src\dllmain.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\Juego.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\pch.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\LookatMouse.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\bfs.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\generaAleatorio.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\grafo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\grafoConObstaculos.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\zombieMove.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\MainMenu.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\Options.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\Bala.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\MoveBullet.cpp">
-    <ClCompile Include="..\Src\GameManager.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\Jugador.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\Shoot.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
+    <ClInclude Include="..\Src\includes\bfs.h" />
+    <ClInclude Include="..\Src\includes\framework.h" />
+    <ClInclude Include="..\Src\includes\GameManager.h" />
+    <ClInclude Include="..\Src\includes\generaAleatorio.h" />
+    <ClInclude Include="..\Src\includes\grafo.h" />
+    <ClInclude Include="..\Src\includes\grafoConObstaculos.h" />
+    <ClInclude Include="..\Src\includes\Juego.h" />
+    <ClInclude Include="..\Src\includes\Jugador.h" />
+    <ClInclude Include="..\Src\includes\LookatMouse.h" />
+    <ClInclude Include="..\Src\includes\MainMenu.h" />
+    <ClInclude Include="..\Src\includes\MoveBullet.h" />
+    <ClInclude Include="..\Src\includes\Options.h" />
+    <ClInclude Include="..\Src\includes\pch.h" />
+    <ClInclude Include="..\Src\includes\Personaje.h" />
+    <ClInclude Include="..\Src\includes\Shoot.h" />
+    <ClInclude Include="..\Src\includes\zombieMove.h" />
   </ItemGroup>
 </Project>

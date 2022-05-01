@@ -16,7 +16,7 @@ local prefab = {
         },
         shoot={
 			numBullets="10"
-		}
+		},
     }
 }
 

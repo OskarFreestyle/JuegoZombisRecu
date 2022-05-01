@@ -1,9 +1,10 @@
 #include "Shoot.h"
 #include "InputManager.h"
-#include "Bala.h"
+
 #include "Entidad.h"
 #include "EntidadManager.h"
-Bala* g;
+#include "Transform.h"
+//Bala* g;
 Shoot::Shoot()
 {
 }
@@ -27,21 +28,23 @@ bool Shoot::init(const std::map<std::string, std::string>& mapa)
 
 void Shoot::update()
 {
-    g = new Bala();
+    //g = new Bala();
    /* if (g = nullptr) {
         g = new Bala();
     }*/
     if (ih().getMouseButtonState(ih().LEFT)) {
         std::cout << "Dispara" << std::endl;
         
-        g->creaBala();
+        Entidad* bala=Entidad::instantiate("Bala.prefab", entity_->getComponent<Transform>()->getPosition());
+        bala->getComponent<Transform>()->getPosition().setY(bala->getComponent<Transform>()->getPosition().getY() + 10);
+        
        // e->setEntityMngr(Singleton<EntidadManager>::instance());
         
 
     }
 }
 
-void Shoot::setBala(Bala* ba)
+/*void Shoot::setBala(Bala* ba)
 {
     g = ba;
-}
+}*/

@@ -5,7 +5,6 @@
 #define JUEGO_API __declspec(dllimport)
 #endif
 class MainMenu;
-class Bala;
 class MoveBullet;
 class Shoot;
 class Entidad;
