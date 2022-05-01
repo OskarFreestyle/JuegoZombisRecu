@@ -46,7 +46,8 @@ void Jugador::update() {
 		Vectola3D mov=v.normalize()*speed_;
 		//Esto es para que se mueva el personaje, hay 2 versiones porque no se cual es la correcta, descomentarlo para testear
 		//version 1 usando el translate del transform
-		entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition()+mov);
+		
+		//entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition()+mov);
 		
 		//version 2 crea un vector3d y lo suma a la posicion del personaje
 		//Vectola3D res = { ejx, 0.0, ejz };

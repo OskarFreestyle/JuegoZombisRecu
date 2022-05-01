@@ -60,30 +60,34 @@ void LookatMouse::rotateToMouse2D()
 {
 	MP = Singleton<InputManager>::instance()->getMousePos();
 
-	if (/*entity_->hasComponent<Transform>()*/tr_ != nullptr){
-		//tr_->setPosition(MP.first, 0, MP.second);
 
-		//var startingScreenPos = mainCamera.WorldToScreenPoint(player.position);
-		//playerPos
-		std::pair<int, int> auxRaton;
+	//tr_->setPosition(MP.first, 0, MP.second);
 
-		auxRaton.first -= tr_->getPosition().getX();
-		//auxRaton.second -= tr_->getPosition().getY();
-		////double angle = Mathf.Atan2(mouseScreenPos.y, mouseScreenPos.x) * Mathf.Rad2Deg;
-		//double angle_ = atan2(auxRaton.first, auxRaton.second);
-		//Vectola3D v(0, angle_, 0) ;
-		//Quaterniola x(0, v);
-		////player.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-		//tr_->setRotation(x);
+	//var startingScreenPos = mainCamera.WorldToScreenPoint(player.position);
+	//playerPos
+	std::pair<int, int> auxRaton;
 
-	}		
+	auxRaton.first -= tr_->getPosition().getX();
+	auxRaton.second -= tr_->getPosition().getY();
+	//double angle = Mathf.Atan2(mouseScreenPos.y, mouseScreenPos.x) * Mathf.Rad2Deg;
+	auxRaton.first -= entity_->getComponent<Transform>()->getPosition().getX();
+	auxRaton.second -= entity_->getComponent<Transform>()->getPosition().getY();
+	double angle_ = atan2(auxRaton.first, auxRaton.second);
+	Vectola3D v(0, angle_, 0) ;
+	Quaterniola x(1, v);
+	//player.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+	entity_->getComponent<Transform>()->setRotation(x);
+	std::cout << entity_->getComponent<Transform>()->getRotation();
+
+	
 }
 
 void LookatMouse::update()
 {
-	if (entity_->hasComponent<Transform>() && Singleton<InputManager>::instance()->isKeyDown(SDL_KeyCode(SDLK_1)))
+	if (entity_->hasComponent<Transform>())
 	{
-		debugMousePos();
+		//debugMousePos();
 		rotateToMouse2D();
 	}
 
