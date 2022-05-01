@@ -36,7 +36,7 @@ void Shoot::update()
         std::cout << "Dispara" << std::endl;
         
         Entidad* bala=Entidad::instantiate("Bala.prefab", entity_->getComponent<Transform>()->getPosition());
-        bala->getComponent<Transform>()->getPosition().setY(bala->getComponent<Transform>()->getPosition().getY() + 10);
+       
         
        // e->setEntityMngr(Singleton<EntidadManager>::instance());
         

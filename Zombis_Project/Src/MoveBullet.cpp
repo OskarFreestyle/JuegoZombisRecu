@@ -47,9 +47,11 @@ void MoveBullet::update()
 {
 	if (isDirCalculated == false) {
 		std::cout << ih().getMousePosInGame().first << " " << ih().getMousePosInGame().second  << std::endl;
-		Vectola3D aux = { ih().getMousePosInGame().first - this->getEntidad()->getComponent<Transform>()->getPosition().getX(),
+		std::cout << this->getEntidad()->getComponent<Transform>()->getPosition().getX()<<" "<< this->getEntidad()->getComponent<Transform>()->getPosition().getY()<<" "<< this->getEntidad()->getComponent<Transform>()->getPosition().getZ() << std::endl;
+		std::cout << this->getEntidad()->getComponent<Transform>()->getLocalPosition().getX() << " " << this->getEntidad()->getComponent<Transform>()->getLocalPosition().getY() << " " << this->getEntidad()->getComponent<Transform>()->getLocalPosition().getZ() << std::endl;
+		Vectola3D aux = { (SCALE_X*ih().getMousePosInGame().first) - this->getEntidad()->getComponent<Transform>()->getPosition().getX(),
 						 0,
-						 (ih().getMousePosInGame().second + this->getEntidad()->getComponent<Transform>()->getPosition().getY())};
+						 ((SCALE_Z *ih().getMousePosInGame().second) - this->getEntidad()->getComponent<Transform>()->getPosition().getZ())};
 		std::cout << aux.getX() << " " << aux.getY() << " " << aux.getZ() << std::endl;
 
 		
