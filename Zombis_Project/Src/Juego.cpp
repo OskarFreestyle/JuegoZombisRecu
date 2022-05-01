@@ -31,32 +31,31 @@
 
 
 void RegistryGameComponents() {
-	// Ejemplo
-	//ComponenteRegistro::ComponenteRegistro<Mesh>("mesh");
-
-	//ComponenteRegistro::ComponenteRegistro<GrafoConObstaculos>("grafoObstaculo");
-	ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");
-	ComponenteRegistro::ComponenteRegistro<Shoot>("shoot");
-	
-
-	ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
-	ComponenteRegistro::ComponenteRegistro<Jugador>("jugador");
-	ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatMouse");
-
-	
-	std::cout << "EM: " << Singleton<EntidadManager>::instance() << "\n";
-	std::cout << "LR " << Singleton<LoadResources>::instance() << "\n";
-	std::cout << "FMOD: " << Singleton<FMODAudioManager>::instance() << "\n";
-
-	Singleton<EntidadManager>::instance()->addEntidad();
-
-	Singleton<FMODAudioManager>::instance()->loadMusic(0, Singleton<LoadResources>::instance()->aud("blind_shift.mp3").c_str());
-
-	Singleton<FMODAudioManager>::instance()->playMusic(0, true);
-
-	
+	try {
+		ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");
+		ComponenteRegistro::ComponenteRegistro<Shoot>("shoot");
+		ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
+		ComponenteRegistro::ComponenteRegistro<Jugador>("jugador");
+		ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatMouse");
+	}
+	catch (...) {
+		std::cerr << "ERROR CARGANDO LOS COMPONENTES DEL JUEGO\n";
+	}
 
 	std::cout << "GAME COMPONENTS REGISTRY CORRECTLY\n";
+}
+
+void loadMusic() {
+	try {
+		// Se crea una entidad para la musica
+		Singleton<EntidadManager>::instance()->addEntidad("music", 1);
+		Singleton<FMODAudioManager>::instance()->loadMusic(0, Singleton<LoadResources>::instance()->aud("GameMusicShort.mp3").c_str());
+		Singleton<FMODAudioManager>::instance()->playMusic(0, true);
+	}
+	catch (...) {
+		std::cerr << "ERROR AL INICIAR LA MUSICA DEL JUEGO\n";
+	}
+
 }
 
 // Simulación de la función de carga
@@ -71,6 +70,8 @@ int LoadGame() {
 	GameManager::GetInstance();
 
 	MainMenu* m = new MainMenu();
+
+	loadMusic();
 	
 
 	std::cout << "GAME LOAD CORRECTLY\n";

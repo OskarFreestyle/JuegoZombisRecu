@@ -46,10 +46,12 @@ void MoveBullet::setDireccion(Vectola3D d)
 void MoveBullet::update()
 {
 	if (isDirCalculated == false) {
-		
+		std::cout << ih().getMousePosInGame().first << " " << ih().getMousePosInGame().second  << std::endl;
 		Vectola3D aux = { ih().getMousePosInGame().first - this->getEntidad()->getComponent<Transform>()->getPosition().getX(),
-						 (ih().getMousePosInGame().second+ this->getEntidad()->getComponent<Transform>()->getPosition().getY())*-1,
-						  0 };
+						 0,
+						 (ih().getMousePosInGame().second + this->getEntidad()->getComponent<Transform>()->getPosition().getY())};
+		std::cout << aux.getX() << " " << aux.getY() << " " << aux.getZ() << std::endl;
+
 		
 		setDireccion(aux);
 		dir = dir.normalize();

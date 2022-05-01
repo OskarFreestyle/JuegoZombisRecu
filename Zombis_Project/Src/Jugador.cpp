@@ -43,19 +43,10 @@ void Jugador::update() {
 		else if (ih().isKeyDown(SDL_SCANCODE_D)) {
 			v.setX(1);
 		}
-		Vectola3D mov=v.normalize()*speed_;
-		//Esto es para que se mueva el personaje, hay 2 versiones porque no se cual es la correcta, descomentarlo para testear
-		//version 1 usando el translate del transform
-		
-		//entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition()+mov);
-		
-		//version 2 crea un vector3d y lo suma a la posicion del personaje
-		//Vectola3D res = { ejx, 0.0, ejz };
-		//entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition() + res);
 
-		//Este es el caso en el que el jugador pulse el boton izquierdo del raton
-		/*if (ih().getMouseButtonState(ih().LEFT)) {
-			//aqui poner el metodo de disparar cuando esten las balas
-		}*/
+		Vectola3D mov=v.normalize()*speed_;
+
+		entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition() + mov);
+
 	}
 }

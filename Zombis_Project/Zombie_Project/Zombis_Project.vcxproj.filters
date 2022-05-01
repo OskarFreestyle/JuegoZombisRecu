@@ -16,6 +16,7 @@
     <ClCompile Include="..\Src\pch.cpp" />
     <ClCompile Include="..\Src\Shoot.cpp" />
     <ClCompile Include="..\Src\zombieMove.cpp" />
+    <ClCompile Include="..\Src\SpawnZombis.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\includes\bfs.h" />
@@ -34,5 +35,6 @@
     <ClInclude Include="..\Src\includes\Personaje.h" />
     <ClInclude Include="..\Src\includes\Shoot.h" />
     <ClInclude Include="..\Src\includes\zombieMove.h" />
+    <ClInclude Include="..\Src\includes\SpawnZombis.h" />
   </ItemGroup>
 </Project>
