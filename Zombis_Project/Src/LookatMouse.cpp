@@ -58,14 +58,14 @@ void LookatMouse::debugMousePos()
 
 void LookatMouse::rotateToMouse2D()
 {
-	MP = Singleton<InputManager>::instance()->getMousePos();
+	MP = Singleton<InputManager>::instance()->getMousePosInGame();
 
 
 	//tr_->setPosition(MP.first, 0, MP.second);
 
 	//var startingScreenPos = mainCamera.WorldToScreenPoint(player.position);
 	//playerPos
-	std::pair<int, int> auxRaton;
+	std::pair<int, int> auxRaton = MP;
 
 	auxRaton.first -= tr_->getPosition().getX();
 	auxRaton.second -= tr_->getPosition().getY();
@@ -76,9 +76,9 @@ void LookatMouse::rotateToMouse2D()
 	Vectola3D v(0, angle_, 0) ;
 	Quaterniola x(1, v);
 	//player.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
+	
 	entity_->getComponent<Transform>()->setRotation(x);
-	std::cout << entity_->getComponent<Transform>()->getRotation();
+	std::cout << angle_ << std::endl;
 
 	
 }
