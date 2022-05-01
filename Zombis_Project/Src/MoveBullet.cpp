@@ -46,13 +46,13 @@ void MoveBullet::setDireccion(Vectola3D d)
 void MoveBullet::update()
 {
 	if (isDirCalculated == false) {
-		std::cout << ih().getMousePosInGame().first << " " << ih().getMousePosInGame().second  << std::endl;
-		std::cout << this->getEntidad()->getComponent<Transform>()->getPosition().getX()<<" "<< this->getEntidad()->getComponent<Transform>()->getPosition().getY()<<" "<< this->getEntidad()->getComponent<Transform>()->getPosition().getZ() << std::endl;
-		std::cout << this->getEntidad()->getComponent<Transform>()->getLocalPosition().getX() << " " << this->getEntidad()->getComponent<Transform>()->getLocalPosition().getY() << " " << this->getEntidad()->getComponent<Transform>()->getLocalPosition().getZ() << std::endl;
-		Vectola3D aux = { (SCALE_X*ih().getMousePosInGame().first) - this->getEntidad()->getComponent<Transform>()->getPosition().getX(),
+		//std::cout << ih().getMousePosInGame().first << " " << ih().getMousePosInGame().second  << std::endl;
+	//	std::cout << entity_->getComponent<Transform>()->getPosition().getX()<<" "<< this->getEntidad()->getComponent<Transform>()->getPosition().getY()<<" "<< this->getEntidad()->getComponent<Transform>()->getPosition().getZ() << std::endl;
+		//std::cout << entity_->getComponent<Transform>()->getLocalPosition().getX() << " " << this->getEntidad()->getComponent<Transform>()->getLocalPosition().getY() << " " << this->getEntidad()->getComponent<Transform>()->getLocalPosition().getZ() << std::endl;
+		Vectola3D aux = { (SCALE_X*ih().getMousePosInGame().first) - entity_->getComponent<Transform>()->getPosition().getX(),
 						 0,
-						 ((SCALE_Z *ih().getMousePosInGame().second) - this->getEntidad()->getComponent<Transform>()->getPosition().getZ())};
-		std::cout << aux.getX() << " " << aux.getY() << " " << aux.getZ() << std::endl;
+						 ((SCALE_Z *ih().getMousePosInGame().second) - entity_->getComponent<Transform>()->getPosition().getZ())};
+		//std::cout << aux.getX() << " " << aux.getY() << " " << aux.getZ() << std::endl;
 
 		
 		setDireccion(aux);
@@ -60,5 +60,10 @@ void MoveBullet::update()
 		isDirCalculated = true;
 	}
 	Vectola3D mov = { dir * vel };
-	this->getEntidad()->getComponent<Transform>()->setPosition(this->getEntidad()->getComponent<Transform>()->getPosition()+mov);
+	entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition()+mov);
+	
+	if (entity_->getComponent<Transform>()->getPosition().getX() > 1370.0 || entity_->getComponent<Transform>()->getPosition().getX()< -1370.0 || entity_->getComponent<Transform>()->getPosition().getZ() > 1040.0 ||  entity_->getComponent<Transform>()->getPosition().getZ() < -1040.0) {
+		entity_->setActive(false);
+
+	}
 }
