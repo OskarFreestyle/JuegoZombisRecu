@@ -17,7 +17,12 @@
 #include "LoadResources.h"
 #include "MainMenu.h"
 
+#include "Personaje.h"
+#include "Jugador.h"
+
 #include "GameManager.h"
+
+
 
 void RegistryGameComponents() {
 	// Ejemplo
@@ -25,6 +30,9 @@ void RegistryGameComponents() {
 	//ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatmouse");
 
 	//ComponenteRegistro::ComponenteRegistro<GrafoConObstaculos>("grafoObstaculo");
+
+	ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
+	ComponenteRegistro::ComponenteRegistro<Jugador>("jugador");
 
 	std::cout << "EM: " << Singleton<EntidadManager>::instance() << "\n";
 	std::cout << "LR " << Singleton<LoadResources>::instance() << "\n";
