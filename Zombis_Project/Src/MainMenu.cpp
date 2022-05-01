@@ -5,6 +5,7 @@
 #include "Options.h"
 #include "LuaReader.h"
 #include "LoadResources.h"
+#include "GameManager.h"
 
 MainMenu::MainMenu() {
 	readFileMenus(Singleton<LoadResources>::instance()->scene("MainMenuScene.lua" ), "GetMainMenu");
@@ -25,7 +26,13 @@ void MainMenu::newGame(Motor* m)
 {
 	//Singleton<OverlayManager>::close();
 	Singleton<OverlayManager>::instance()->clear();
-	readFile(Singleton<LoadResources>::instance()->scene("TestScene.lua"));
+
+	readFile(Singleton<LoadResources>::instance()->scene("PlayScene.lua"));
+
+	//Singleton<OverlayManager>::instance()->getMotor()->loadScene("PlayScene.lua");
+
+	GameManager::GetInstance()->initGame();
+
 }
 
 void MainMenu::option(Motor* m)

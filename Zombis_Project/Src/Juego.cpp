@@ -17,8 +17,16 @@
 #include "LoadResources.h"
 #include "MainMenu.h"
 
+
 #include "Bala.h"
 #include "MoveBullet.h"
+
+#include "Personaje.h"
+#include "Jugador.h"
+
+#include "GameManager.h"
+
+
 
 
 void RegistryGameComponents() {
@@ -29,6 +37,9 @@ void RegistryGameComponents() {
 	//ComponenteRegistro::ComponenteRegistro<GrafoConObstaculos>("grafoObstaculo");
 	ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");
 	
+
+	ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
+	ComponenteRegistro::ComponenteRegistro<Jugador>("jugador");
 
 	std::cout << "EM: " << Singleton<EntidadManager>::instance() << "\n";
 	std::cout << "LR " << Singleton<LoadResources>::instance() << "\n";
@@ -51,10 +62,12 @@ int LoadGame() {
 
 	// Se registran los componentes
 	RegistryGameComponents();
+
+	// Se crea el game manager
+	GameManager::Init();
+	GameManager::GetInstance();
+
 	MainMenu* m = new MainMenu();
-	Bala* b = new Bala();
-	b->creaBala();
-	
 
 	std::cout << "GAME LOAD CORRECTLY\n";
 	return 0;

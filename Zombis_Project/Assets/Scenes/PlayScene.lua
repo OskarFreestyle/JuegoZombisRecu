@@ -1,0 +1,131 @@
+local level = {
+    backgroundColor="0.23,0.51,0.74",
+    ambient="1.0,1.0,1.0",
+    gravity="0.0,-9.8,0.0",
+    camera = {
+        nearClipDistance="1",
+        farClipDistance="10000",
+        camPosition="0,2500,0",
+        camRotation="0,-1,0"
+    },
+    entidades = {
+        {
+            name="Player",
+            id=0,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,10,0",
+                    rotation="0,0,0",
+                    scale="1,1,1"
+                },
+                mesh={
+                    mesh="ninja.mesh",
+                    material="",
+                    visible="true"
+                }
+                personaje={
+                    maxHealth="3",
+                    lifefactor="0.05"
+                },
+                jugador={
+                    speed="10.0"
+                }
+            }
+        },
+        {
+            name="Suelo",
+            id=5,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,-1,0",
+                    rotation="0,0,0",
+                    scale="18,1,18"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Floor",
+                    visible="true"
+                }
+            }
+        },
+        {
+            name="Pared1",
+            id=1,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,-1,900",
+                    rotation="0,0,0",
+                    scale="20,1,0.2"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Negro",
+                    visible="true"
+                }
+            }
+        },
+        {
+            name="Pared2",
+            id=2,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,-1,-900",
+                    rotation="0,0,0",
+                    scale="20,1,0.2"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Negro",
+                    visible="true"
+                }
+            }
+        },
+        {
+            name="Pared3",
+            id=3,
+            components={
+                transform={
+                    parent="-1",
+                    position="900,-1,0",
+                    rotation="0,90,0",
+                    scale="20,1,0.2"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Negro",
+                    visible="true"
+                }
+            }
+        },
+        {
+            name="Pared4",
+            id=3,
+            components={
+                transform={
+                    parent="-1",
+                    position="-900,-1,0",
+                    rotation="0,90,0",
+                    scale="20,1,0.2"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Negro",
+                    visible="true"
+                }
+            }
+        }
+    }
+}
+
+function GetLevel ()
+  return level
+end
+
+function pruebaTexto()
+    print('Im Working YESS')
+end
+
