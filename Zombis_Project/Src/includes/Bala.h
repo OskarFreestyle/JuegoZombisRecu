@@ -1,5 +1,6 @@
 #pragma once
 #include "utils\Singleton.h"
+//#include <vector>
 class LuaReader;
 class EntidadManager;
 class Motor;
@@ -15,13 +16,13 @@ class Bala{
  
 
 private:
-  
+   
    
 public:
     Bala();
     ~Bala();
     void creaBala();
-    void click();
+    
   
 
     

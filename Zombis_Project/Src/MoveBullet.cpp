@@ -56,6 +56,5 @@ void MoveBullet::update()
 		isDirCalculated = true;
 	}
 	Vectola3D mov = { dir * vel };
-	std::cout << mov.getX() << " " << mov.getY() << " " << mov.getZ() << std::endl;
 	this->getEntidad()->getComponent<Transform>()->setPosition(this->getEntidad()->getComponent<Transform>()->getPosition()+mov);
 }

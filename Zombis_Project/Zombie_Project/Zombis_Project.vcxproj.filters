@@ -61,6 +61,9 @@
     <ClInclude Include="..\Src\includes\Jugador.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="..\Src\includes\Shoot.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\dllmain.cpp">
@@ -104,6 +107,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="..\Src\Jugador.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\Shoot.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

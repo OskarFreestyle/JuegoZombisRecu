@@ -1,9 +1,9 @@
 local prefab = { 
-    name="Bala",
-    id=1,
+    name="prueba",
+    id=6,
     cursor=0,
     components={
-        transform={
+		transform={
             parent="-1",
             position="0,0,0",
             rotation="0,0,0",
@@ -14,11 +14,9 @@ local prefab = {
             material="Rojo",
             visible="true"
         },
-		moveBullet={
-			direction="0,0,0",
-			velocity="5"
-		},
-		
+        shoot={
+			numBullets="10"
+		}
     }
 }
 
