@@ -6,6 +6,8 @@ class Entidad;
 class Transform;
 class EntidadManager;
 
+typedef long clock_t;
+
 class Shoot :
     public Componente
 {
@@ -13,6 +15,8 @@ private:
     //Bala* g;
     int maxNumBullets;
     int cont = 0;
+    
+    clock_t lastBullet = 0;
 public:
     Shoot();
     ~Shoot();

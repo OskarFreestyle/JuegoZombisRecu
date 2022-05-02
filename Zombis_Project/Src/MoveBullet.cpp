@@ -45,6 +45,7 @@ void MoveBullet::setDireccion(Vectola3D d)
 
 void MoveBullet::update()
 {
+	
 	if (isDirCalculated == false) {
 		//std::cout << ih().getMousePosInGame().first << " " << ih().getMousePosInGame().second  << std::endl;
 	//	std::cout << entity_->getComponent<Transform>()->getPosition().getX()<<" "<< this->getEntidad()->getComponent<Transform>()->getPosition().getY()<<" "<< this->getEntidad()->getComponent<Transform>()->getPosition().getZ() << std::endl;

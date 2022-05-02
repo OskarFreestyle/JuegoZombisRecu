@@ -4,7 +4,9 @@
 #include "Entidad.h"
 #include "EntidadManager.h"
 #include "Transform.h"
+#include <time.h>
 //Bala* g;
+const clock_t TIME_TO_SPAWN = 2000;
 Shoot::Shoot()
 {
 }
@@ -32,15 +34,20 @@ void Shoot::update()
    /* if (g = nullptr) {
         g = new Bala();
     }*/
-    if (ih().getMouseButtonState(ih().LEFT)) {
-        std::cout << "Dispara" << std::endl;
+    clock_t auxc = clock();
+    if (auxc > lastBullet + TIME_TO_SPAWN) {
         
-        Entidad* bala=Entidad::instantiate("Bala.prefab", entity_->getComponent<Transform>()->getPosition());
-       
-        
-       // e->setEntityMngr(Singleton<EntidadManager>::instance());
-        
+        if (ih().getMouseButtonState(ih().LEFT)) {
+            lastBullet = auxc;
+            std::cout << "Dispara" << std::endl;
 
+            Entidad* bala = Entidad::instantiate("Bala.prefab", entity_->getComponent<Transform>()->getPosition());
+
+
+            // e->setEntityMngr(Singleton<EntidadManager>::instance());
+
+
+        }
     }
 }
 
