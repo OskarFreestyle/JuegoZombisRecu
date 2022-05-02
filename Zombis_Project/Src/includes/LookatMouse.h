@@ -26,4 +26,5 @@ private:
 	bool test;
 	std::pair<double, double> MP;
 	Transform *tr_;
+	double angle = 0;
 };
