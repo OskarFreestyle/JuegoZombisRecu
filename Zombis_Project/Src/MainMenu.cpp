@@ -6,6 +6,7 @@
 #include "LuaReader.h"
 #include "LoadResources.h"
 #include "GameManager.h"
+//#include "EndState.h"
 
 MainMenu::MainMenu() {
 	readFileMenus(Singleton<LoadResources>::instance()->scene("MainMenuScene.lua" ), "GetMainMenu");
@@ -41,6 +42,8 @@ void MainMenu::option(Motor* m)
 	Singleton<OverlayManager>::instance()->clear();
 	//Singleton<OverlayManager>::instance()->getMotor()->loadMenu("Options.lua","GetOptions");
 	Options* o = new Options();
+	//EndState* e = new EndState();
+	
 
 }
 void MainMenu::exit(Motor* m)
