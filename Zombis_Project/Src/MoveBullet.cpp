@@ -65,6 +65,5 @@ void MoveBullet::update()
 	
 	if (entity_->getComponent<Transform>()->getPosition().getX() > 1370.0 || entity_->getComponent<Transform>()->getPosition().getX()< -1370.0 || entity_->getComponent<Transform>()->getPosition().getZ() > 1040.0 ||  entity_->getComponent<Transform>()->getPosition().getZ() < -1040.0) {
 		entity_->setActive(false);
-
 	}
 }

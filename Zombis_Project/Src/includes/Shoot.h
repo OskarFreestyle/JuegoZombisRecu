@@ -12,8 +12,7 @@ class Shoot :
     public Componente
 {
 private:
-    //Bala* g;
-    int maxNumBullets;
+    int shootTime;
     int cont = 0;
     
     clock_t lastBullet = 0;
@@ -22,6 +21,5 @@ public:
     ~Shoot();
     bool init(const std::map<std::string, std::string>& mapa);
     void update();
-    //void setBala(Bala* ba);
 };
 

@@ -50,7 +50,8 @@ void LookatMouse::rotateToMouse2D()
 	
 	angle *= -180 / M_PI;
 	angle -= 90;
-	std::cout << angle << std::endl;
+
+	//std::cout << angle << std::endl;
 
 	Vectola3D v(0, angle, 0) ;
 	Quaterniola x = Quaterniola::Euler(v);

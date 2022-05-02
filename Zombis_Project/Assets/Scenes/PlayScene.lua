@@ -1,7 +1,7 @@
 local level = {
     backgroundColor="0.23,0.51,0.74",
     ambient="1.0,1.0,1.0",
-    gravity="0.0,-9.8,0.0",
+    gravity="0.0,0.0,0.0",
     camera = {
         nearClipDistance="1",
         farClipDistance="10000",
@@ -15,13 +15,13 @@ local level = {
             components={
                 transform={
                     parent="-1",
-                    position="0,10,0",
+                    position="0,40,0",
                     rotation="0,0,0",
-                    scale="5,5,5"
+                    scale="0.5,0.5,0.5"
                 },
                 mesh={
                     mesh="ninja.mesh",
-                    material="",
+                    material="Azul",
                     visible="true"
                 },
                 personaje={
@@ -35,7 +35,7 @@ local level = {
                     test="false"
                 },
 				shoot={
-					numBullets="10"
+					shootTime="150"
 				}
             }
         },
@@ -45,7 +45,7 @@ local level = {
             components={
                 transform={
                     parent="-1",
-                    position="0,10,0",
+                    position="0,0,0",
                     rotation="0,0,0",
                     scale="1,1,1"
                 },
