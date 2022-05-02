@@ -17,7 +17,7 @@ local level = {
                     parent="-1",
                     position="0,10,0",
                     rotation="0,0,0",
-                    scale="5,5,5"
+                    scale="3,3,3"
                 },
                 mesh={
                     mesh="ninja.mesh",
@@ -35,7 +35,7 @@ local level = {
                     test="false"
                 },
 				shoot={
-					numBullets="10"
+					shootTime="150"
 				}
             }
         },

@@ -6,7 +6,7 @@ class Entidad;
 class Transform;
 
 const float SCALE_X= 1270.0 / 320;
-const float SCALE_Z=940.0 / 240;
+const float SCALE_Z= 940.0 / 240;
 
 class MoveBullet :
     public Componente
