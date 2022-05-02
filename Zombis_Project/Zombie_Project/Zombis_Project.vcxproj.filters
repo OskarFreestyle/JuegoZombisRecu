@@ -17,6 +17,7 @@
     <ClCompile Include="..\Src\Shoot.cpp" />
     <ClCompile Include="..\Src\zombieMove.cpp" />
     <ClCompile Include="..\Src\SpawnZombis.cpp" />
+    <ClCompile Include="..\Src\EndState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\includes\bfs.h" />
@@ -36,5 +37,6 @@
     <ClInclude Include="..\Src\includes\Shoot.h" />
     <ClInclude Include="..\Src\includes\zombieMove.h" />
     <ClInclude Include="..\Src\includes\SpawnZombis.h" />
+    <ClInclude Include="..\Src\includes\EndState.h" />
   </ItemGroup>
 </Project>

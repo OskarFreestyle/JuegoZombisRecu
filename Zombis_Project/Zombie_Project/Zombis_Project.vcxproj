@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\includes\bfs.h" />
+    <ClInclude Include="..\Src\includes\EndState.h" />
     <ClInclude Include="..\Src\includes\framework.h" />
     <ClInclude Include="..\Src\includes\GameManager.h" />
     <ClInclude Include="..\Src\includes\generaAleatorio.h" />
@@ -40,6 +41,7 @@
   <ItemGroup>
     <ClCompile Include="..\Src\bfs.cpp" />
     <ClCompile Include="..\Src\dllmain.cpp" />
+    <ClCompile Include="..\Src\EndState.cpp" />
     <ClCompile Include="..\Src\GameManager.cpp" />
     <ClCompile Include="..\Src\generaAleatorio.cpp" />
     <ClCompile Include="..\Src\grafo.cpp" />

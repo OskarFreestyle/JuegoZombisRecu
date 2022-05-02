@@ -17,6 +17,8 @@
 #include "LoadResources.h"
 #include "MainMenu.h"
 
+#include "EndState.h"
+
 
 // Componentes
 #include "MoveBullet.h"
@@ -25,6 +27,7 @@
 #include "Personaje.h"
 #include "Jugador.h"
 #include "GameManager.h"
+
 
 
 
@@ -70,7 +73,9 @@ int LoadGame() {
 	GameManager::GetInstance();
 
 	MainMenu* m = new MainMenu();
-
+	//EndState* s = new EndState();
+	
+	
 	//loadMusic();
 	
 

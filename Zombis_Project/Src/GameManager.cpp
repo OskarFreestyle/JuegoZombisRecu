@@ -17,7 +17,7 @@ void GameManager::initGame()
 {	
 	// Crea un texto de puntuacion y un fondo
 	Singleton<OverlayManager>::instance()->creaPanel(0, 0, "PuntosPanel", "Blanco", 0.25f, 0.08f);
-	Singleton<OverlayManager>::instance()->creaTexto(0.0f, -0.08f, "POINTS:", "PuntosTexto", 0.05f, "PuntosTextoPanel");
+	Singleton<OverlayManager>::instance()->creaTexto(0.0f, -0.08f, "POINTS:", "PuntosTexto", 0.05f, "PuntosTextoPanel",0.25,0.25);
 
 	// Guarda el texto de puntuacion para que luego sea más facil obtenerlo
 	Ogre::TextAreaOverlayElement* p = Singleton<OverlayManager>::instance()->getTexto("PuntosTextoPanel", "PuntosTexto");
