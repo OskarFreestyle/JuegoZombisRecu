@@ -13,7 +13,6 @@ ZombieMove::~ZombieMove()
 
 bool ZombieMove::init(const std::map<std::string, std::string>& mapa)
 {
-
 	return true;
 }
 

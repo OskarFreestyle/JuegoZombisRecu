@@ -22,5 +22,4 @@ protected:
 	Transform* transform_;
 	float speed_;
 	Vectola3D v;
-
 };

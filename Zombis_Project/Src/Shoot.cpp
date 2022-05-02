@@ -43,7 +43,10 @@ void Shoot::update()
             lastBullet = auxc;
 
             // Se instancia la bala
-            Entidad* bala = Entidad::instantiate("Bala.prefab", entity_->getComponent<Transform>()->getPosition());
+            Vectola3D pos = entity_->getComponent<Transform>()->getPosition();
+            pos.setY(100);
+
+            Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
         }
     }
 }
