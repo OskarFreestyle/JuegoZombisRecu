@@ -25,4 +25,5 @@ protected:
 	float speed_;
 	Vectola3D v;
 	clock_t lastZombieContact = 0;
+	clock_t lastSound = 0;
 };

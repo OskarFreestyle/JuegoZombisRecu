@@ -11,6 +11,7 @@
 
 // Tiempo para que te pueda volver a pegar un zombie
 const clock_t TIME_TO_ANOTHER_ZOMBIE_CONTACT = 2000;
+const clock_t REPRODUCT_SOUND = 700;
 
 Jugador::Jugador() : 
 	transform_(nullptr), speed_(), v()
@@ -36,13 +37,23 @@ void Jugador::update() {
 
 	if (active_) {
 		v.setY(0);
-	
+		//ih().refresh();
 		// Arriba - Abajo
 		if (ih().isKeyDown(SDL_SCANCODE_W)) {
 			v.setZ(-1);
+			//Singleton<FMODAudioManager>::instance()->togglePause(4);
+			if (clock() > lastSound + REPRODUCT_SOUND) {
+				lastSound = clock();
+				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+			}
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_S)) {
 			v.setZ(1);
+			//Singleton<FMODAudioManager>::instance()->togglePause(4);
+			if (clock() > lastSound + REPRODUCT_SOUND) {
+				lastSound = clock();
+				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+			}
 		}
 		else if (ih().isKeyUp(SDL_SCANCODE_W) || ih().isKeyUp(SDL_SCANCODE_S)) {
 			v.setZ(0);
@@ -51,13 +62,25 @@ void Jugador::update() {
 		// Izquierda - Derecha
 		if (ih().isKeyDown(SDL_SCANCODE_A)) {
 			v.setX(-1);
+			//Singleton<FMODAudioManager>::instance()->togglePause(4);
+			if (clock() > lastSound + REPRODUCT_SOUND) {
+				lastSound = clock();
+				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+			}
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_D)) {
 			v.setX(1);
+			//Singleton<FMODAudioManager>::instance()->togglePause(4);
+			if (clock() > lastSound + REPRODUCT_SOUND) {
+				lastSound = clock();
+				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+			}
 		}
 		else if (ih().isKeyUp(SDL_SCANCODE_A) || ih().isKeyUp(SDL_SCANCODE_D)) {
 			v.setX(0);
+
 		}
+		//Singleton<FMODAudioManager>::instance()->togglePause(4);
 
 		Vectola3D mov = v.normalize() * speed_;
 
@@ -66,7 +89,7 @@ void Jugador::update() {
 		// PHYSICS
 		entity_->getComponent<RigidBody>()->setVelocity(physx::PxVec3(mov.getX(), mov.getY(), mov.getZ()));
 
-		Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+		
 	}
 }
 

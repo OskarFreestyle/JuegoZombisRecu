@@ -4,6 +4,7 @@
 #include "EntidadManager.h"
 #include "EndState.h"
 #include "Entidad.h"
+#include "FMODAudioManager.h"
 
 GameManager* GameManager::_singleton = nullptr;
 
@@ -113,13 +114,20 @@ void GameManager::endGame()
 	for (int i = 0; i < n; i++)
 	{
 		std::cout << "Borrada entidad " << i << "\n";
-		(*em().getAllEntidades().at(i)).setActive(false);
+		(em().getAllEntidades().at(i))->setActive(false);
 	}
-	//em().refresh();
+	for (int i = 0; i < n; i++)
+	{
+		std::cout << "Borrada entidad " << i << "\n";
+		(em().getAllEntidades().at(i))=nullptr;
+	}
+	em().refresh();
+	em().getAllEntidades().clear();
 	Singleton<EntidadManager>::instance();
 
 	// Borra los paneles
 	Singleton<OverlayManager>::instance()->clear();
+	
 
 	// Cambia al estado de fin
 	EndState* e = new EndState();

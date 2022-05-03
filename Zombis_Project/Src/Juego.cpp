@@ -54,7 +54,7 @@ void loadMusic() {
 		Singleton<FMODAudioManager>::instance()->loadMusic(1, Singleton<LoadResources>::instance()->aud("click.mp3").c_str());
 		Singleton<FMODAudioManager>::instance()->loadMusic(2, Singleton<LoadResources>::instance()->aud("disparo_1.mp3").c_str());
 		Singleton<FMODAudioManager>::instance()->loadMusic(3, Singleton<LoadResources>::instance()->aud("golpes_1.mp3").c_str());//Para colision entre zombi y jugador
-		Singleton<FMODAudioManager>::instance()->loadMusic(4, Singleton<LoadResources>::instance()->aud("steps.mp3").c_str());
+		Singleton<FMODAudioManager>::instance()->loadMusic(4, Singleton<LoadResources>::instance()->aud("walkingsound.mp3").c_str());
 		Singleton<FMODAudioManager>::instance()->loadMusic(5, Singleton<LoadResources>::instance()->aud("zombieSound.mp3").c_str());
 	}
 	catch (...) {
