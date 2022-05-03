@@ -5,6 +5,7 @@
 #include "grafoConObstaculos.h"
 #include "RigidBody.h"
 #include "EntidadManager.h"
+#include "GameManager.h"
 
 ZombieMove::ZombieMove()
 {
@@ -29,8 +30,11 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 	if (other->getName() == "Bala") {
 		std::cout << "Me ha dado una bala\n";
 		// Sumar punto
+		GameManager::GetInstance()->addPoints(10);
 		// Destruir bala
+		//other->setActive(false);
 		// Destruir zombi
+		//entity_->setActive(false);
 	}
 }
 
