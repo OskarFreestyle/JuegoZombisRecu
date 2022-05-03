@@ -1,8 +1,13 @@
 #include "GameManager.h"
 #include "OverlayManager.h"
 #include <string>
+#include "EntidadManager.h"
+#include "EndState.h"
+#include "Entidad.h"
 
 GameManager* GameManager::_singleton = nullptr;
+
+const int INIT_LIVES = 1;
 
 GameManager* GameManager::GetInstance() {
 	return _singleton;
@@ -16,6 +21,7 @@ bool GameManager::Init() {
 void GameManager::initGame()
 {	
 	// Crea un texto de puntuacion y un fondo
+	points = 0;
 	Singleton<OverlayManager>::instance()->creaPanel(0.0f, 0.0f, "PuntosPanel", "Blanco", 0.25f, 0.08f);
 	Singleton<OverlayManager>::instance()->creaTexto(0.0f, -0.08f, "POINTS:", "PuntosTexto", 0.05f, "PuntosTextoPanel", 0.25f, 0.25f);
 
@@ -26,6 +32,7 @@ void GameManager::initGame()
 	if (p != nullptr) p->setCaption("POINTS: " + std::to_string(points));
 
 	// Crea un texto de puntuacion y un fondo
+	lives = INIT_LIVES;
 	Singleton<OverlayManager>::instance()->creaPanel(0.75f, 0.0f, "VidasPanel", "Blanco", 0.25f, 0.08f);
 	Singleton<OverlayManager>::instance()->creaTexto(0.75f, -0.08f, "LIVES:", "VidasTexto", 0.05f, "VidasTextoPanel", 0.25f, 0.25f);
 
@@ -70,6 +77,9 @@ void GameManager::updateLiveText()
 {
 	Ogre::TextAreaOverlayElement* v = Singleton<OverlayManager>::instance()->getTexto("VidasTextoPanel", "VidasTexto");
 	if (v != nullptr) v->setCaption("VIDAS: " + std::to_string(lives));
+
+	// Se comprueba si se han perdido todas las vidas
+	if (lives <= 0) endGame();
 }
 
 int GameManager::getLives()
@@ -93,5 +103,25 @@ void GameManager::removeLives(int livesToRemove)
 {
 	lives -= livesToRemove;
 	updateLiveText();
+}
+
+void GameManager::endGame()
+{
+	// Borra todas las entidades
+	std::cout << em().getAllEntidades().size() << "\n";
+	int n = em().getAllEntidades().size();
+	for (int i = 0; i < n; i++)
+	{
+		std::cout << "Borrada entidad " << i << "\n";
+		(*em().getAllEntidades().at(i)).setActive(false);
+	}
+	//em().refresh();
+	Singleton<EntidadManager>::instance();
+
+	// Borra los paneles
+	Singleton<OverlayManager>::instance()->clear();
+
+	// Cambia al estado de fin
+	EndState* e = new EndState();
 }
 

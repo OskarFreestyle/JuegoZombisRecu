@@ -32,9 +32,11 @@ public:
 	void addLives(int livesToAdd);
 	void removeLives(int livesToRemove);
 
+	void endGame();
+
 protected:
 	static GameManager* _singleton;
 
 	int points = 9999;
-	int lives = 5;
+	int lives = 2;
 };

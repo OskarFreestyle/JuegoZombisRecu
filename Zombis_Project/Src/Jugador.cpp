@@ -72,13 +72,11 @@ void Jugador::update() {
 
 void Jugador::onCollisionStart(Entidad* other)
 {
-	std::cout << "Me ha tocado un zombie\n";
 	if (other->getName() == "Zombie" && clock() > lastZombieContact + TIME_TO_ANOTHER_ZOMBIE_CONTACT) {
 		// Pierde una vida
 		GameManager::GetInstance()->removeLives(1);
 
 		// Pone un tiempo para evitar que pierda varias vidas de un solo golpe
 		lastZombieContact = clock();
-		std::cout << "Pierdo una vida\n";
 	}
 }

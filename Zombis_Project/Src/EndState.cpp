@@ -17,16 +17,16 @@ EndState::EndState()
 	readFileMenus(Singleton<LoadResources>::instance()->scene("EndScene.lua"), "GetEndScene");
 	Singleton<OverlayManager>::instance()->creaTexto(0.25, 0.2, "Your score is: "+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText", 0.1, "ScorePanel",0.6,0.3);
 	Singleton<OverlayManager>::instance()->creaTexto(0, 0.5, "Pulsa 3 teclas con tu nombre para poder guardar el record o el boton derecho del raton para no guardar", "RecordText", 0.03, "RecordPanel", 1, 0.3);
-	
 	Singleton<OverlayManager>::instance()->setCallBackToButton("BackMenuPanel", backToMenu);
 	Singleton<OgreManager>::instance()->update();
 	arch();
-	
 }
 
 EndState::~EndState()
 {
+
 }
+
 void EndState::arch()
 {
 	readFile();
@@ -45,7 +45,10 @@ void EndState::backToMenu(Motor* m)
 {
 	Singleton<OverlayManager>::instance()->clear();
 	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
-	//Singleton<OverlayManager>::instance()->getMotor()->loadMenu("Options.lua","GetOptions");
+
+	// Para evitar pulsar el boton del otro menu
+	ih().refresh();
+
 	MainMenu* mainMenu = new MainMenu();
 }
 void EndState::readFile()
@@ -73,10 +76,12 @@ void EndState::readFile()
 	}
 	file.close();
 }
+
 bool sortPairs(const pair<string, int>& x, const pair<string, int>& y)
 {
 	return x.second > y.second;
 }
+
 bool EndState::compYOrdMaxPoints(std::pair<std::string, int>p)
 {
 	if (maxPoints.size() < NUM_MAXRECORDS) {
@@ -93,18 +98,15 @@ bool EndState::compYOrdMaxPoints(std::pair<std::string, int>p)
 				std::cout << maxPoints[i].first << " " << maxPoints[i].second << std::endl;
 			}
 			return true;
-			
 		}
-		
 	}
 	return false;
-	
-	
-	
+
 }
 void EndState::writeFile() {
 	ofstream file;
 	string s = "../../Exes/Assets/maxScore.txt";
+	//string s = "./Assets/maxScore.txt";
 	file.open(s.c_str());
 	if (!file.is_open()) {
 		std::cout << "Archivo no abierto" << std::endl;
@@ -120,7 +122,6 @@ void EndState::writeFile() {
 
 void EndState::putName()
 {
-	
 	int i = 0;
 	while(i<3&& saltar==false){
 		ih().refresh();
@@ -128,7 +129,7 @@ void EndState::putName()
 			saltar = true;
 		}
 		else {
-			
+#pragma region alfabeth
 			if (ih().isKeyDown(SDL_SCANCODE_A)) {
 				name += "A";
 				i++;
@@ -233,6 +234,7 @@ void EndState::putName()
 				name += "Z";
 				i++;
 			}
+#pragma endregion
 		}
 	}
 }

@@ -36,7 +36,6 @@ void ZombieMove::update()
 	// Busca la entidad del jugador
 	if (!_player) _player = Singleton<EntidadManager>::instance()->getEntidadByID(0);
 
-
 	Vectola3D aux = entity_->getComponent<Transform>()->getPosition();
 	//std::cout << "ZOMBIE POS: " << aux.getX() << ", " << aux.getY() << ", " << aux.getZ() << ")\n";
 

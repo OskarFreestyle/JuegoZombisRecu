@@ -3,9 +3,8 @@ local endScene = {
     ambient="0.1,0.1,0.1",
     gravity="0 -9.8 0",
     botones={
-		
 		{
-			positionX="0.25",
+			positionX="0.75",
 			positionY="0.75",
 			texto="Back To Menu",
 			nombrePanel="BackMenuPanel",
@@ -13,14 +12,9 @@ local endScene = {
 			tamLetra="0.05",
 			material="Azul",
 			dimensionX="0.25",
-			dimensionY="0.25"
-			
-			
+			dimensionY="0.25"	
 		}
-		
-		
-    },
-	
+    },	
 }
 
 function GetEndScene ()

@@ -37,7 +37,6 @@ void MainMenu::newGame(Motor* m)
 	//Singleton<OverlayManager>::instance()->getMotor()->loadScene("PlayScene.lua");
 
 	GameManager::GetInstance()->initGame();
-
 }
 
 void MainMenu::option(Motor* m)
