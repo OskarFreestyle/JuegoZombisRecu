@@ -1,7 +1,7 @@
 #pragma once
 #include "Componente.h"
 
-
+class Entidad;
 
 class ZombieMove : public Componente
 {
@@ -15,5 +15,7 @@ public:
 
 
 private:
+	Entidad* _player;
+	int _speed;
 };
 

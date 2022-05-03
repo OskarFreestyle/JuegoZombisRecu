@@ -24,8 +24,8 @@ bool Shoot::init(const std::map<std::string, std::string>& mapa)
 {
     if (mapa.find("shootTime") == mapa.end()) return false;
     std::string::size_type sz = 0, sa = 0;
-    std::string numBulletsString = mapa.at("shootTime");
-    shootTime = stoi(numBulletsString);
+    std::string shootTimeString = mapa.at("shootTime");
+    shootTime = stoi(shootTimeString);
     inicializado_ = true;
    
     return true;
@@ -50,6 +50,22 @@ void Shoot::update()
 
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
             Singleton<FMODAudioManager>::instance()->playMusic(2, false);
+        }
+        if (ih().getMouseButtonState(ih().RIGHT)) {
+
+            std::cout << "Crea Zombie" << std::endl;
+
+            // Actualiza el tiempo
+            lastBullet = auxc;
+
+            // Se instancia la bala
+            Vectola3D pos = entity_->getComponent<Transform>()->getPosition();
+            pos.setY(100);
+            pos.setX(200);
+            pos.setZ(200);
+
+            Entidad* bala = Entidad::instantiate("Zombie.prefab", pos);
+            //Singleton<FMODAudioManager>::instance()->playMusic(2, false);
         }
     }
 }

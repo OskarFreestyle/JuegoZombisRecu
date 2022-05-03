@@ -6,7 +6,7 @@ local level = {
         nearClipDistance="1",
         farClipDistance="10000",
         camPosition="0,2500,0",
-        camRotation="0.0,-1.0,-0.0"
+        camRotation="0.0,0.0,0.0"
     },
     entidades = {
         {
@@ -32,6 +32,7 @@ local level = {
                     trigger="false"
                 },
                 rigidbody={
+                    position="0,40,0",
                     static="false",
                     density="1000"
                 },
@@ -66,33 +67,6 @@ local level = {
             }
         },
         {
-            name="Suelo",
-            id=5,
-            components={
-                transform={
-                    parent="-1",
-                    position="0,0,0",
-                    rotation="0,0,0",
-                    scale="18,1,18"
-                },
-                mesh={
-                    mesh="cube.mesh",
-                    material="Floor",
-                    visible="true"
-                },  
-                collider={
-                    type="box",
-                    x="18",
-                    y="1",
-                    z="18",
-                    trigger="false"
-                },
-                rigidbody={
-                    static="true"
-                }
-            }
-        },
-        {
             name="Pared1",
             id=1,
             components={
@@ -115,6 +89,7 @@ local level = {
                     trigger="false"
                 },
                 rigidbody={
+                    position="0,0,900",
                     static="true"
                 }
             }
@@ -142,6 +117,7 @@ local level = {
                     trigger="false"
                 },
                 rigidbody={
+                    position="0,0,-900",
                     static="true"
                 }
             }
@@ -169,6 +145,7 @@ local level = {
                     trigger="false"
                 },
                 rigidbody={
+                    position="900,0,0",
                     static="true"
                 }
             }
@@ -185,7 +162,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Negro",
+                    material="Verde",
                     visible="true"
                 }
             }

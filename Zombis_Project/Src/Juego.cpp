@@ -1,32 +1,32 @@
 #include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
 #include <utility>
 #include <limits.h>
+#include <iostream>
 
+// Motor
 #include <Motor.h>
 #include <Transform.h>
 #include "ComponenteRegistro.h"
-
-#include "Juego.h"
-#include <iostream>
 #include "Entidad.h"
 #include "EntidadManager.h"
-#include "LookatMouse.h"
-
-#include "grafoConObstaculos.h"
 #include "FMODAudioManager.h"
 #include "LoadResources.h"
+
+// Juego
+#include "Juego.h"
+#include "GameManager.h"
+#include "grafoConObstaculos.h"
 #include "MainMenu.h"
-
 #include "EndState.h"
-
 
 // Componentes
 #include "MoveBullet.h"
 #include "Shoot.h"
-#include "SpawnZombis.h"
 #include "Personaje.h"
 #include "Jugador.h"
-#include "GameManager.h"
+#include "LookatMouse.h"
+#include "zombieMove.h"
+#include "SpawnZombis.h"
 
 void RegistryGameComponents() {
 	try {
@@ -34,6 +34,7 @@ void RegistryGameComponents() {
 		ComponenteRegistro::ComponenteRegistro<Shoot>("shoot");
 		ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
 		ComponenteRegistro::ComponenteRegistro<Jugador>("jugador");
+		ComponenteRegistro::ComponenteRegistro<ZombieMove>("zombieMove");
 		ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatMouse");
 		ComponenteRegistro::ComponenteRegistro<SpawnZombis>("spawnZombis");
 	}

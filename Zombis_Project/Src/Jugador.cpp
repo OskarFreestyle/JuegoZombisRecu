@@ -1,5 +1,9 @@
 #include "Jugador.h"
-//#include "Transform.h"
+#include <iostream>
+#include "Transform.h"
+#include "Entidad.h"
+#include "InputManager.h"
+#include "OgreVector3.h"
 #include<Transform.h>
 #include "FMODAudioManager.h"
 
@@ -22,6 +26,10 @@ bool Jugador::init(const std::map<std::string, std::string>& mapa) {
 };
 
 void Jugador::update() {
+
+	Vectola3D aux = entity_->getComponent<Transform>()->getPosition();
+	std::cout << "PLAYER POS: " << aux.getX() << ", " << aux.getY() << ", " << aux.getZ() << ")\n";
+
 	if (active_) {
 		v.setY(0);
 	
