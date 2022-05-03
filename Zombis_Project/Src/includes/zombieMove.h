@@ -11,6 +11,8 @@ public:
 
 	bool init(const std::map<std::string, std::string>& mapa);
 
+	void onCollisionStart(Entidad* other);
+
 	void update();
 
 

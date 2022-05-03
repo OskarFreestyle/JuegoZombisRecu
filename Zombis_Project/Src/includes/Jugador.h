@@ -15,6 +15,8 @@ public:
 
 	void update();
 
+	void onCollisionStart(Entidad* other) override;
+
 	//Metodo para cambiarle la velocidad al jugador
 	void setSpeed(float speed) { speed_ = speed; }
 
@@ -22,4 +24,5 @@ protected:
 	Transform* transform_;
 	float speed_;
 	Vectola3D v;
+	clock_t lastZombieContact = 0;
 };

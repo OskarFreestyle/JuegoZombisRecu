@@ -23,9 +23,18 @@ public:
 	int getPoints();
 	void setPoints(int totalPoints);
 	void addPoints(int pointsToAdd);
+	void removePoints(int pointsToRemove);
+
+	// Funciones de live
+	void updateLiveText();
+	int getLives();
+	void setLives(int totalLives);
+	void addLives(int livesToAdd);
+	void removeLives(int livesToRemove);
 
 protected:
 	static GameManager* _singleton;
 
 	int points = 9999;
+	int lives = 5;
 };

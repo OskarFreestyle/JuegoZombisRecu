@@ -15,7 +15,7 @@ local level = {
             components={
                 transform={
                     parent="-1",
-                    position="0,40,0",
+                    position="0,0,0",
                     rotation="0,0,0",
                     scale="0.5,0.5,0.5"
                 },
@@ -41,7 +41,7 @@ local level = {
                     lifefactor="0.05"
                 },
                 jugador={
-                    speed="10.0"
+                    speed="600"
                 },
                 lookatMouse={
                     test="false"

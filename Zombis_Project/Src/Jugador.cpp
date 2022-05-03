@@ -4,14 +4,18 @@
 #include "Entidad.h"
 #include "InputManager.h"
 #include "OgreVector3.h"
-#include<Transform.h>
 #include "FMODAudioManager.h"
+#include "RigidBody.h"
+#include "GameManager.h"
+#include <time.h>
+
+// Tiempo para que te pueda volver a pegar un zombie
+const clock_t TIME_TO_ANOTHER_ZOMBIE_CONTACT = 2000;
 
 Jugador::Jugador() : 
-	transform_(nullptr),
-	speed_(), v()
-	{
-	}
+	transform_(nullptr), speed_(), v()
+{
+}
 
 bool Jugador::init(const std::map<std::string, std::string>& mapa) {
 	if (mapa.find("speed") == mapa.end())
@@ -28,7 +32,7 @@ bool Jugador::init(const std::map<std::string, std::string>& mapa) {
 void Jugador::update() {
 
 	Vectola3D aux = entity_->getComponent<Transform>()->getPosition();
-	std::cout << "PLAYER POS: " << aux.getX() << ", " << aux.getY() << ", " << aux.getZ() << ")\n";
+	//std::cout << "PLAYER POS: " << aux.getX() << ", " << aux.getY() << ", " << aux.getZ() << ")\n";
 
 	if (active_) {
 		v.setY(0);
@@ -57,8 +61,24 @@ void Jugador::update() {
 
 		Vectola3D mov = v.normalize() * speed_;
 
-		entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition() + mov);
-		Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+		// CINEMATIC
+		//entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition() + mov);
+		// PHYSICS
+		entity_->getComponent<RigidBody>()->setVelocity(physx::PxVec3(mov.getX(), mov.getY(), mov.getZ()));
 
+		Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+	}
+}
+
+void Jugador::onCollisionStart(Entidad* other)
+{
+	std::cout << "Me ha tocado un zombie\n";
+	if (other->getName() == "Zombie" && clock() > lastZombieContact + TIME_TO_ANOTHER_ZOMBIE_CONTACT) {
+		// Pierde una vida
+		GameManager::GetInstance()->removeLives(1);
+
+		// Pone un tiempo para evitar que pierda varias vidas de un solo golpe
+		lastZombieContact = clock();
+		std::cout << "Pierdo una vida\n";
 	}
 }

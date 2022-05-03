@@ -17,28 +17,28 @@ bool SpawnZombis::init(const std::map<std::string, std::string>& mapa)
 
 void SpawnZombis::update()
 {
-	//clock_t auxc = clock();
-	//if(auxc > lastZombie + TIME_TO_SPAWN){
+	clock_t auxc = clock();
+	if(auxc > lastZombie + TIME_TO_SPAWN){
 
-	//	lastZombie = auxc;
+		lastZombie = auxc;
 
-	//	std::cout << "Se crea un Zombie\n";
-	//	Entidad* zombie = Entidad::instantiate("Zombie.prefab");
-	//	Singleton<FMODAudioManager>::instance()->playMusic(5, false);
+		std::cout << "Se crea un Zombie\n";
+		Entidad* zombie = Entidad::instantiate("Zombie.prefab");
+		Singleton<FMODAudioManager>::instance()->playMusic(5, false);
 
-	//	// Los zombis se generan en las 4 esquinas
-	//	int x = POS_ZOMBIS;
-	//	int z = POS_ZOMBIS;
+		// Los zombis se generan en las 4 esquinas
+		int x = POS_ZOMBIS;
+		int z = POS_ZOMBIS;
 
-	//	if (rand() % 2 == 1) {
-	//		x = -x;
-	//	}
+		if (rand() % 2 == 1) {
+			x = -x;
+		}
 
-	//	if (rand() % 2 == 1) {
-	//		z = -z;
-	//	}
+		if (rand() % 2 == 1) {
+			z = -z;
+		}
 
-	//	std::cout << "x: " << x << " z: " << z << "\n";
-	//	zombie->getComponent<Transform>()->setPosition(zombie->getComponent<Transform>()->getPosition() + Vectola3D(x, 0, z));
-	//}
+		std::cout << "x: " << x << " z: " << z << "\n";
+		zombie->getComponent<Transform>()->setPosition(zombie->getComponent<Transform>()->getPosition() + Vectola3D(x, 0, z));
+	}
 }

@@ -46,26 +46,27 @@ void Shoot::update()
 
             // Se instancia la bala
             Vectola3D pos = entity_->getComponent<Transform>()->getPosition();
-            pos.setY(100);
+            pos.setY(0);
 
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
             Singleton<FMODAudioManager>::instance()->playMusic(2, false);
         }
-        if (ih().getMouseButtonState(ih().RIGHT)) {
+        // AYUDA PARA CREAR UN ZOMBIE (BORRAR)
+        //if (ih().getMouseButtonState(ih().RIGHT)) {
 
-            std::cout << "Crea Zombie" << std::endl;
+        //    std::cout << "Crea Zombie" << std::endl;
 
-            // Actualiza el tiempo
-            lastBullet = auxc;
+        //    // Actualiza el tiempo
+        //    lastBullet = auxc;
 
-            // Se instancia la bala
-            Vectola3D pos = entity_->getComponent<Transform>()->getPosition();
-            pos.setY(100);
-            pos.setX(200);
-            pos.setZ(200);
+        //    // Se instancia la bala
+        //    Vectola3D pos = entity_->getComponent<Transform>()->getPosition();
+        //    pos.setY(0);
+        //    pos.setX(200);
+        //    pos.setZ(200);
 
-            Entidad* bala = Entidad::instantiate("Zombie.prefab", pos);
-            //Singleton<FMODAudioManager>::instance()->playMusic(2, false);
-        }
+        //    Entidad* bala = Entidad::instantiate("Zombie.prefab", pos);
+        //    //Singleton<FMODAudioManager>::instance()->playMusic(2, false);
+        //}
     }
 }
