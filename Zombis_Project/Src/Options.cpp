@@ -20,6 +20,7 @@ Options::~Options()
 }
 void Options::volume(Motor* m)
 {
+	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
 	if(Singleton<FMODAudioManager>::instance()->getMute() == false)
 		Singleton<FMODAudioManager>::instance()->setMute(true);
 	else 
@@ -40,6 +41,7 @@ void Options::volume(Motor* m)
 void Options::backToMenu(Motor* m)
 {
 	Singleton<OverlayManager>::instance()->clear();
+	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
 	//Singleton<OverlayManager>::instance()->getMotor()->loadMenu("Options.lua","GetOptions");
 	MainMenu* mainMenu = new MainMenu();
 }

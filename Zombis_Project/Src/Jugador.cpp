@@ -1,6 +1,7 @@
 #include "Jugador.h"
 //#include "Transform.h"
 #include<Transform.h>
+#include "FMODAudioManager.h"
 
 Jugador::Jugador() : 
 	transform_(nullptr),
@@ -49,6 +50,7 @@ void Jugador::update() {
 		Vectola3D mov = v.normalize() * speed_;
 
 		entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition() + mov);
+		Singleton<FMODAudioManager>::instance()->playMusic(4, false);
 
 	}
 }

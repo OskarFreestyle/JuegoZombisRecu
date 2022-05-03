@@ -9,7 +9,7 @@
 #include "GameManager.h"
 #include "InputManager.h"
 #include "OgreManager.h"
-
+#include "FMODAudioManager.h"
 
 
 EndState::EndState()
@@ -44,6 +44,7 @@ void EndState::arch()
 void EndState::backToMenu(Motor* m)
 {
 	Singleton<OverlayManager>::instance()->clear();
+	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
 	//Singleton<OverlayManager>::instance()->getMotor()->loadMenu("Options.lua","GetOptions");
 	MainMenu* mainMenu = new MainMenu();
 }

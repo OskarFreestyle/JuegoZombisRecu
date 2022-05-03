@@ -50,6 +50,11 @@ void loadMusic() {
 		Singleton<EntidadManager>::instance()->addEntidad("music", 1);
 		Singleton<FMODAudioManager>::instance()->loadMusic(0, Singleton<LoadResources>::instance()->aud("GameMusicShort.mp3").c_str());
 		Singleton<FMODAudioManager>::instance()->playMusic(0, true);
+		Singleton<FMODAudioManager>::instance()->loadMusic(1, Singleton<LoadResources>::instance()->aud("click.mp3").c_str());
+		Singleton<FMODAudioManager>::instance()->loadMusic(2, Singleton<LoadResources>::instance()->aud("disparo_1.mp3").c_str());
+		Singleton<FMODAudioManager>::instance()->loadMusic(3, Singleton<LoadResources>::instance()->aud("golpes_1.mp3").c_str());//Para colision entre zombi y jugador
+		Singleton<FMODAudioManager>::instance()->loadMusic(4, Singleton<LoadResources>::instance()->aud("steps.mp3").c_str());
+		Singleton<FMODAudioManager>::instance()->loadMusic(5, Singleton<LoadResources>::instance()->aud("zombieSound.mp3").c_str());
 	}
 	catch (...) {
 		std::cerr << "ERROR AL INICIAR LA MUSICA DEL JUEGO\n";
@@ -63,6 +68,7 @@ int LoadGame() {
 
 	// Se registran los componentes
 	RegistryGameComponents();
+	loadMusic();
 
 	// Se crea el game manager
 	GameManager::Init();

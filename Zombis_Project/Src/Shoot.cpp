@@ -5,6 +5,8 @@
 #include "EntidadManager.h"
 #include "Transform.h"
 #include <time.h>
+#include "FMODAudioManager.h"
+
 
 //const clock_t TIME_TO_SPAWN = 2000;
 
@@ -47,6 +49,7 @@ void Shoot::update()
             pos.setY(100);
 
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
+            Singleton<FMODAudioManager>::instance()->playMusic(2, false);
         }
     }
 }

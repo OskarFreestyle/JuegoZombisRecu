@@ -6,6 +6,7 @@
 #include "LuaReader.h"
 #include "LoadResources.h"
 #include "GameManager.h"
+#include "FMODAudioManager.h"
 //#include "EndState.h"
 
 MainMenu::MainMenu() {
@@ -29,6 +30,7 @@ void MainMenu::newGame(Motor* m)
 {
 	//Singleton<OverlayManager>::close();
 	Singleton<OverlayManager>::instance()->clear();
+	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
 
 	readFile(Singleton<LoadResources>::instance()->scene("PlayScene.lua"));
 
@@ -42,6 +44,7 @@ void MainMenu::option(Motor* m)
 {
 	//Singleton<OverlayManager>::close();
 	Singleton<OverlayManager>::instance()->clear();
+	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
 	//Singleton<OverlayManager>::instance()->getMotor()->loadMenu("Options.lua","GetOptions");
 	Options* o = new Options();
 	//EndState* e = new EndState();
@@ -51,4 +54,5 @@ void MainMenu::option(Motor* m)
 void MainMenu::exit(Motor* m)
 {
 	Singleton<OverlayManager>::instance()->getMotor()->setStop(true);
+	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
 }
