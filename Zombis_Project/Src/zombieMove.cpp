@@ -28,6 +28,9 @@ bool ZombieMove::init(const std::map<std::string, std::string>& mapa)
 void ZombieMove::onCollisionStart(Entidad* other) {
 	if (other->getName() == "Bala") {
 		std::cout << "Me ha dado una bala\n";
+		// Sumar punto
+		// Destruir bala
+		// Destruir zombi
 	}
 }
 
