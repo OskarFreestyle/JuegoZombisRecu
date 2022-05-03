@@ -5,6 +5,7 @@
 #include "EntidadManager.h"
 #include "Transform.h"
 #include <time.h>
+#include "FMODAudioManager.h"
 
 const int POS_ZOMBIS = 800;
 const clock_t TIME_TO_SPAWN = 5000;
@@ -23,6 +24,7 @@ void SpawnZombis::update()
 
 		std::cout << "Se crea un Zombie\n";
 		Entidad* zombie = Entidad::instantiate("Zombie.prefab");
+		Singleton<FMODAudioManager>::instance()->playMusic(5, false);
 
 		// Los zombis se generan en las 4 esquinas
 		int x = POS_ZOMBIS;
