@@ -6,7 +6,7 @@ local level = {
         nearClipDistance="1",
         farClipDistance="10000",
         camPosition="0,2500,0",
-        camRotation="0,-1,0"
+        camRotation="0.0,-1.0,-0.0"
     },
     entidades = {
         {
@@ -23,6 +23,17 @@ local level = {
                     mesh="ninja.mesh",
                     material="Azul",
                     visible="true"
+                },
+                collider={
+                    type="box",
+                    x="0.5",
+                    y="0.5",
+                    z="0.5",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="false",
+                    density="1000"
                 },
                 personaje={
                     maxHealth="3",
@@ -60,7 +71,7 @@ local level = {
             components={
                 transform={
                     parent="-1",
-                    position="0,-1,0",
+                    position="0,0,0",
                     rotation="0,0,0",
                     scale="18,1,18"
                 },
@@ -68,6 +79,16 @@ local level = {
                     mesh="cube.mesh",
                     material="Floor",
                     visible="true"
+                },  
+                collider={
+                    type="box",
+                    x="18",
+                    y="1",
+                    z="18",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
                 }
             }
         },
@@ -77,7 +98,7 @@ local level = {
             components={
                 transform={
                     parent="-1",
-                    position="0,-1,900",
+                    position="0,0,900",
                     rotation="0,0,0",
                     scale="20,1,0.2"
                 },
@@ -85,6 +106,16 @@ local level = {
                     mesh="cube.mesh",
                     material="Negro",
                     visible="true"
+                },  
+                collider={
+                    type="box",
+                    x="20",
+                    y="1",
+                    z="0.2",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
                 }
             }
         },
@@ -94,7 +125,7 @@ local level = {
             components={
                 transform={
                     parent="-1",
-                    position="0,-1,-900",
+                    position="0,0,-900",
                     rotation="0,0,0",
                     scale="20,1,0.2"
                 },
@@ -102,6 +133,16 @@ local level = {
                     mesh="cube.mesh",
                     material="Negro",
                     visible="true"
+                },  
+                collider={
+                    type="box",
+                    x="20",
+                    y="1",
+                    z="0.2",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
                 }
             }
         },
@@ -111,7 +152,7 @@ local level = {
             components={
                 transform={
                     parent="-1",
-                    position="900,-1,0",
+                    position="900,0,0",
                     rotation="0,90,0",
                     scale="20,1,0.2"
                 },
@@ -119,6 +160,16 @@ local level = {
                     mesh="cube.mesh",
                     material="Negro",
                     visible="true"
+                },  
+                collider={
+                    type="box",
+                    x="20",
+                    y="1",
+                    z="0.2",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
                 }
             }
         },
@@ -128,7 +179,7 @@ local level = {
             components={
                 transform={
                     parent="-1",
-                    position="-900,-1,0",
+                    position="-900,0,0",
                     rotation="0,90,0",
                     scale="20,1,0.2"
                 },

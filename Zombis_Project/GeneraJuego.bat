@@ -16,13 +16,13 @@ echo BUILDING DONE
 
 :: Ahora hay que mover Juego.dll a Motor-Ola/MotorOla_Solution/GameToLoad
 cd DLL
-copy /Y Juego.dll "../Motor-Ola/MotorOla_Solution/GameToLoad/Juego.dll"
-copy /Y Juego_d.dll "../Motor-Ola/MotorOla_Solution/GameToLoad/Juego_d.dll"
+copy /Y Juego.dll "../Motor-Ola/MotorOla_Solution/Exes/Juego.dll"
+copy /Y Juego_d.dll "../Motor-Ola/MotorOla_Solution/Exes/Juego_d.dll"
 echo JUEGO.DLL MOVIDO
 cd ..
 
 :: Y los Assets del Juego a Motor-Ola/MotorOla_Solution/Exes/Assets
-xcopy /s Assets "./Motor-Ola/MotorOla_Solution/Exes/Assets"
+xcopy /Y /s Assets "./Motor-Ola/MotorOla_Solution/Exes/Assets"
 echo ASSETS MOVIDOS
 
 :: Pausa para ver que ha ocurrido

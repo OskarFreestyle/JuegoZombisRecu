@@ -28,10 +28,6 @@
 #include "Jugador.h"
 #include "GameManager.h"
 
-
-
-
-
 void RegistryGameComponents() {
 	try {
 		ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");
@@ -70,7 +66,8 @@ int LoadGame() {
 
 	// Se crea el game manager
 	GameManager::Init();
-	GameManager::GetInstance();
+	std::cout << "GAME MANAGER CORRECTO\n";
+
 
 	MainMenu* m = new MainMenu();
 	//EndState* s = new EndState();

@@ -51,6 +51,7 @@ void EndState::readFile()
 {
 	ifstream file;
 	string s = "../../Exes/Assets/maxScore.txt";
+	//string s = "./Assets/maxScore.txt";	// Codigo para la entrega perdonanos Pedro P.
 	file.open(s.c_str());
 	if (file.is_open()) {
 		string f;

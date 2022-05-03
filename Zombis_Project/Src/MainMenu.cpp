@@ -13,6 +13,8 @@ MainMenu::MainMenu() {
 	Singleton<OverlayManager>::instance()->setCallBackToButton("NewGamePanel", newGame);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("OptionsPanel", option);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("ExitPanel", exit);
+	std::cout << "MAIN MENU CORRECTO\n";
+
 	//std::cout << Singleton<OverlayManager>::instance()->getMotor()<<std::endl;
 }
 
