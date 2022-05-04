@@ -1,5 +1,5 @@
 local level = {
-    backgroundColor="0.23,0.51,0.74",
+    backgroundColor="0.79,0.52,1.0",
     ambient="1.0,1.0,1.0",
     gravity="0.0,0.0,0.0",
     camera = {
