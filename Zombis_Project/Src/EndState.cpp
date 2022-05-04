@@ -25,7 +25,7 @@ EndState::EndState()
 	Singleton<OverlayManager>::instance()->changeTextColor("GameOverPanel", "GameOverText", "Red");
 
 	// Texto Score
-	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.2, "Your score is: "+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText", 0.1, "ScorePanel",0.8,0.3);
+	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.2, "YOUR SCORE IS: "+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText", 0.1, "ScorePanel",0.8,0.3);
 	Singleton<OverlayManager>::instance()->changeTextColor("ScorePanel", "ScoreText", "Red");
 
 	// Texto Puntuacion
@@ -50,13 +50,27 @@ void EndState::arch()
 	readFile();
 	std::pair<string, int>p;
 	putName();
+
+	Ogre::TextAreaOverlayElement* text1 = Singleton<OverlayManager>::instance()->getTexto("RecordPanel", "RecordText");
+	if (text1 != nullptr) text1->setCaption("");	
+	Ogre::TextAreaOverlayElement* text2 = Singleton<OverlayManager>::instance()->getTexto("RecordPanel2", "RecordText2");
+	if (text1 != nullptr) text2->setCaption("");
+
 	if (saltar == false) {
+
+		Singleton<OverlayManager>::instance()->creaTexto(0.2, 0.5, "SAVED RECORD", "RecordText3", 0.06, "RecordPanel3", 0.6, 0.2);
+
 		p.first = name;
 		p.second = GameManager::GetInstance()->getPoints();
 		bool añadido = compYOrdMaxPoints(p);
 		if (añadido)
 			writeFile();
 	}
+	else {
+		Singleton<OverlayManager>::instance()->creaTexto(0.2, 0.5, "NOT SAVED RECORD", "RecordText3", 0.06, "RecordPanel3", 0.6, 0.2);
+	}
+
+	Singleton<OverlayManager>::instance()->changeTextColor("RecordPanel3", "RecordText3", "Red");
 }
 
 void EndState::backToMenu(Motor* m)
@@ -119,8 +133,8 @@ bool EndState::compYOrdMaxPoints(std::pair<std::string, int>p)
 		}
 	}
 	return false;
-
 }
+
 void EndState::writeFile() {
 	ofstream file;
 	string s = "../../Exes/Assets/maxScore.txt";
@@ -141,7 +155,7 @@ void EndState::writeFile() {
 void EndState::putName()
 {
 	int i = 0;
-	while(i<3&& saltar==false){
+	while(i < 3 && saltar == false){
 		ih().refresh();
 		if (ih().getMouseButtonState(ih().RIGHT)) {
 			saltar = true;
@@ -255,4 +269,7 @@ void EndState::putName()
 #pragma endregion
 		}
 	}
+
+
+
 }

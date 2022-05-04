@@ -46,7 +46,7 @@ void ZombieMove::update()
 	Vectola3D aux = entity_->getComponent<Transform>()->getPosition();
 	//std::cout << "ZOMBIE POS: " << aux.getX() << ", " << aux.getY() << ", " << aux.getZ() << ")\n";
 
-	if (entity_->hasComponent<RigidBody>()){
+	if (entity_->hasComponent<RigidBody>() && entity_->hasComponent<Transform>()){
 		// Se calcula la direccion
 		Vectola3D dir = _player->getComponent<Transform>()->getPosition() - entity_->getComponent<Transform>()->getPosition();
 
