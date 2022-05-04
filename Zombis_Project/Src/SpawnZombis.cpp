@@ -8,7 +8,7 @@
 #include "FMODAudioManager.h"
 
 const int POS_ZOMBIS = 800;
-const clock_t TIME_TO_SPAWN = 5000;
+const clock_t TIME_TO_SPAWN = 1000;
 
 bool SpawnZombis::init(const std::map<std::string, std::string>& mapa)
 {
