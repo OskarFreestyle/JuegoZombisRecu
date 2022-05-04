@@ -6,7 +6,10 @@
 #include "FMODAudioManager.h"
 #include "LuaReader.h"
 #include "LoadResources.h"
+#include "InputManager.h"
 
+
+const clock_t TIME_TO_CLICK = 500;
 
 Options::Options()
 {
@@ -17,6 +20,7 @@ Options::Options()
 
 	Singleton<OverlayManager>::instance()->setCallBackToButton("VolumePanel", volume);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("ReturnPanel", backToMenu);
+
 }
 
 Options::~Options()
@@ -25,24 +29,17 @@ Options::~Options()
 
 void Options::volume(Motor* m)
 {
-	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
-	if (Singleton<FMODAudioManager>::instance()->getMute() == false) {
-		Singleton<FMODAudioManager>::instance()->setMute(true);
-		Singleton<OverlayManager>::instance()->changeTextColor("", "ScoreText", "Red");
+	clock_t auxc = clock();
+	if (auxc > lastClickVol + TIME_TO_CLICK) {
+		lastClickVol = auxc;
+		Singleton<FMODAudioManager>::instance()->playMusic(1, false);
+		if (Singleton<FMODAudioManager>::instance()->getMute() == false)
+			Singleton<FMODAudioManager>::instance()->setMute(true);
+		else
+			Singleton<FMODAudioManager>::instance()->setMute(false);
 	}
-	else 
-		Singleton<FMODAudioManager>::instance()->setMute(false);
-	for (int i = 0;i < Singleton<FMODAudioManager>::instance()->getCont();i++) {
-		if (Singleton<FMODAudioManager>::instance()->getMute() == false) {
-			Singleton<FMODAudioManager>::instance()->setVolume(i, 1);
-			
-
-		}
-		else {
-			Singleton<FMODAudioManager>::instance()->setVolume(i, 0);
-			
-		}
-	}
+	
+	
 }
 
 void Options::backToMenu(Motor* m)
