@@ -8,7 +8,7 @@
 
 GameManager* GameManager::_singleton = nullptr;
 
-const int INIT_LIVES = 5;
+const int INIT_LIVES = 3;
 
 GameManager* GameManager::GetInstance() {
 	return _singleton;
@@ -116,12 +116,6 @@ void GameManager::endGame()
 		std::cout << "Borrada entidad " << i << "\n";
 		(em().getAllEntidades().at(i))->setActive(false);
 	}
-	/*for (int i = 0; i < n; i++)
-	{
-		std::cout << "Borrada entidad " << i << "\n";
-		(em().getAllEntidades().at(i))=nullptr;
-	}*/
-	//em().refresh();
 	
 	//em().getAllEntidades().clear();
 	Singleton<EntidadManager>::instance();

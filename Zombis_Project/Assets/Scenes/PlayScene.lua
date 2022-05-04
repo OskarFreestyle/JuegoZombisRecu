@@ -17,22 +17,22 @@ local level = {
                     parent="-1",
                     position="0,0,0",
                     rotation="0,0,0",
-                    scale="0.5,0.5,0.5"
+                    scale="1.0,1.0,1.0"
                 },
                 mesh={
                     mesh="ninja.mesh",
-                    material="Azul",
+                    material="",
                     visible="true"
                 },
                 collider={
                     type="box",
-                    x="0.5",
-                    y="0.5",
-                    z="0.5",
+                    x="50.0",
+                    y="50.0",
+                    z="50.0",
                     trigger="false"
                 },
                 rigidbody={
-                    position="0,40,0",
+                    position="0,0,0",
                     static="false",
                     density="1000"
                 },
@@ -41,13 +41,13 @@ local level = {
                     lifefactor="0.05"
                 },
                 jugador={
-                    speed="600"
+                    speed="500"
                 },
                 lookatMouse={
                     test="false"
                 },
 				shoot={
-					shootTime="150"
+					shootTime="500"
 				}
             }
         },
@@ -63,107 +63,6 @@ local level = {
                 },
                 spawnZombis={
                     null="",
-                }
-            }
-        },
-        {
-            name="Pared1",
-            id=1,
-            components={
-                transform={
-                    parent="-1",
-                    position="0,0,900",
-                    rotation="0,0,0",
-                    scale="20,1,0.2"
-                },
-                mesh={
-                    mesh="cube.mesh",
-                    material="Negro",
-                    visible="true"
-                },  
-                collider={
-                    type="box",
-                    x="20",
-                    y="1",
-                    z="0.2",
-                    trigger="false"
-                },
-                rigidbody={
-                    position="0,0,900",
-                    static="true"
-                }
-            }
-        },
-        {
-            name="Pared2",
-            id=2,
-            components={
-                transform={
-                    parent="-1",
-                    position="0,0,-900",
-                    rotation="0,0,0",
-                    scale="20,1,0.2"
-                },
-                mesh={
-                    mesh="cube.mesh",
-                    material="Negro",
-                    visible="true"
-                },  
-                collider={
-                    type="box",
-                    x="20",
-                    y="1",
-                    z="0.2",
-                    trigger="false"
-                },
-                rigidbody={
-                    position="0,0,-900",
-                    static="true"
-                }
-            }
-        },
-        {
-            name="Pared3",
-            id=3,
-            components={
-                transform={
-                    parent="-1",
-                    position="900,0,0",
-                    rotation="0,90,0",
-                    scale="20,1,0.2"
-                },
-                mesh={
-                    mesh="cube.mesh",
-                    material="Negro",
-                    visible="true"
-                },  
-                collider={
-                    type="box",
-                    x="20",
-                    y="1",
-                    z="0.2",
-                    trigger="false"
-                },
-                rigidbody={
-                    position="900,0,0",
-                    static="true"
-                }
-            }
-        },
-        {
-            name="Pared4",
-            id=3,
-            components={
-                transform={
-                    parent="-1",
-                    position="-900,0,0",
-                    rotation="0,90,0",
-                    scale="20,1,0.2"
-                },
-                mesh={
-                    mesh="cube.mesh",
-                    material="Verde",
-                    visible="true"
                 }
             }
         }

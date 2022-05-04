@@ -10,7 +10,12 @@
 //#include "EndState.h"
 
 MainMenu::MainMenu() {
+	// Pone la foto de fondo
+	Singleton<OverlayManager>::instance()->creaPanel(0.0f, 0.0f, "MainMenuBGPanel", "MainMenuBG", 1.0f, 1.0f);
+
+	// Crea los botones de la escena
 	readFileMenus(Singleton<LoadResources>::instance()->scene("MainMenuScene.lua" ), "GetMainMenu");
+
 	Singleton<OverlayManager>::instance()->setCallBackToButton("NewGamePanel", newGame);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("OptionsPanel", option);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("ExitPanel", exit);

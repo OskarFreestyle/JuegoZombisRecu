@@ -39,7 +39,7 @@ void Shoot::update()
         // Luego si está pulsado el boton izquierdo del ratón se dispara
         if (ih().getMouseButtonState(ih().LEFT)) {
 
-            std::cout << "Dispara" << std::endl;
+            //std::cout << "Dispara" << std::endl;
 
             // Actualiza el tiempo
             lastBullet = auxc;

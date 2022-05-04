@@ -10,7 +10,11 @@
 
 Options::Options()
 {
+	// Pone la foto de fondo
+	Singleton<OverlayManager>::instance()->creaPanel(0.0f, 0.0f, "OptionsBGPanel", "OptionsMenuBG", 1.0f, 1.0f);
+
 	readFileMenus(Singleton<LoadResources>::instance()->scene("Options.lua"), "GetOptions");
+
 	Singleton<OverlayManager>::instance()->setCallBackToButton("VolumePanel", volume);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("ReturnPanel", backToMenu);
 }
@@ -18,11 +22,14 @@ Options::Options()
 Options::~Options()
 {
 }
+
 void Options::volume(Motor* m)
 {
 	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
-	if(Singleton<FMODAudioManager>::instance()->getMute() == false)
+	if (Singleton<FMODAudioManager>::instance()->getMute() == false) {
 		Singleton<FMODAudioManager>::instance()->setMute(true);
+		Singleton<OverlayManager>::instance()->changeTextColor("", "ScoreText", "Red");
+	}
 	else 
 		Singleton<FMODAudioManager>::instance()->setMute(false);
 	for (int i = 0;i < Singleton<FMODAudioManager>::instance()->getCont();i++) {

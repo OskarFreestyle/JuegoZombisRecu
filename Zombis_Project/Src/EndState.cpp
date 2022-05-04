@@ -10,13 +10,31 @@
 #include "InputManager.h"
 #include "OgreManager.h"
 #include "FMODAudioManager.h"
-
+#include "Ogre.h"
 
 EndState::EndState()
 {
+	// Pone la foto de fondo
+	Singleton<OverlayManager>::instance()->creaPanel(0.0f, 0.0f, "EndMenuBGPanel", "EndMenuBG", 1.0f, 1.0f);
+
+	// Añade el botton
 	readFileMenus(Singleton<LoadResources>::instance()->scene("EndScene.lua"), "GetEndScene");
-	Singleton<OverlayManager>::instance()->creaTexto(0.25, 0.2, "Your score is: "+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText", 0.1, "ScorePanel",0.6,0.3);
-	Singleton<OverlayManager>::instance()->creaTexto(0, 0.5, "Pulsa 3 teclas con tu nombre para poder guardar el record o el boton derecho del raton para no guardar", "RecordText", 0.03, "RecordPanel", 1, 0.3);
+
+	// Texto de GAME OVER en rojo
+	Singleton<OverlayManager>::instance()->creaTexto(0.2, 0.1, "GAME OVER","GameOverText", 0.1, "GameOverPanel",0.6,0.3);
+	Singleton<OverlayManager>::instance()->changeTextColor("GameOverPanel", "GameOverText", "Red");
+
+	// Texto Score
+	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.2, "Your score is: "+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText", 0.1, "ScorePanel",0.8,0.3);
+	Singleton<OverlayManager>::instance()->changeTextColor("ScorePanel", "ScoreText", "Red");
+
+	// Texto Puntuacion
+	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.5, "Pulsa 3 teclas con tu nombre para poder guardar el record", "RecordText", 0.04, "RecordPanel", 0.8, 0.2);
+	Singleton<OverlayManager>::instance()->changeTextColor("RecordPanel", "RecordText", "Red");
+
+	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.55, "Pulsa el boton derecho del raton para no guardar", "RecordText2", 0.04, "RecordPanel2", 0.8, 0.2);
+	Singleton<OverlayManager>::instance()->changeTextColor("RecordPanel2", "RecordText2", "Red");
+
 	Singleton<OverlayManager>::instance()->setCallBackToButton("BackMenuPanel", backToMenu);
 	Singleton<OgreManager>::instance()->update();
 	arch();

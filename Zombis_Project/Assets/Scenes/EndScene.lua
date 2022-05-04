@@ -5,14 +5,14 @@ local endScene = {
     botones={
 		{
 			positionX="0.75",
-			positionY="0.75",
-			texto="Back To Menu",
+			positionY="0.65",
+			texto="Menu",
 			nombrePanel="BackMenuPanel",
 			nombreTexto="BackMenuTexto",
 			tamLetra="0.05",
-			material="Azul",
+			material="LapidaButton",
 			dimensionX="0.25",
-			dimensionY="0.25"	
+			dimensionY="0.35"	
 		}
     },	
 }
