@@ -32,9 +32,9 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 		// Sumar punto
 		GameManager::GetInstance()->addPoints(10);
 		// Destruir bala
-		//other->setActive(false);
+		other->setActive(false);
 		// Destruir zombi
-		//entity_->setActive(false);
+		entity_->setActive(false);
 	}
 }
 

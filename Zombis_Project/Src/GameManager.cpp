@@ -8,7 +8,7 @@
 
 GameManager* GameManager::_singleton = nullptr;
 
-const int INIT_LIVES = 1;
+const int INIT_LIVES = 5;
 
 GameManager* GameManager::GetInstance() {
 	return _singleton;
@@ -116,13 +116,14 @@ void GameManager::endGame()
 		std::cout << "Borrada entidad " << i << "\n";
 		(em().getAllEntidades().at(i))->setActive(false);
 	}
-	for (int i = 0; i < n; i++)
+	/*for (int i = 0; i < n; i++)
 	{
 		std::cout << "Borrada entidad " << i << "\n";
 		(em().getAllEntidades().at(i))=nullptr;
-	}
-	em().refresh();
-	em().getAllEntidades().clear();
+	}*/
+	//em().refresh();
+	
+	//em().getAllEntidades().clear();
 	Singleton<EntidadManager>::instance();
 
 	// Borra los paneles
