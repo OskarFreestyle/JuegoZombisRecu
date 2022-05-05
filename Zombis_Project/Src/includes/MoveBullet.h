@@ -7,16 +7,11 @@ class Transform;
 
 const float SCALE_X= 1270.0 / 320;
 const float SCALE_Z= 940.0 / 240;
+const float LIMIT_X = 1370.0f;
+const float LIMIT_Z = 1040.0f;
 
-class MoveBullet :
-    public Componente
-    
-
+class MoveBullet : public Componente
 {
-private:
-    float vel;
-    Vectola3D dir;
-    bool isDirCalculated = false;
 public:
     MoveBullet();
     ~MoveBullet();
@@ -24,5 +19,10 @@ public:
     void setVelocity(float v);
     void setDireccion(Vectola3D d);
     void update();
+
+private:
+    float vel;
+    Vectola3D dir;
+    bool isDirCalculated = false;
 };
 

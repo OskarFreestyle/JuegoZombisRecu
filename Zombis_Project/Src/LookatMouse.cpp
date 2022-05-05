@@ -36,9 +36,7 @@ void LookatMouse::debugMousePos()
 	//else {
 	//	std::cout << "INPUT MANAGER POINTER NULL IN LOOKATMOUSE";
 	//}
-
 	//std::cout << Singleton<InputManager>::instance()->getMousePos().first << ", " << Singleton<InputManager>::instance()->getMousePos().second << "\n";
-
 }
 
 void LookatMouse::rotateToMouse2D()

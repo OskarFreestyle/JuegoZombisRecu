@@ -53,6 +53,7 @@
     <ClCompile Include="..\Src\MoveBullet.cpp" />
     <ClCompile Include="..\Src\Options.cpp" />
     <ClCompile Include="..\Src\pch.cpp" />
+    <ClCompile Include="..\Src\Personaje.cpp" />
     <ClCompile Include="..\Src\Shoot.cpp" />
     <ClCompile Include="..\Src\SpawnZombis.cpp" />
     <ClCompile Include="..\Src\zombieMove.cpp" />

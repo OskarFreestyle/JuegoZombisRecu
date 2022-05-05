@@ -28,7 +28,6 @@ bool ZombieMove::init(const std::map<std::string, std::string>& mapa)
 
 void ZombieMove::onCollisionStart(Entidad* other) {
 	if (other->getName() == "Bala") {
-		//std::cout << "Me ha dado una bala\n";
 		// Sumar punto
 		GameManager::GetInstance()->addPoints(10);
 		// Destruir bala
@@ -44,13 +43,10 @@ void ZombieMove::update()
 	if (!_player) _player = Singleton<EntidadManager>::instance()->getEntidadByID(0);
 
 	Vectola3D aux = entity_->getComponent<Transform>()->getPosition();
-	//std::cout << "ZOMBIE POS: " << aux.getX() << ", " << aux.getY() << ", " << aux.getZ() << ")\n";
 
 	if (entity_->hasComponent<RigidBody>() && entity_->hasComponent<Transform>()){
 		// Se calcula la direccion
 		Vectola3D dir = _player->getComponent<Transform>()->getPosition() - entity_->getComponent<Transform>()->getPosition();
-
-		//std::cout << "ZOMBIE DIR: " << dir.getX() << ", " << dir.getY() << ", " << dir.getZ() << ")\n";
 
 		// Importante normalizar y añadir el speed
 		dir = dir.normalize() * _speed;

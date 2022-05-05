@@ -3,6 +3,11 @@
 
 typedef long clock_t;
 
+const int POS_ZOMBIS_X = 1150;
+const int POS_ZOMBIS_Y = 750;
+const int MARGIN = 100;
+const clock_t TIME_TO_SPAWN = 400;
+
 class SpawnZombis : public Componente
 {
 public:

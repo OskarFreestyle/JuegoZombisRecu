@@ -7,7 +7,6 @@
 #include "LoadResources.h"
 #include "GameManager.h"
 #include "FMODAudioManager.h"
-//#include "EndState.h"
 
 MainMenu::MainMenu() {
 	// Pone la foto de fondo
@@ -15,46 +14,36 @@ MainMenu::MainMenu() {
 
 	// Crea los botones de la escena
 	readFileMenus(Singleton<LoadResources>::instance()->scene("MainMenuScene.lua" ), "GetMainMenu");
-
 	Singleton<OverlayManager>::instance()->setCallBackToButton("NewGamePanel", newGame);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("OptionsPanel", option);
 	Singleton<OverlayManager>::instance()->setCallBackToButton("ExitPanel", exit);
-	std::cout << "MAIN MENU CORRECTO\n";
 
-	//std::cout << Singleton<OverlayManager>::instance()->getMotor()<<std::endl;
+#if (defined _DEBUG)
+	std::cout << "MAIN MENU CORRECTO\n";
+#endif
 }
 
 MainMenu::~MainMenu()
 {
-	/*if (o != nullptr) {
-		delete o;
-		o = nullptr;
-	}*/
 }
+
 void MainMenu::newGame(Motor* m)
 {
-	//Singleton<OverlayManager>::close();
 	Singleton<OverlayManager>::instance()->clear();
 	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
 
 	readFile(Singleton<LoadResources>::instance()->scene("PlayScene.lua"));
-
-	//Singleton<OverlayManager>::instance()->getMotor()->loadScene("PlayScene.lua");
 
 	GameManager::GetInstance()->initGame();
 }
 
 void MainMenu::option(Motor* m)
 {
-	//Singleton<OverlayManager>::close();
 	Singleton<OverlayManager>::instance()->clear();
 	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
-	//Singleton<OverlayManager>::instance()->getMotor()->loadMenu("Options.lua","GetOptions");
 	Options* o = new Options();
-	//EndState* e = new EndState();
-	
-
 }
+
 void MainMenu::exit(Motor* m)
 {
 	Singleton<OverlayManager>::instance()->getMotor()->setStop(true);

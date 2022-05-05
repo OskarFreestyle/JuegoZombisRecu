@@ -3,7 +3,6 @@
 #include "Componente.h"
 #include <SDL.h>
 
-class InputManager;
 class Transform;
 
 class LookatMouse : public Componente
@@ -18,9 +17,6 @@ public:
 	void rotateToMouse2D();
 	void init() {};
 	void update();
-	//Quaterniola eulerToQuat(int yaw,int pitch,int roll);
-
-		
 
 private:
 	bool test;

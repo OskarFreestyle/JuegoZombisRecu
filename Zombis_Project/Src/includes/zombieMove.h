@@ -14,8 +14,6 @@ public:
 	void onCollisionStart(Entidad* other);
 
 	void update();
-
-
 private:
 	Entidad* _player;
 	int _speed;
