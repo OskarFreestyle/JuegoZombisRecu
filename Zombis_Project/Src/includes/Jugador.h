@@ -4,7 +4,6 @@
 #include "Entidad.h"
 #include "InputManager.h"
 #include "OgreVector3.h"
-//#include <Transform.h>
 
 class Jugador : public Componente {
 public:

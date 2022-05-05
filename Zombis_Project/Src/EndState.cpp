@@ -19,6 +19,7 @@ EndState::EndState()
 
 	// Añade el botton
 	readFileMenus(Singleton<LoadResources>::instance()->scene("EndScene.lua"), "GetEndScene");
+	Singleton<OverlayManager>::instance()->setCallBackToButton("BackMenuPanel", backToMenu);
 
 	// Texto de GAME OVER en rojo
 	Singleton<OverlayManager>::instance()->creaTexto(0.2, 0.1, "GAME OVER","GameOverText", 0.1, "GameOverPanel",0.6,0.3);
@@ -28,21 +29,18 @@ EndState::EndState()
 	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.2, "YOUR SCORE IS: "+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText", 0.1, "ScorePanel",0.8,0.3);
 	Singleton<OverlayManager>::instance()->changeTextColor("ScorePanel", "ScoreText", "Red");
 
-	// Texto Puntuacion
+	// Textos para guardar Puntuacion
 	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.5, "Pulsa 3 teclas con tu nombre para poder guardar el record", "RecordText", 0.04, "RecordPanel", 0.8, 0.2);
 	Singleton<OverlayManager>::instance()->changeTextColor("RecordPanel", "RecordText", "Red");
-
 	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.55, "Pulsa el boton derecho del raton para no guardar", "RecordText2", 0.04, "RecordPanel2", 0.8, 0.2);
 	Singleton<OverlayManager>::instance()->changeTextColor("RecordPanel2", "RecordText2", "Red");
 
-	Singleton<OverlayManager>::instance()->setCallBackToButton("BackMenuPanel", backToMenu);
 	Singleton<OgreManager>::instance()->update();
 	arch();
 }
 
 EndState::~EndState()
 {
-
 }
 
 void EndState::arch()
@@ -56,20 +54,18 @@ void EndState::arch()
 	Ogre::TextAreaOverlayElement* text2 = Singleton<OverlayManager>::instance()->getTexto("RecordPanel2", "RecordText2");
 	if (text1 != nullptr) text2->setCaption("");
 
+	std::string resultText = "NOT SAVED RECORD";
+
 	if (saltar == false) {
-
-		Singleton<OverlayManager>::instance()->creaTexto(0.2, 0.5, "SAVED RECORD", "RecordText3", 0.06, "RecordPanel3", 0.6, 0.2);
-
+		resultText = "SAVED RECORD";
 		p.first = name;
 		p.second = GameManager::GetInstance()->getPoints();
 		bool añadido = compYOrdMaxPoints(p);
 		if (añadido)
 			writeFile();
 	}
-	else {
-		Singleton<OverlayManager>::instance()->creaTexto(0.2, 0.5, "NOT SAVED RECORD", "RecordText3", 0.06, "RecordPanel3", 0.6, 0.2);
-	}
 
+	Singleton<OverlayManager>::instance()->creaTexto(0.2, 0.5, resultText, "RecordText3", 0.06, "RecordPanel3", 0.6, 0.2);
 	Singleton<OverlayManager>::instance()->changeTextColor("RecordPanel3", "RecordText3", "Red");
 }
 
@@ -86,8 +82,6 @@ void EndState::backToMenu(Motor* m)
 void EndState::readFile()
 {
 	ifstream file;
-	string s = "../../Exes/Assets/maxScore.txt";
-	//string s = "./Assets/maxScore.txt";	// Codigo para la entrega perdonanos Pedro P.
 	file.open(s.c_str());
 	if (file.is_open()) {
 		string f;
@@ -103,7 +97,6 @@ void EndState::readFile()
 			p.second = stoi(n);
 			//compYOrdMaxPoints(p);
 			maxPoints.push_back(p);
-			//std::cout << maxPoints.back().first << " " << maxPoints.back().second << std::endl;
 		}
 	}
 	file.close();
@@ -137,14 +130,11 @@ bool EndState::compYOrdMaxPoints(std::pair<std::string, int>p)
 
 void EndState::writeFile() {
 	ofstream file;
-	string s = "../../Exes/Assets/maxScore.txt";
-	//string s = "./Assets/maxScore.txt";
 	file.open(s.c_str());
 	if (!file.is_open()) {
 		std::cout << "Archivo no abierto" << std::endl;
 	}
 	else {
-		//file <<"1."<<"PPP"<<"-"<< GameManager::GetInstance()->getPoints() << "\n";
 		for (int i = 0;i < maxPoints.size();i++) {
 			file <<i+1<< "." << maxPoints[i].first<< "-" << maxPoints[i].second << "\n";
 		}
@@ -269,7 +259,4 @@ void EndState::putName()
 #pragma endregion
 		}
 	}
-
-
-
 }

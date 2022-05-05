@@ -33,15 +33,12 @@ bool Jugador::init(const std::map<std::string, std::string>& mapa) {
 void Jugador::update() {
 
 	Vectola3D aux = entity_->getComponent<Transform>()->getPosition();
-	//std::cout << "PLAYER POS: " << aux.getX() << ", " << aux.getY() << ", " << aux.getZ() << ")\n";
 
 	if (active_) {
 		v.setY(0);
-		//ih().refresh();
 		// Arriba - Abajo
 		if (ih().isKeyDown(SDL_SCANCODE_W)) {
 			v.setZ(-1);
-			//Singleton<FMODAudioManager>::instance()->togglePause(4);
 			if (clock() > lastSound + REPRODUCT_SOUND) {
 				lastSound = clock();
 				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
@@ -49,7 +46,6 @@ void Jugador::update() {
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_S)) {
 			v.setZ(1);
-			//Singleton<FMODAudioManager>::instance()->togglePause(4);
 			if (clock() > lastSound + REPRODUCT_SOUND) {
 				lastSound = clock();
 				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
@@ -62,7 +58,6 @@ void Jugador::update() {
 		// Izquierda - Derecha
 		if (ih().isKeyDown(SDL_SCANCODE_A)) {
 			v.setX(-1);
-			//Singleton<FMODAudioManager>::instance()->togglePause(4);
 			if (clock() > lastSound + REPRODUCT_SOUND) {
 				lastSound = clock();
 				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
@@ -70,7 +65,6 @@ void Jugador::update() {
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_D)) {
 			v.setX(1);
-			//Singleton<FMODAudioManager>::instance()->togglePause(4);
 			if (clock() > lastSound + REPRODUCT_SOUND) {
 				lastSound = clock();
 				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
@@ -80,16 +74,14 @@ void Jugador::update() {
 			v.setX(0);
 
 		}
-		//Singleton<FMODAudioManager>::instance()->togglePause(4);
 
 		Vectola3D mov = v.normalize() * speed_;
 
 		// CINEMATIC
 		//entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition() + mov);
+
 		// PHYSICS
 		entity_->getComponent<RigidBody>()->setVelocity(physx::PxVec3(mov.getX(), mov.getY(), mov.getZ()));
-
-		
 	}
 }
 

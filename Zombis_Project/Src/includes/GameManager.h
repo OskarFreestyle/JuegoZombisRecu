@@ -1,5 +1,7 @@
 ﻿#pragma once
 
+const int INIT_LIVES = 3;
+
 class GameManager {
 public:
 	~GameManager() {}
@@ -15,8 +17,10 @@ public:
 	/// </summary>
 	static bool Init();
 
+	/// <summary>
+	/// Inicia una nueva partida y pone el interfaz
+	/// </summary>
 	void initGame();
-
 
 	// Funciones de puntos
 	void updatePointsText();
@@ -32,11 +36,14 @@ public:
 	void addLives(int livesToAdd);
 	void removeLives(int livesToRemove);
 
+	/// <summary>
+	/// Manda borrar las entidades de la escena al acabar la partida
+	/// </summary>
 	void endGame();
 
 protected:
 	static GameManager* _singleton;
 
-	int points = 9999;
-	int lives = 2;
+	int points = 0;
+	int lives = INIT_LIVES;
 };

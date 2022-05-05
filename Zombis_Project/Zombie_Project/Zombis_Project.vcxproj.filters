@@ -1,13 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\Src\bfs.cpp" />
-    <ClCompile Include="..\Src\dllmain.cpp" />
-    <ClCompile Include="..\Src\GameManager.cpp" />
-    <ClCompile Include="..\Src\generaAleatorio.cpp" />
-    <ClCompile Include="..\Src\grafo.cpp" />
-    <ClCompile Include="..\Src\grafoConObstaculos.cpp" />
-    <ClCompile Include="..\Src\Juego.cpp" />
     <ClCompile Include="..\Src\Jugador.cpp" />
     <ClCompile Include="..\Src\LookatMouse.cpp" />
     <ClCompile Include="..\Src\MainMenu.cpp" />
@@ -17,16 +10,32 @@
     <ClCompile Include="..\Src\Shoot.cpp" />
     <ClCompile Include="..\Src\zombieMove.cpp" />
     <ClCompile Include="..\Src\SpawnZombis.cpp" />
-    <ClCompile Include="..\Src\EndState.cpp" />
+    <ClCompile Include="..\Src\EndState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\bfs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\GameManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\generaAleatorio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\grafo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\grafoConObstaculos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Src\Juego.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\includes\bfs.h" />
-    <ClInclude Include="..\Src\includes\framework.h" />
-    <ClInclude Include="..\Src\includes\GameManager.h" />
-    <ClInclude Include="..\Src\includes\generaAleatorio.h" />
-    <ClInclude Include="..\Src\includes\grafo.h" />
-    <ClInclude Include="..\Src\includes\grafoConObstaculos.h" />
-    <ClInclude Include="..\Src\includes\Juego.h" />
     <ClInclude Include="..\Src\includes\Jugador.h" />
     <ClInclude Include="..\Src\includes\LookatMouse.h" />
     <ClInclude Include="..\Src\includes\MainMenu.h" />
@@ -37,6 +46,37 @@
     <ClInclude Include="..\Src\includes\Shoot.h" />
     <ClInclude Include="..\Src\includes\zombieMove.h" />
     <ClInclude Include="..\Src\includes\SpawnZombis.h" />
-    <ClInclude Include="..\Src\includes\EndState.h" />
+    <ClInclude Include="..\Src\includes\EndState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\includes\bfs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\includes\framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\includes\GameManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\includes\generaAleatorio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\includes\grafo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\includes\grafoConObstaculos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\includes\Juego.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{772fc4d9-f28e-40f6-aa03-51b1bd0c6991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{ee0fe194-90a5-4df9-b554-029c2eadab49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

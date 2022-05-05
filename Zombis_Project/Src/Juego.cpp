@@ -63,9 +63,10 @@ void loadMusic() {
 
 }
 
-// Simulación de la función de carga
 int LoadGame() {
+#if (defined _DEBUG)
 	std::cout << "TRYING LOAD GAME\n";
+#endif
 
 	// Se registran los componentes
 	RegistryGameComponents();
@@ -73,16 +74,15 @@ int LoadGame() {
 
 	// Se crea el game manager
 	GameManager::Init();
-	std::cout << "GAME MANAGER CORRECTO\n";
 
+#if (defined _DEBUG)
+	std::cout << "GAME MANAGER CORRECTO\n";
+#endif
 
 	MainMenu* m = new MainMenu();
-	//EndState* s = new EndState();
-	
-	
-	//loadMusic();
-	
 
+#if (defined _DEBUG)
 	std::cout << "GAME LOAD CORRECTLY\n";
+#endif
 	return 0;
 }
