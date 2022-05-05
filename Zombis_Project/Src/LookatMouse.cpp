@@ -18,11 +18,11 @@ bool LookatMouse::init(const std::map<std::string, std::string>& mapa)
 	if (mapa.find("test") == mapa.end())
 		return false;
 
-	tr_ = entity_->getComponent<Transform>();
+	tr_ = _entity->getComponent<Transform>();
 	if (tr_ == nullptr)
 		return false;
 
-	inicializado_ = true;
+	_inicializado = true;
 
 	return true;
 }
@@ -55,12 +55,12 @@ void LookatMouse::rotateToMouse2D()
 	Quaterniola x = Quaterniola::Euler(v);
 
 
-	entity_->getComponent<Transform>()->setRotation(x);
+	_entity->getComponent<Transform>()->setRotation(x);
 }
 
 void LookatMouse::update()
 {
-	if (entity_->hasComponent<Transform>())
+	if (_entity->hasComponent<Transform>())
 	{
 		//debugMousePos();
 		rotateToMouse2D();

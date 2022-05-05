@@ -26,7 +26,7 @@ bool MoveBullet::init(const std::map<std::string, std::string>& mapa)
 	std::string velocityString = mapa.at("velocity");
 	vel = stof(velocityString);
 
-	inicializado_ = true;
+	_inicializado = true;
 	
     return true;
 }
@@ -44,9 +44,9 @@ void MoveBullet::setDireccion(Vectola3D d)
 void MoveBullet::update()
 {
 	if (isDirCalculated == false) {
-		Vectola3D aux = { (SCALE_X*ih().getMousePosInGame().first) - entity_->getComponent<Transform>()->getPosition().getX(),
+		Vectola3D aux = { (SCALE_X*ih().getMousePosInGame().first) - _entity->getComponent<Transform>()->getPosition().getX(),
 						 0,
-						 ((SCALE_Z *ih().getMousePosInGame().second) - entity_->getComponent<Transform>()->getPosition().getZ())};
+						 ((SCALE_Z *ih().getMousePosInGame().second) - _entity->getComponent<Transform>()->getPosition().getZ())};
 		
 		setDireccion(aux);
 		dir = dir.normalize();
@@ -54,9 +54,9 @@ void MoveBullet::update()
 	}
 
 	Vectola3D mov = { dir * vel };
-	entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition()+mov);
+	_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition()+mov);
 	
-	if (entity_->getComponent<Transform>()->getPosition().getX() > LIMIT_X || entity_->getComponent<Transform>()->getPosition().getX()< -LIMIT_X || entity_->getComponent<Transform>()->getPosition().getZ() > LIMIT_Z ||  entity_->getComponent<Transform>()->getPosition().getZ() < -LIMIT_Z) {
-		entity_->setActive(false);
+	if (_entity->getComponent<Transform>()->getPosition().getX() > LIMIT_X || _entity->getComponent<Transform>()->getPosition().getX()< -LIMIT_X || _entity->getComponent<Transform>()->getPosition().getZ() > LIMIT_Z ||  _entity->getComponent<Transform>()->getPosition().getZ() < -LIMIT_Z) {
+		_entity->setActive(false);
 	}
 }

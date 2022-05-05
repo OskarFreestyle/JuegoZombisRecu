@@ -33,7 +33,7 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 		// Destruir bala
 		other->setActive(false);
 		// Destruir zombi
-		entity_->setActive(false);
+		_entity->setActive(false);
 	}
 }
 
@@ -42,19 +42,19 @@ void ZombieMove::update()
 	// Busca la entidad del jugador
 	if (!_player) _player = Singleton<EntidadManager>::instance()->getEntidadByID(0);
 
-	Vectola3D aux = entity_->getComponent<Transform>()->getPosition();
+	Vectola3D aux = _entity->getComponent<Transform>()->getPosition();
 
-	if (entity_->hasComponent<RigidBody>() && entity_->hasComponent<Transform>()){
+	if (_entity->hasComponent<RigidBody>() && _entity->hasComponent<Transform>()){
 		// Se calcula la direccion
-		Vectola3D dir = _player->getComponent<Transform>()->getPosition() - entity_->getComponent<Transform>()->getPosition();
+		Vectola3D dir = _player->getComponent<Transform>()->getPosition() - _entity->getComponent<Transform>()->getPosition();
 
 		// Importante normalizar y añadir el speed
 		dir = dir.normalize() * _speed;
 
 		// CINEMATIC
-		//entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition() + dir);
+		//_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition() + dir);
 
 		// PHYSX
-		entity_->getComponent<RigidBody>()->setVelocity(physx::PxVec3(dir.getX(), dir.getY(), dir.getZ()));
+		_entity->getComponent<RigidBody>()->setVelocity(physx::PxVec3(dir.getX(), dir.getY(), dir.getZ()));
 	}
 }

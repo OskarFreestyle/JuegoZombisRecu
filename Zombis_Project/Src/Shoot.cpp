@@ -20,7 +20,7 @@ bool Shoot::init(const std::map<std::string, std::string>& mapa)
     std::string::size_type sz = 0, sa = 0;
     std::string shootTimeString = mapa.at("shootTime");
     shootTime = stoi(shootTimeString);
-    inicializado_ = true;
+    _inicializado = true;
    
     return true;
 }
@@ -38,7 +38,7 @@ void Shoot::update()
             lastBullet = auxc;
 
             // Se instancia la bala
-            Vectola3D pos = entity_->getComponent<Transform>()->getPosition();
+            Vectola3D pos = _entity->getComponent<Transform>()->getPosition();
             pos.setY(0);
 
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);

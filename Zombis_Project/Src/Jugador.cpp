@@ -22,7 +22,7 @@ bool Jugador::init(const std::map<std::string, std::string>& mapa) {
 	if (mapa.find("speed") == mapa.end())
 		return false;
 
-	transform_ = entity_->getComponent<Transform>();
+	transform_ = _entity->getComponent<Transform>();
 
 	std::string s = mapa.at("speed");
 	speed_ = stof(s);
@@ -32,9 +32,9 @@ bool Jugador::init(const std::map<std::string, std::string>& mapa) {
 
 void Jugador::update() {
 
-	Vectola3D aux = entity_->getComponent<Transform>()->getPosition();
+	Vectola3D aux = _entity->getComponent<Transform>()->getPosition();
 
-	if (active_) {
+	if (_active) {
 		v.setY(0);
 		// Arriba - Abajo
 		if (ih().isKeyDown(SDL_SCANCODE_W)) {
@@ -78,10 +78,10 @@ void Jugador::update() {
 		Vectola3D mov = v.normalize() * speed_;
 
 		// CINEMATIC
-		//entity_->getComponent<Transform>()->setPosition(entity_->getComponent<Transform>()->getPosition() + mov);
+		//_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition() + mov);
 
 		// PHYSICS
-		entity_->getComponent<RigidBody>()->setVelocity(physx::PxVec3(mov.getX(), mov.getY(), mov.getZ()));
+		_entity->getComponent<RigidBody>()->setVelocity(physx::PxVec3(mov.getX(), mov.getY(), mov.getZ()));
 	}
 }
 
