@@ -45,7 +45,7 @@ material OptionsMenuBG
 			specular	0.8 0.8 0.8 68
 			texture_unit
 			{
-				texture BackgrounOptions.jpg
+				texture BackgroundOptions.jpg
 				colour_op modulate
 			}
 		}
