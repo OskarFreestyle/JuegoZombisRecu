@@ -3,7 +3,7 @@
 
 :: Primero tiene que construir el Motor
 echo BUILDING MOTOR
-cd Motor-Ola/MotorOla_Solution
+cd Motor-Ola-Recu/MotorOla_Solution
 call MotorOla.bat
 mkdir GameToLoad
 cd ../..
@@ -16,8 +16,8 @@ echo BUILDING DONE
 
 :: Ahora hay que mover Juego.dll a Motor-Ola/MotorOla_Solution/GameToLoad
 cd DLL
-copy /Y Juego.dll "../Motor-Ola/MotorOla_Solution/Exes/Juego.dll"
-copy /Y Juego_d.dll "../Motor-Ola/MotorOla_Solution/Exes/Juego_d.dll"
+copy /Y Juego.dll "../Motor-Ola-Recu/MotorOla_Solution/Exes/Juego.dll"
+copy /Y Juego_d.dll "../Motor-Ola-Recu/MotorOla_Solution/Exes/Juego_d.dll"
 echo JUEGO.DLL MOVIDO
 cd ..
 
