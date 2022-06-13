@@ -1,3 +1,3 @@
-[submodule "Zombis_Project/Motor-Ola"]
-	path = Zombis_Project/Motor-Ola
-	url = https://github.com/GDV-Proyectos3/Motor-Ola.git
+[submodule "Zombis_Project/Motor-Ola-Recu"]
+	path = Zombis_Project/Motor-Ola-Recu
+	url = https://github.com/OskarFreestyle/Motor-Ola-Recu.git
