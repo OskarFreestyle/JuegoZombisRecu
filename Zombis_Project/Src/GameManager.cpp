@@ -1,10 +1,9 @@
 #include "GameManager.h"
 #include "OverlayManager.h"
 #include <string>
-#include "EntidadManager.h"
+#include "SceneManager.h"
 #include "EndState.h"
 #include "Entidad.h"
-#include "FMODAudioManager.h"
 
 GameManager* GameManager::_singleton = nullptr;
 
@@ -107,14 +106,13 @@ void GameManager::removeLives(int livesToRemove)
 void GameManager::endGame()
 {
 	// Manda borrar todas las entidades
-	int n = em().getAllEntidades().size();
-
-	for (int i = 0; i < n; i++)
-	{
-		(em().getAllEntidades().at(i))->setActive(false);
+	std::vector<Entidad*>* currEntities = SceneManager::GetInstance()->getEntities();
+	auto it = currEntities->begin();
+	while (it != currEntities->end()) {
+		Entidad* e = (*it);
+		it++;
+		SceneManager::GetInstance()->addEntityToRemove(e);
 	}
-	
-	Singleton<EntidadManager>::instance();
 
 	// Borra los paneles
 	Singleton<OverlayManager>::instance()->clear();

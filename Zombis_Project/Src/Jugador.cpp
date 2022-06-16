@@ -4,7 +4,7 @@
 #include "Entidad.h"
 #include "InputManager.h"
 #include "OgreVector3.h"
-#include "FMODAudioManager.h"
+#include "AudioManager.h"
 #include "RigidBody.h"
 #include "GameManager.h"
 #include <time.h>
@@ -41,14 +41,14 @@ void Jugador::update() {
 			v.setZ(-1);
 			if (clock() > lastSound + REPRODUCT_SOUND) {
 				lastSound = clock();
-				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+				AudioManager::GetInstance()->playMusic(4, false);
 			}
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_S)) {
 			v.setZ(1);
 			if (clock() > lastSound + REPRODUCT_SOUND) {
 				lastSound = clock();
-				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+				AudioManager::GetInstance()->playMusic(4, false);
 			}
 		}
 		else if (ih().isKeyUp(SDL_SCANCODE_W) || ih().isKeyUp(SDL_SCANCODE_S)) {
@@ -60,14 +60,14 @@ void Jugador::update() {
 			v.setX(-1);
 			if (clock() > lastSound + REPRODUCT_SOUND) {
 				lastSound = clock();
-				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+				AudioManager::GetInstance()->playMusic(4, false);
 			}
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_D)) {
 			v.setX(1);
 			if (clock() > lastSound + REPRODUCT_SOUND) {
 				lastSound = clock();
-				Singleton<FMODAudioManager>::instance()->playMusic(4, false);
+				AudioManager::GetInstance()->playMusic(4, false);
 			}
 		}
 		else if (ih().isKeyUp(SDL_SCANCODE_A) || ih().isKeyUp(SDL_SCANCODE_D)) {

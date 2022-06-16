@@ -2,10 +2,10 @@
 
 #include "InputManager.h"
 #include "Entidad.h"
-#include "EntidadManager.h"
+#include "SceneManager.h"
 #include "Transform.h"
 #include <time.h>
-#include "FMODAudioManager.h"
+#include "AudioManager.h"
 
 bool SpawnZombis::init(const std::map<std::string, std::string>& mapa)
 {
@@ -20,7 +20,7 @@ void SpawnZombis::update()
 		lastZombie = auxc;
 
 		Entidad* zombie = Entidad::instantiate("Zombie.prefab");
-		Singleton<FMODAudioManager>::instance()->playMusic(5, false);
+		AudioManager::GetInstance()->playMusic(5, false);
 
 		// Los zombis se generan en las 4 esquinas de manera aleatoria
 		int x = POS_ZOMBIS_X;

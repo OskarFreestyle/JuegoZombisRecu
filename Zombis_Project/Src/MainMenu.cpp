@@ -6,7 +6,7 @@
 #include "LuaReader.h"
 #include "LoadResources.h"
 #include "GameManager.h"
-#include "FMODAudioManager.h"
+#include "AudioManager.h"
 
 MainMenu::MainMenu() {
 	// Pone la foto de fondo
@@ -30,7 +30,7 @@ MainMenu::~MainMenu()
 void MainMenu::newGame(Motor* m)
 {
 	Singleton<OverlayManager>::instance()->clear();
-	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
+	AudioManager::GetInstance()->playMusic(1, false);
 
 	readFile(Singleton<LoadResources>::instance()->scene("PlayScene.lua"));
 
@@ -40,12 +40,12 @@ void MainMenu::newGame(Motor* m)
 void MainMenu::option(Motor* m)
 {
 	Singleton<OverlayManager>::instance()->clear();
-	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
+	AudioManager::GetInstance()->playMusic(1, false);
 	Options* o = new Options();
 }
 
 void MainMenu::exit(Motor* m)
 {
 	Singleton<OverlayManager>::instance()->getMotor()->setStop(true);
-	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
+	AudioManager::GetInstance()->playMusic(1, false);
 }

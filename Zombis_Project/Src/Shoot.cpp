@@ -1,10 +1,10 @@
 #include "Shoot.h"
 #include "InputManager.h"
 #include "Entidad.h"
-#include "EntidadManager.h"
+#include "SceneManager.h"
 #include "Transform.h"
 #include <time.h>
-#include "FMODAudioManager.h"
+#include "AudioManager.h"
 
 Shoot::Shoot() : shootTime(), cont(), lastBullet()
 {
@@ -42,7 +42,7 @@ void Shoot::update()
             pos.setY(0);
 
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
-            Singleton<FMODAudioManager>::instance()->playMusic(2, false);
+            AudioManager::GetInstance()->playMusic(2, false);
         }
     }
 }

@@ -4,7 +4,7 @@
 #include "Transform.h"
 #include "grafoConObstaculos.h"
 #include "RigidBody.h"
-#include "EntidadManager.h"
+#include "SceneManager.h"
 #include "GameManager.h"
 
 ZombieMove::ZombieMove()
@@ -40,7 +40,7 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 void ZombieMove::update()
 {
 	// Busca la entidad del jugador
-	if (!_player) _player = Singleton<EntidadManager>::instance()->getEntidadByID(0);
+	if (!_player) _player = SceneManager::GetInstance()->getEntityByID(0);
 
 	Vectola3D aux = _entity->getComponent<Transform>()->getPosition();
 

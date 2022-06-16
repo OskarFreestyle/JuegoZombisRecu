@@ -3,7 +3,7 @@
 #include "utils\Singleton.h"
 #include "OverlayManager.h"
 #include <Motor.h>
-#include "FMODAudioManager.h"
+#include "AudioManager.h"
 #include "LuaReader.h"
 #include "LoadResources.h"
 #include "InputManager.h"
@@ -29,17 +29,17 @@ void Options::volume(Motor* m)
 	clock_t auxc = clock();
 	if (auxc > lastClickVol + TIME_TO_CLICK) {
 		lastClickVol = auxc;
-		Singleton<FMODAudioManager>::instance()->playMusic(1, false);
-		if (Singleton<FMODAudioManager>::instance()->getMute() == false)
-			Singleton<FMODAudioManager>::instance()->setMute(true);
+		AudioManager::GetInstance()->playMusic(1, false);
+		if (AudioManager::GetInstance()->getMute() == false)
+			AudioManager::GetInstance()->setMute(true);
 		else
-			Singleton<FMODAudioManager>::instance()->setMute(false);
+			AudioManager::GetInstance()->setMute(false);
 	}
 }
 
 void Options::backToMenu(Motor* m)
 {
 	Singleton<OverlayManager>::instance()->clear();
-	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
+	AudioManager::GetInstance()->playMusic(1, false);
 	MainMenu* mainMenu = new MainMenu();
 }

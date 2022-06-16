@@ -9,7 +9,7 @@
 #include "GameManager.h"
 #include "InputManager.h"
 #include "OgreManager.h"
-#include "FMODAudioManager.h"
+#include "AudioManager.h"
 #include "Ogre.h"
 
 EndState::EndState()
@@ -72,7 +72,7 @@ void EndState::arch()
 void EndState::backToMenu(Motor* m)
 {
 	Singleton<OverlayManager>::instance()->clear();
-	Singleton<FMODAudioManager>::instance()->playMusic(1, false);
+	AudioManager::GetInstance()->playMusic(1, false);
 
 	// Para evitar pulsar el boton del otro menu
 	ih().refresh();
