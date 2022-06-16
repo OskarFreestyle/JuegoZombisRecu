@@ -1,7 +1,6 @@
 #include "EndState.h"
 #include <fstream>
 #include <algorithm>
-#include "utils\Singleton.h"
 #include"LuaReader.h"
 #include"LoadResources.h"
 #include "OverlayManager.h"
@@ -15,27 +14,27 @@
 EndState::EndState()
 {
 	// Pone la foto de fondo
-	Singleton<OverlayManager>::instance()->creaPanel(0.0f, 0.0f, "EndMenuBGPanel", "EndMenuBG", 1.0f, 1.0f);
+	OverlayManager::GetInstance()->creaPanel(0.0f, 0.0f, "EndMenuBGPanel", "EndMenuBG", 1.0f, 1.0f);
 
 	// Añade el botton
-	readFileMenus(Singleton<LoadResources>::instance()->scene("EndScene.lua"), "GetEndScene");
-	Singleton<OverlayManager>::instance()->setCallBackToButton("BackMenuPanel", backToMenu);
+	readFileMenus(LoadResources::GetInstance()->scene("EndScene.lua"), "GetEndScene");
+	OverlayManager::GetInstance()->setCallBackToButton("BackMenuPanel", backToMenu);
 
 	// Texto de GAME OVER en rojo
-	Singleton<OverlayManager>::instance()->creaTexto(0.2, 0.1, "GAME OVER","GameOverText", 0.1, "GameOverPanel",0.6,0.3);
-	Singleton<OverlayManager>::instance()->changeTextColor("GameOverPanel", "GameOverText", "Red");
+	OverlayManager::GetInstance()->creaTexto(0.2, 0.1, "GAME OVER","GameOverText", 0.1, "GameOverPanel",0.6,0.3);
+	OverlayManager::GetInstance()->changeTextColor("GameOverPanel", "GameOverText", "Red");
 
 	// Texto Score
-	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.2, "YOUR SCORE IS: "+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText", 0.1, "ScorePanel",0.8,0.3);
-	Singleton<OverlayManager>::instance()->changeTextColor("ScorePanel", "ScoreText", "Red");
+	OverlayManager::GetInstance()->creaTexto(0.1, 0.2, "YOUR SCORE IS: "+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText", 0.1, "ScorePanel",0.8,0.3);
+	OverlayManager::GetInstance()->changeTextColor("ScorePanel", "ScoreText", "Red");
 
 	// Textos para guardar Puntuacion
-	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.5, "Pulsa 3 teclas con tu nombre para poder guardar el record", "RecordText", 0.04, "RecordPanel", 0.8, 0.2);
-	Singleton<OverlayManager>::instance()->changeTextColor("RecordPanel", "RecordText", "Red");
-	Singleton<OverlayManager>::instance()->creaTexto(0.1, 0.55, "Pulsa el boton derecho del raton para no guardar", "RecordText2", 0.04, "RecordPanel2", 0.8, 0.2);
-	Singleton<OverlayManager>::instance()->changeTextColor("RecordPanel2", "RecordText2", "Red");
+	OverlayManager::GetInstance()->creaTexto(0.1, 0.5, "Pulsa 3 teclas con tu nombre para poder guardar el record", "RecordText", 0.04, "RecordPanel", 0.8, 0.2);
+	OverlayManager::GetInstance()->changeTextColor("RecordPanel", "RecordText", "Red");
+	OverlayManager::GetInstance()->creaTexto(0.1, 0.55, "Pulsa el boton derecho del raton para no guardar", "RecordText2", 0.04, "RecordPanel2", 0.8, 0.2);
+	OverlayManager::GetInstance()->changeTextColor("RecordPanel2", "RecordText2", "Red");
 
-	Singleton<OgreManager>::instance()->update();
+	OgreManager::GetInstance()->update();
 	arch();
 }
 
@@ -49,9 +48,9 @@ void EndState::arch()
 	std::pair<string, int>p;
 	putName();
 
-	Ogre::TextAreaOverlayElement* text1 = Singleton<OverlayManager>::instance()->getTexto("RecordPanel", "RecordText");
+	Ogre::TextAreaOverlayElement* text1 = OverlayManager::GetInstance()->getTexto("RecordPanel", "RecordText");
 	if (text1 != nullptr) text1->setCaption("");	
-	Ogre::TextAreaOverlayElement* text2 = Singleton<OverlayManager>::instance()->getTexto("RecordPanel2", "RecordText2");
+	Ogre::TextAreaOverlayElement* text2 = OverlayManager::GetInstance()->getTexto("RecordPanel2", "RecordText2");
 	if (text1 != nullptr) text2->setCaption("");
 
 	std::string resultText = "NOT SAVED RECORD";
@@ -65,13 +64,13 @@ void EndState::arch()
 			writeFile();
 	}
 
-	Singleton<OverlayManager>::instance()->creaTexto(0.2, 0.5, resultText, "RecordText3", 0.06, "RecordPanel3", 0.6, 0.2);
-	Singleton<OverlayManager>::instance()->changeTextColor("RecordPanel3", "RecordText3", "Red");
+	OverlayManager::GetInstance()->creaTexto(0.2, 0.5, resultText, "RecordText3", 0.06, "RecordPanel3", 0.6, 0.2);
+	OverlayManager::GetInstance()->changeTextColor("RecordPanel3", "RecordText3", "Red");
 }
 
 void EndState::backToMenu(Motor* m)
 {
-	Singleton<OverlayManager>::instance()->clear();
+	OverlayManager::GetInstance()->clear();
 	AudioManager::GetInstance()->playMusic(1, false);
 
 	// Para evitar pulsar el boton del otro menu

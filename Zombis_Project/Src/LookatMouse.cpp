@@ -41,7 +41,7 @@ void LookatMouse::debugMousePos()
 
 void LookatMouse::rotateToMouse2D()
 {
-	MP = Singleton<InputManager>::instance()->getMousePosInGame();
+	MP = InputManager::GetInstance()->getMousePosInGame();
 
 	float angle = atan2(MP.second - tr_->getPosition().getY(), MP.first - tr_->getPosition().getX());
 

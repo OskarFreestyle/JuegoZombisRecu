@@ -1,6 +1,5 @@
 #include "Options.h"
 #include "MainMenu.h"
-#include "utils\Singleton.h"
 #include "OverlayManager.h"
 #include <Motor.h>
 #include "AudioManager.h"
@@ -11,13 +10,12 @@
 Options::Options()
 {
 	// Pone la foto de fondo
-	Singleton<OverlayManager>::instance()->creaPanel(0.0f, 0.0f, "OptionsBGPanel", "OptionsMenuBG", 1.0f, 1.0f);
+	OverlayManager::GetInstance()->creaPanel(0.0f, 0.0f, "OptionsBGPanel", "OptionsMenuBG", 1.0f, 1.0f);
 
-	readFileMenus(Singleton<LoadResources>::instance()->scene("Options.lua"), "GetOptions");
+	readFileMenus(LoadResources::GetInstance()->scene("Options.lua"), "GetOptions");
 
-	Singleton<OverlayManager>::instance()->setCallBackToButton("VolumePanel", volume);
-	Singleton<OverlayManager>::instance()->setCallBackToButton("ReturnPanel", backToMenu);
-
+	OverlayManager::GetInstance()->setCallBackToButton("VolumePanel", volume);
+	OverlayManager::GetInstance()->setCallBackToButton("ReturnPanel", backToMenu);
 }
 
 Options::~Options()
@@ -39,7 +37,7 @@ void Options::volume(Motor* m)
 
 void Options::backToMenu(Motor* m)
 {
-	Singleton<OverlayManager>::instance()->clear();
+	OverlayManager::GetInstance()->clear();
 	AudioManager::GetInstance()->playMusic(1, false);
 	MainMenu* mainMenu = new MainMenu();
 }
