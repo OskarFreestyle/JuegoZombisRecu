@@ -1,0 +1,95 @@
+local level = {
+    ambient="1.0,1.0,1.0",
+    gravity="0.0,0.0,0.0",
+    entidades = {
+        {
+            name="Camera",
+            id=0,
+            components={
+                transform={
+                    position="0,1000,0",
+                    rotation="-90,0,0",
+                    scale="1,1,1",
+                    parent="-1"
+                },
+                camera={
+                    near="0.1",
+                    far="3000",
+                    autoaspect="true",
+                    aspect="1.78",
+                    fov="50",
+                    proyection="1",
+                    viewport="0,0,1,1",
+                    color="0.2,0.2,0"
+                }
+            }
+        },
+        {
+            name="Floor",
+            id=2,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,0,0",
+                    rotation="0,0,0",
+                    scale="10.0,1.0,10.0"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Blue",
+                    visible="true"
+                }
+            }
+        },
+        {
+            name="Player",
+            id=1,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,0,0",
+                    rotation="0,0,0",
+                    scale="1.0,1.0,1.0"
+                },
+                mesh={
+                    mesh="ninja.mesh",
+                    material="",
+                    visible="true"
+                },
+                collider={
+                    type="box",
+                    x="50.0",
+                    y="50.0",
+                    z="50.0",
+                    trigger="false"
+                },
+                rigidbody={
+                    position="0,0,0",
+                    static="false",
+                    density="1000"
+                },
+                personaje={
+                    maxHealth="3",
+                    lifefactor="0.05"
+                },
+                jugador={
+                    speed="500"
+                },
+                lookatMouse={
+                    test="false"
+                },
+				shoot={
+					shootTime="500"
+				}
+            }
+        }
+    }
+}
+
+function GetLevel ()
+  return level
+end
+
+function pruebaTexto()
+    print('Im Working YESS')
+end

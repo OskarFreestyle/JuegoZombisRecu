@@ -42,7 +42,7 @@ void Shoot::update()
             pos.setY(0);
 
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
-            AudioManager::GetInstance()->playMusic(2, false);
+            //AudioManager::GetInstance()->playMusic(2, false);
         }
     }
 }

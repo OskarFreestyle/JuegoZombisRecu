@@ -49,14 +49,14 @@ void loadMusic() {
 	try {
 		// Se crea una entidad para la musica
 		//SceneManager::GetInstance()->addEntity(new Entidad("music", 1));
-		////Singleton<EntidadManager>::instance()->addEntidad("music", 1);
-		//Singleton<FMODAudioManager>::instance()->loadMusic(0, Singleton<LoadResources>::instance()->aud("GameMusicShort.mp3").c_str());
-		//Singleton<FMODAudioManager>::instance()->playMusic(0, true);
-		//Singleton<FMODAudioManager>::instance()->loadMusic(1, Singleton<LoadResources>::instance()->aud("click.mp3").c_str());
-		//Singleton<FMODAudioManager>::instance()->loadMusic(2, Singleton<LoadResources>::instance()->aud("disparo_1.mp3").c_str());
-		//Singleton<FMODAudioManager>::instance()->loadMusic(3, Singleton<LoadResources>::instance()->aud("golpes_1.mp3").c_str());//Para colision entre zombi y jugador
-		//Singleton<FMODAudioManager>::instance()->loadMusic(4, Singleton<LoadResources>::instance()->aud("walkingsound.mp3").c_str());
-		//Singleton<FMODAudioManager>::instance()->loadMusic(5, Singleton<LoadResources>::instance()->aud("zombieSound.mp3").c_str());
+		//Singleton<EntidadManager>::instance()->addEntidad("music", 1);
+		AudioManager::GetInstance()->loadMusic(0, LoadResources::GetInstance()->aud("GameMusicShort.mp3").c_str());
+		AudioManager::GetInstance()->playMusic(0, true);
+		AudioManager::GetInstance()->loadMusic(1, LoadResources::GetInstance()->aud("click.mp3").c_str());
+		AudioManager::GetInstance()->loadMusic(2, LoadResources::GetInstance()->aud("disparo_1.mp3").c_str());
+		AudioManager::GetInstance()->loadMusic(3, LoadResources::GetInstance()->aud("golpes_1.mp3").c_str());//Para colision entre zombi y jugador
+		AudioManager::GetInstance()->loadMusic(4, LoadResources::GetInstance()->aud("walkingsound.mp3").c_str());
+		AudioManager::GetInstance()->loadMusic(5, LoadResources::GetInstance()->aud("zombieSound.mp3").c_str());
 	}
 	catch (...) {
 		std::cerr << "ERROR AL INICIAR LA MUSICA DEL JUEGO\n";
@@ -80,7 +80,7 @@ int LoadGame() {
 	std::cout << "GAME MANAGER CORRECTO\n";
 #endif
 
-	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
+	SceneManager::GetInstance()->newScene("NewPlayScene.lua");
 
 	// Probar a quitar luego a ver que pasa
 	SceneManager::GetInstance()->loadEntities();

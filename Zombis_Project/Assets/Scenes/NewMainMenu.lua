@@ -36,7 +36,7 @@ local level = {
             components={
                 transform={
                     parent="-1",
-                    position="0.10,0.375,-10",
+                    position="0.10,0.375,-50",
                     rotation="0,0,0",
                     scale="1.0,1.0,1.0"
                 },

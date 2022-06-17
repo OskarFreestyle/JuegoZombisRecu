@@ -22,7 +22,7 @@ echo JUEGO.DLL MOVIDO
 cd ..
 
 :: Y los Assets del Juego a Motor-Ola/MotorOla_Solution/Exes/Assets
-xcopy /Y /s Assets "./Motor-Ola-Recu/MotorOla_Solution/Exes/Assets/"
+xcopy /Y /s /i Assets "./Motor-Ola-Recu/MotorOla_Solution/Exes/Assets/"
 echo ASSETS MOVIDOS
 
 :: Pausa para ver que ha ocurrido
