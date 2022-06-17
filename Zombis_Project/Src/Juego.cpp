@@ -41,8 +41,9 @@ void RegistryGameComponents() {
 	catch (...) {
 		std::cerr << "ERROR CARGANDO LOS COMPONENTES DEL JUEGO\n";
 	}
-
-	std::cout << "GAME COMPONENTS REGISTRY CORRECTLY\n";
+#if (defined _DEBUG)
+	std::cout << "---------- GAME COMPONENTES CARGADOS ----------\n";
+#endif
 }
 
 void loadMusic() {
@@ -66,7 +67,7 @@ void loadMusic() {
 
 int LoadGame() {
 #if (defined _DEBUG)
-	std::cout << "TRYING LOAD GAME\n";
+	std::cout << "---------- TRYING LOAD GAME ----------\n";
 #endif
 
 	// Se registran los componentes
@@ -80,7 +81,11 @@ int LoadGame() {
 	std::cout << "GAME MANAGER CORRECTO\n";
 #endif
 
-	MainMenu* m = new MainMenu();
+	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
+
+	// Probar a quitar luego a ver que pasa
+	SceneManager::GetInstance()->loadEntities();
+
 	
 
 #if (defined _DEBUG)
