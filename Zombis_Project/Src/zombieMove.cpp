@@ -2,7 +2,6 @@
 #include "Entidad.h"
 #include <iostream>
 #include "Transform.h"
-#include "grafoConObstaculos.h"
 #include "RigidBody.h"
 #include "SceneManager.h"
 #include "GameManager.h"

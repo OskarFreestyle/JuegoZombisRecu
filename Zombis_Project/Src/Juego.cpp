@@ -15,7 +15,6 @@
 // Juego
 #include "Juego.h"
 #include "GameManager.h"
-#include "grafoConObstaculos.h"
 #include "MainMenu.h"
 #include "EndState.h"
 
