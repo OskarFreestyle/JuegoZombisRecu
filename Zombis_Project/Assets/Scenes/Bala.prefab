@@ -5,13 +5,13 @@ local prefab = {
     components={
         transform={
             parent="-1",
-            position="0,0,0",
+            position="0,2,0",
             rotation="0,0,0",
             scale="0.15,0.15,0.15"
         },
         mesh={
             mesh="sphere.mesh",
-            material="Rojo",
+            material="Amarillo",
             visible="true"
         },
 		moveBullet={
@@ -20,7 +20,7 @@ local prefab = {
 		},  
         collider={
             type="sphere",
-            radius="15",
+            radius="0.15",
             trigger="false"
         },
         rigidbody={

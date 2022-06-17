@@ -39,7 +39,7 @@ void Shoot::update()
 
             // Se instancia la bala
             Vectola3D pos = _entity->getComponent<Transform>()->getPosition();
-            pos.setY(0);
+            pos.setY(170);
 
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
             //AudioManager::GetInstance()->playMusic(2, false);

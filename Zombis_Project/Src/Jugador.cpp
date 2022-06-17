@@ -31,54 +31,61 @@ bool Jugador::init(const std::map<std::string, std::string>& mapa) {
 };
 
 void Jugador::update() {
-
 	Vectola3D aux = _entity->getComponent<Transform>()->getPosition();
 
 	if (_active) {
-		v.setY(0);
-		// Arriba - Abajo
-		if (ih().isKeyDown(SDL_SCANCODE_W)) {
-			v.setZ(-1);
-			if (clock() > lastSound + REPRODUCT_SOUND) {
-				lastSound = clock();
-				AudioManager::GetInstance()->playMusic(4, false);
-			}
-		}
-		else if (ih().isKeyDown(SDL_SCANCODE_S)) {
-			v.setZ(1);
-			if (clock() > lastSound + REPRODUCT_SOUND) {
-				lastSound = clock();
-				AudioManager::GetInstance()->playMusic(4, false);
-			}
-		}
-		else if (ih().isKeyUp(SDL_SCANCODE_W) || ih().isKeyUp(SDL_SCANCODE_S)) {
-			v.setZ(0);
-		}
+		if (ih().isKeyDown(SDL_SCANCODE_W)) v.setZ(-1);
+		else if (ih().isKeyDown(SDL_SCANCODE_S)) v.setZ(1);
+		else v.setZ(0);
 
-		// Izquierda - Derecha
-		if (ih().isKeyDown(SDL_SCANCODE_A)) {
-			v.setX(-1);
-			if (clock() > lastSound + REPRODUCT_SOUND) {
-				lastSound = clock();
-				AudioManager::GetInstance()->playMusic(4, false);
-			}
-		}
-		else if (ih().isKeyDown(SDL_SCANCODE_D)) {
-			v.setX(1);
-			if (clock() > lastSound + REPRODUCT_SOUND) {
-				lastSound = clock();
-				AudioManager::GetInstance()->playMusic(4, false);
-			}
-		}
-		else if (ih().isKeyUp(SDL_SCANCODE_A) || ih().isKeyUp(SDL_SCANCODE_D)) {
-			v.setX(0);
+		if (ih().isKeyDown(SDL_SCANCODE_A)) v.setX(-1);
+		else if (ih().isKeyDown(SDL_SCANCODE_D)) v.setX(1);
+		else v.setX(0);
 
-		}
+	//if (_active) {
+	//	v.setY(0);
+	//	// Arriba - Abajo
+	//	if (ih().isKeyDown(SDL_SCANCODE_W)) {
+	//		v.setZ(-1);
+	//		if (clock() > lastSound + REPRODUCT_SOUND) {
+	//			lastSound = clock();
+	//			//AudioManager::GetInstance()->playMusic(4, false);
+	//		}
+	//	}
+	//	else if (ih().isKeyDown(SDL_SCANCODE_S)) {
+	//		v.setZ(1);
+	//		if (clock() > lastSound + REPRODUCT_SOUND) {
+	//			lastSound = clock();
+	//			//AudioManager::GetInstance()->playMusic(4, false);
+	//		}
+	//	}
+	//	else if (ih().isKeyUp(SDL_SCANCODE_W) || ih().isKeyUp(SDL_SCANCODE_S)) {
+	//		v.setZ(0);
+	//	}
+
+	//	// Izquierda - Derecha
+	//	if (ih().isKeyDown(SDL_SCANCODE_A)) {
+	//		v.setX(-1);
+	//		if (clock() > lastSound + REPRODUCT_SOUND) {
+	//			lastSound = clock();
+	//			AudioManager::GetInstance()->playMusic(4, false);
+	//		}
+	//	}
+	//	else if (ih().isKeyDown(SDL_SCANCODE_D)) {
+	//		v.setX(1);
+	//		if (clock() > lastSound + REPRODUCT_SOUND) {
+	//			lastSound = clock();
+	//			AudioManager::GetInstance()->playMusic(4, false);
+	//		}
+	//	}
+	//	else if (ih().isKeyUp(SDL_SCANCODE_A) || ih().isKeyUp(SDL_SCANCODE_D)) {
+	//		v.setX(0);
+	//	}
 
 		Vectola3D mov = v.normalize() * speed_;
 
 		// CINEMATIC
-		//_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition() + mov);
+		//_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition() + mov * 0.01f);
 
 		// PHYSICS
 		_entity->getComponent<RigidBody>()->setVelocity(physx::PxVec3(mov.getX(), mov.getY(), mov.getZ()));

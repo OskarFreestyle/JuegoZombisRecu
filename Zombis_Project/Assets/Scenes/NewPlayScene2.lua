@@ -7,7 +7,7 @@ local level = {
             id=0,
             components={
                 transform={
-                    position="0,2000,0",
+                    position="0,1000,0",
                     rotation="-90,0,0",
                     scale="1,1,1",
                     parent="-1"
@@ -38,45 +38,6 @@ local level = {
                     mesh="cube.mesh",
                     material="Rojo",
                     visible="true"
-                },
-                collider={
-                    type="box",
-                    x="10.0",
-                    y="1.0",
-                    z="10.0",
-                    trigger="false"
-                },
-                rigidbody={
-                    position="0,0,0",
-                    static="true"
-                }
-            }
-        },
-        {
-            name="Wall",
-            id=3,
-            components={
-                transform={
-                    parent="-1",
-                    position="-500,0.0,0",
-                    rotation="0,0,0",
-                    scale="1.0,5.0,10.0"
-                },
-                mesh={
-                    mesh="cube.mesh",
-                    material="Azul",
-                    visible="true"
-                },
-                collider={
-                    type="box",
-                    x="1.0",
-                    y="5.0",
-                    z="10.0",
-                    trigger="false"
-                },
-                rigidbody={
-                    position="0,0,0",
-                    static="true"
                 }
             }
         },
@@ -97,9 +58,9 @@ local level = {
                 },
                 collider={
                     type="box",
-                    x="1.0",
-                    y="1.0",
-                    z="1.0",
+                    x="50.0",
+                    y="50.0",
+                    z="50.0",
                     trigger="false"
                 },
                 rigidbody={

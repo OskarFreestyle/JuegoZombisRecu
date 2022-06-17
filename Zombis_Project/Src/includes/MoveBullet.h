@@ -1,5 +1,6 @@
 #pragma once
 #include "Componente.h"
+#include "SceneManager.h"
 #include "utils\Vectola3D.h"
 class InputManager;
 class Entidad;
@@ -19,6 +20,11 @@ public:
     void setVelocity(float v);
     void setDireccion(Vectola3D d);
     void update();
+
+    virtual void onCollisionStart(Entidad* other) override {
+        std::cout << "Bala choca\n";
+        SceneManager::GetInstance()->addEntityToRemove(_entity);
+    };
 
 private:
     float vel;
