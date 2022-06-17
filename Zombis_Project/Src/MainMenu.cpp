@@ -8,11 +8,11 @@
 #include "AudioManager.h"
 
 MainMenu::MainMenu() {
+	
 	// Pone la foto de fondo
 	OverlayManager::GetInstance()->creaPanel(0.0f, 0.0f, "MainMenuBGPanel", "MainMenuBG", 1.0f, 1.0f);
-
 	// Crea los botones de la escena
-	readFileMenus(LoadResources::GetInstance()->scene("MainMenuScene.lua" ), "GetMainMenu");
+	LuaReader::GetInstance()->readFileMenus(LoadResources::GetInstance()->scene("MainMenuScene.lua" ), "GetMainMenu");
 	OverlayManager::GetInstance()->setCallBackToButton("NewGamePanel", newGame);
 	OverlayManager::GetInstance()->setCallBackToButton("OptionsPanel", option);
 	OverlayManager::GetInstance()->setCallBackToButton("ExitPanel", exit);
@@ -31,7 +31,7 @@ void MainMenu::newGame(Motor* m)
 	OverlayManager::GetInstance()->clear();
 	AudioManager::GetInstance()->playMusic(1, false);
 
-	readFile(LoadResources::GetInstance()->scene("PlayScene.lua"));
+	LuaReader::GetInstance()->readFile(LoadResources::GetInstance()->scene("PlayScene.lua"));
 
 	GameManager::GetInstance()->initGame();
 }

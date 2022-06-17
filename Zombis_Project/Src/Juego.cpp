@@ -81,6 +81,7 @@ int LoadGame() {
 #endif
 
 	MainMenu* m = new MainMenu();
+	
 
 #if (defined _DEBUG)
 	std::cout << "GAME LOAD CORRECTLY\n";

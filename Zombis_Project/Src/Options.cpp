@@ -12,7 +12,7 @@ Options::Options()
 	// Pone la foto de fondo
 	OverlayManager::GetInstance()->creaPanel(0.0f, 0.0f, "OptionsBGPanel", "OptionsMenuBG", 1.0f, 1.0f);
 
-	readFileMenus(LoadResources::GetInstance()->scene("Options.lua"), "GetOptions");
+	LuaReader::GetInstance()->readFileMenus(LoadResources::GetInstance()->scene("Options.lua"), "GetOptions");
 
 	OverlayManager::GetInstance()->setCallBackToButton("VolumePanel", volume);
 	OverlayManager::GetInstance()->setCallBackToButton("ReturnPanel", backToMenu);

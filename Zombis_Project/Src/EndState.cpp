@@ -1,7 +1,7 @@
 #include "EndState.h"
 #include <fstream>
 #include <algorithm>
-#include"LuaReader.h"
+#include "LuaReader.h"
 #include"LoadResources.h"
 #include "OverlayManager.h"
 #include "MainMenu.h"
@@ -17,7 +17,7 @@ EndState::EndState()
 	OverlayManager::GetInstance()->creaPanel(0.0f, 0.0f, "EndMenuBGPanel", "EndMenuBG", 1.0f, 1.0f);
 
 	// Añade el botton
-	readFileMenus(LoadResources::GetInstance()->scene("EndScene.lua"), "GetEndScene");
+	LuaReader::GetInstance()->readFileMenus(LoadResources::GetInstance()->scene("EndScene.lua"), "GetEndScene");
 	OverlayManager::GetInstance()->setCallBackToButton("BackMenuPanel", backToMenu);
 
 	// Texto de GAME OVER en rojo
