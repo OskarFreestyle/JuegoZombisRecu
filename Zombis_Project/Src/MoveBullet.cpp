@@ -1,6 +1,7 @@
 #include "MoveBullet.h"
 #include "Entidad.h"
 #include "Transform.h"
+#include "Motor.h"
 #include "InputManager.h"
 
 MoveBullet::MoveBullet()
@@ -53,8 +54,8 @@ void MoveBullet::update()
 		isDirCalculated = true;
 	}
 
-	Vectola3D mov = { dir * vel };
-	_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition()+mov);
+	Vectola3D mov = { dir * vel * Motor::GetInstance()->getDeltaTime() };
+	_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition() + mov);
 	
 	if (_entity->getComponent<Transform>()->getPosition().getX() > LIMIT_X || _entity->getComponent<Transform>()->getPosition().getX()< -LIMIT_X || _entity->getComponent<Transform>()->getPosition().getZ() > LIMIT_Z ||  _entity->getComponent<Transform>()->getPosition().getZ() < -LIMIT_Z) {
 		_entity->setActive(false);

@@ -4,7 +4,7 @@
 #include <iostream>
 
 // Motor
-#include <Motor.h>
+//#include <Motor.h>
 #include <Transform.h>
 #include "ComponenteRegistro.h"
 #include "Entidad.h"
@@ -60,7 +60,6 @@ void loadMusic() {
 	catch (...) {
 		std::cerr << "ERROR AL INICIAR LA MUSICA DEL JUEGO\n";
 	}
-
 }
 
 int LoadGame() {
@@ -84,8 +83,6 @@ int LoadGame() {
 
 	// Probar a quitar luego a ver que pasa
 	//SceneManager::GetInstance()->loadEntities();
-
-	
 
 #if (defined _DEBUG)
 	std::cout << "GAME LOAD CORRECTLY\n";
