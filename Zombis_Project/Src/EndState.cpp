@@ -18,7 +18,7 @@ EndState::EndState()
 
 	// Añade el botton
 	LuaReader::GetInstance()->readFileMenus(LoadResources::GetInstance()->scene("EndScene.lua"), "GetEndScene");
-	OverlayManager::GetInstance()->setCallBackToButton("BackMenuPanel", backToMenu);
+	//OverlayManager::GetInstance()->setCallBackToButton("BackMenuPanel", backToMenu);
 
 	// Texto de GAME OVER en rojo
 	OverlayManager::GetInstance()->creaTexto(0.2, 0.1, "GAME OVER","GameOverText", 0.1, "GameOverPanel",0.6,0.3);
@@ -68,7 +68,7 @@ void EndState::arch()
 	OverlayManager::GetInstance()->changeTextColor("RecordPanel3", "RecordText3", "Red");
 }
 
-void EndState::backToMenu(Motor* m)
+/*void EndState::backToMenu(Motor* m)
 {
 	OverlayManager::GetInstance()->clear();
 	AudioManager::GetInstance()->playMusic(1, false);
@@ -77,7 +77,7 @@ void EndState::backToMenu(Motor* m)
 	ih().refresh();
 
 	MainMenu* mainMenu = new MainMenu();
-}
+}*/
 void EndState::readFile()
 {
 	ifstream file;

@@ -80,10 +80,11 @@ int LoadGame() {
 	std::cout << "GAME MANAGER CORRECTO\n";
 #endif
 
-	SceneManager::GetInstance()->newScene("NewPlayScene.lua");
+	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
+	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
 
 	// Probar a quitar luego a ver que pasa
-	SceneManager::GetInstance()->loadEntities();
+	//SceneManager::GetInstance()->loadEntities();
 
 	
 

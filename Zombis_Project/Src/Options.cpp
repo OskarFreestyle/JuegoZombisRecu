@@ -14,15 +14,15 @@ Options::Options()
 
 	LuaReader::GetInstance()->readFileMenus(LoadResources::GetInstance()->scene("Options.lua"), "GetOptions");
 
-	OverlayManager::GetInstance()->setCallBackToButton("VolumePanel", volume);
-	OverlayManager::GetInstance()->setCallBackToButton("ReturnPanel", backToMenu);
+	//OverlayManager::GetInstance()->setCallBackToButton("VolumePanel", volume);
+	//OverlayManager::GetInstance()->setCallBackToButton("ReturnPanel", backToMenu);
 }
 
 Options::~Options()
 {
 }
 
-void Options::volume(Motor* m)
+/*void Options::volume(Motor* m)
 {
 	clock_t auxc = clock();
 	if (auxc > lastClickVol + TIME_TO_CLICK) {
@@ -40,4 +40,4 @@ void Options::backToMenu(Motor* m)
 	OverlayManager::GetInstance()->clear();
 	AudioManager::GetInstance()->playMusic(1, false);
 	MainMenu* mainMenu = new MainMenu();
-}
+}*/

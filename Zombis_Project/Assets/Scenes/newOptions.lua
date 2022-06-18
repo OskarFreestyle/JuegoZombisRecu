@@ -25,40 +25,40 @@ local level = {
             }
         }, 
         {
-            name="BotonPlay",
+            name="BotonVolume",
             id=1,
             components={
 				button={
-					positionX="0.10",
-					positionY="0.375",
-					texto="Play",
-					nombrePanel="NewGamePanel",
-					nombreTexto="NewGameTexto",
-					tamLetra="0.05",
-					material="LapidaButton",
+					positionX="0.2",
+					positionY="0.2",
+					texto="",
+					nombrePanel="VolumePanel",
+					nombreTexto="VolumeTexto",
+					tamLetra="0.1",
+					material="AltavozButton",
 					dimensionX="0.25",
-					dimensionY="0.35",
-					type="CHANGE_SCENE",
-					nextScene="NewPlayScene.lua"
+					dimensionY="0.25",
+					type="VOLUME",
+					nextScene=" "
 				}
             }
         },
 		{
-            name="BotonOptions",
+            name="BotonBack",
             id=2,
             components={
 				button={
-					positionX="0.375",
-					positionY="0.375",
-					texto="Options",
-					nombrePanel="OptionsPanel",
-					nombreTexto="OptionsTexto",
+					positionX="0.55",
+					positionY="0.15",
+					texto="Return",
+					nombrePanel="ReturnPanel",
+					nombreTexto="ReturnTexto",
 					tamLetra="0.05",
 					material="LapidaButton",
 					dimensionX="0.25",
 					dimensionY="0.35",
 					type="CHANGE_SCENE",
-					nextScene="newOptions.lua"
+					nextScene="NewMainMenu.lua"
 				}
             }
         },
@@ -88,4 +88,3 @@ local level = {
 function GetLevel ()
   return level
 end
-

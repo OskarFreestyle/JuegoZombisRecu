@@ -14,7 +14,7 @@ public :
 	~Options();
 private:
 	inline static clock_t lastClickVol = 0;
-	static void volume(Motor* m);
-	static void backToMenu(Motor* m);
+	//static void volume(Motor* m);
+	//static void backToMenu(Motor* m);
 };
 

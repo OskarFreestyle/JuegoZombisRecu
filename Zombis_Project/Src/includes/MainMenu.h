@@ -15,8 +15,8 @@ public:
 	~MainMenu();
 
 private:
-	static void newGame(Motor* m);
-	static void option(Motor* m);
-	static void exit(Motor* m);
+	//static void newGame(Motor* m);
+	//static void option(Motor* m);
+	//static void exit(Motor* m);
 };
 

@@ -22,7 +22,7 @@ public:
 
 private:
 	// Funciones
-	static void backToMenu(Motor* m);
+	//static void backToMenu(Motor* m);
 	void readFile();
 	bool compYOrdMaxPoints(std::pair<std::string,int>p);
 	void writeFile();
