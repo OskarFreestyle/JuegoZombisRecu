@@ -4,7 +4,6 @@
 #include "LuaReader.h"
 #include"LoadResources.h"
 #include "OverlayManager.h"
-#include "MainMenu.h"
 #include "GameManager.h"
 #include "InputManager.h"
 #include "OgreManager.h"

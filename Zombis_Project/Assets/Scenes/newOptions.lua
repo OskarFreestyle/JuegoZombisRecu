@@ -61,26 +61,7 @@ local level = {
 					nextScene="NewMainMenu.lua"
 				}
             }
-        },
-		{
-			name="BotonExit",
-            id=3,
-            components={
-				button={
-					positionX="0.65",
-					positionY="0.375",
-					texto="Exit",
-					nombrePanel="ExitPanel",
-					nombreTexto="ExitTexto",
-					tamLetra="0.05",
-					material="LapidaButton",
-					dimensionX="0.25",
-					dimensionY="0.35",
-					type="EXIT",
-					nextScene=""
-				}
-            }
-		}
+        }
 		
     }
 }

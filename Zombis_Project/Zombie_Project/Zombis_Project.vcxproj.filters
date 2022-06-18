@@ -16,12 +16,6 @@
     <ClCompile Include="..\Src\EndState.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\MainMenu.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\Options.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
     <ClCompile Include="..\Src\LookatMouse.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
@@ -79,12 +73,6 @@
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\includes\EndState.h">
-      <Filter>Header Files\States</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\MainMenu.h">
-      <Filter>Header Files\States</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\Options.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
   </ItemGroup>

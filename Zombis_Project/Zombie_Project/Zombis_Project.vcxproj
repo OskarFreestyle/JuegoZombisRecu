@@ -25,9 +25,7 @@
     <ClInclude Include="..\Src\includes\Juego.h" />
     <ClInclude Include="..\Src\includes\Jugador.h" />
     <ClInclude Include="..\Src\includes\LookatMouse.h" />
-    <ClInclude Include="..\Src\includes\MainMenu.h" />
     <ClInclude Include="..\Src\includes\MoveBullet.h" />
-    <ClInclude Include="..\Src\includes\Options.h" />
     <ClInclude Include="..\Src\includes\pch.h" />
     <ClInclude Include="..\Src\includes\Personaje.h" />
     <ClInclude Include="..\Src\includes\Shoot.h" />
@@ -41,9 +39,7 @@
     <ClCompile Include="..\Src\Juego.cpp" />
     <ClCompile Include="..\Src\Jugador.cpp" />
     <ClCompile Include="..\Src\LookatMouse.cpp" />
-    <ClCompile Include="..\Src\MainMenu.cpp" />
     <ClCompile Include="..\Src\MoveBullet.cpp" />
-    <ClCompile Include="..\Src\Options.cpp" />
     <ClCompile Include="..\Src\pch.cpp" />
     <ClCompile Include="..\Src\Personaje.cpp" />
     <ClCompile Include="..\Src\Shoot.cpp" />
