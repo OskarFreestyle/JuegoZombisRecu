@@ -25,23 +25,19 @@ local level = {
             }
         }, 
         {
-            name="BotonPlay",
+			name="BackGroundImage",
             id=1,
             components={
-				button={
-					positionX="0.10",
-					positionY="0.375",
-					texto="Play",
-					nombrePanel="NewGamePanel",
-					nombreTexto="NewGameTexto",
-					tamLetra="0.05",
-					material="LapidaButton",
-					dimensionX="0.25",
-					dimensionY="0.35",
-					type="CHANGE_SCENE",
-					nextScene="NewPlayScene.lua"
+				image={
+					positionX="0",
+					positionY="0",
+					nombrePanel="BackGroundPanel",
+					material="MainMenuBG",
+					dimensionX="1",
+					dimensionY="1"
 				}
             }
+            
         },
 		{
             name="BotonOptions",
@@ -80,8 +76,26 @@ local level = {
 					nextScene=""
 				}
             }
+		},
+		{
+			name="BotonPlay",
+            id=4,
+            components={
+				button={
+					positionX="0.10",
+					positionY="0.375",
+					texto="Play",
+					nombrePanel="NewGamePanel",
+					nombreTexto="NewGameTexto",
+					tamLetra="0.05",
+					material="LapidaButton",
+					dimensionX="0.25",
+					dimensionY="0.35",
+					type="CHANGE_SCENE",
+					nextScene="NewPlayScene.lua"
+				}
+            }
 		}
-		
     }
 }
 

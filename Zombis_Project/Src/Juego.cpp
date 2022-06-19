@@ -80,6 +80,7 @@ int LoadGame() {
 
 	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
 	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
+	//SceneManager::GetInstance()->newScene("newEndState.lua");
 
 	// Probar a quitar luego a ver que pasa
 	//SceneManager::GetInstance()->loadEntities();

@@ -24,31 +24,17 @@ local level = {
                 }
             }
         }, 
-        {
-			name="BackGroundImage",
-            id=1,
-            components={
-				image={
-					positionX="0",
-					positionY="0",
-					nombrePanel="BackGroundPanel",
-					material="OptionsMenuBG",
-					dimensionX="1",
-					dimensionY="1"
-				}
-            }
-            
-        },
+        
 		{
             name="BotonBack",
-            id=2,
+            id=1,
             components={
 				button={
-					positionX="0.55",
-					positionY="0.15",
-					texto="Return",
-					nombrePanel="ReturnPanel",
-					nombreTexto="ReturnTexto",
+					positionX="0.75",
+					positionY="0.65",
+					texto="Menu",
+					nombrePanel="BackMenuPanel",
+					nombreTexto="BackMenuTexto",
 					tamLetra="0.05",
 					material="LapidaButton",
 					dimensionX="0.25",
@@ -59,21 +45,19 @@ local level = {
             }
         },
 		{
-			name="BotonVolume",
-            id=3,
+			name="GameOver",
+            id=2,
             components={
-				button={
+				texto={
 					positionX="0.2",
-					positionY="0.2",
-					texto="",
-					nombrePanel="VolumePanel",
-					nombreTexto="VolumeTexto",
+					positionY="0.1",
+					texto="GAME OVER",
+					nombreTexto="GameOverText",
 					tamLetra="0.1",
-					material="AltavozButton",
-					dimensionX="0.25",
-					dimensionY="0.25",
-					type="VOLUME",
-					nextScene=" "
+					nombrePanel="GameOverPanel",
+					dimensionX="0.6",
+					dimensionY="0.3",
+					color="Red"
 				}
             }
 		}
