@@ -24,6 +24,20 @@ local level = {
                 }
             }
         }, 
+		{
+			name="BackGroundImage",
+            id=1,
+            components={
+				image={
+					positionX="0",
+					positionY="0",
+					nombrePanel="BackGroundPanel",
+					material="EndMenuBG",
+					dimensionX="1",
+					dimensionY="1"
+				}
+            }
+		},
         
 		{
             name="BotonBack",
@@ -56,6 +70,23 @@ local level = {
 					tamLetra="0.1",
 					nombrePanel="GameOverPanel",
 					dimensionX="0.6",
+					dimensionY="0.3",
+					color="Red"
+				}
+            }
+		},
+		{
+			name="Score",
+            id=3,
+            components={
+				texto={
+					positionX="0.1",
+					positionY="0.2",
+					texto="YOUR SCORE is: ",
+					nombreTexto="ScoreText",
+					tamLetra="0.1",
+					nombrePanel="ScorePanel",
+					dimensionX="0.8",
 					dimensionY="0.3",
 					color="Red"
 				}

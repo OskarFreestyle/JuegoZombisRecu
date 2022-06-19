@@ -26,6 +26,9 @@
 #include "zombieMove.h"
 #include "SpawnZombis.h"
 
+#include "Entidad.h"
+#include "TextComponent.h"
+
 void RegistryGameComponents() {
 	try {
 		ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");
@@ -79,8 +82,9 @@ int LoadGame() {
 #endif
 
 	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
-	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
-	//SceneManager::GetInstance()->newScene("newEndState.lua");
+	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
+	SceneManager::GetInstance()->newScene("newEndState.lua");
+	//SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->setTexto(SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->getTexto()+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText","ScorePanel");
 
 	// Probar a quitar luego a ver que pasa
 	//SceneManager::GetInstance()->loadEntities();
