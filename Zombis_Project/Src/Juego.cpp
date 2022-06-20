@@ -84,8 +84,10 @@ int LoadGame() {
 	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
 	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
 	SceneManager::GetInstance()->newScene("newEndState.lua");
-	//SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->setTexto(SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->getTexto()+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText","ScorePanel");
-
+	SceneManager::GetInstance()->loadEntities();
+	GameManager::GetInstance()->setPoints(100);
+	SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->setTexto(SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->getTexto()+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText","ScorePanel");
+	
 	// Probar a quitar luego a ver que pasa
 	//SceneManager::GetInstance()->loadEntities();
 
