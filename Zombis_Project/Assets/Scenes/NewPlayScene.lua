@@ -7,14 +7,14 @@ local level = {
             id=0,
             components={
                 transform={
-                    position="0,2000,0",
+                    position="0,3000,0",
                     rotation="-90,0,0",
                     scale="1,1,1",
                     parent="-1"
                 },
                 camera={
                     near="0.1",
-                    far="3000",
+                    far="5000",
                     autoaspect="true",
                     aspect="1.78",
                     fov="50",
@@ -32,7 +32,7 @@ local level = {
                     parent="-1",
                     position="0,0,0",
                     rotation="0,0,0",
-                    scale="10.0,1.0,10.0"
+                    scale="25.0,1.0,25.0"
                 },
                 mesh={
                     mesh="cube.mesh",
@@ -47,20 +47,19 @@ local level = {
                     trigger="false"
                 },
                 rigidbody={
-                    position="0,0,0",
                     static="true"
                 }
             }
         },
         {
-            name="Wall",
-            id=3,
+            name="Wall1",
+            id=2,
             components={
                 transform={
                     parent="-1",
-                    position="-500,0.0,0",
+                    position="-1250,0.0,0",
                     rotation="0,0,0",
-                    scale="1.0,5.0,10.0"
+                    scale="1.0,5.0,25.0"
                 },
                 mesh={
                     mesh="cube.mesh",
@@ -70,12 +69,92 @@ local level = {
                 collider={
                     type="box",
                     x="1.0",
-                    y="5.0",
-                    z="10.0",
+                    y="1.0",
+                    z="1.0",
                     trigger="false"
                 },
                 rigidbody={
-                    position="0,0,0",
+                    static="true"
+                }
+            }
+        },
+        {
+            name="Wall2",
+            id=2,
+            components={
+                transform={
+                    parent="-1",
+                    position="1250,0.0,0",
+                    rotation="0,0,0",
+                    scale="1.0,5.0,25.0"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Azul",
+                    visible="true"
+                },
+                collider={
+                    type="box",
+                    x="1.0",
+                    y="1.0",
+                    z="1.0",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
+                }
+            }
+        },
+        {
+            name="Wall3",
+            id=2,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,0,1250",
+                    rotation="0,0,0",
+                    scale="25.0,5.0,1.0"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Azul",
+                    visible="true"
+                },
+                collider={
+                    type="box",
+                    x="1.0",
+                    y="1.0",
+                    z="1.0",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
+                }
+            }
+        },
+        {
+            name="Wall4",
+            id=2,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,0,-1250",
+                    rotation="0,0,0",
+                    scale="25.0,5.0,1.0"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Azul",
+                    visible="true"
+                },
+                collider={
+                    type="box",
+                    x="1.0",
+                    y="1.0",
+                    z="1.0",
+                    trigger="false"
+                },
+                rigidbody={
                     static="true"
                 }
             }
@@ -103,7 +182,6 @@ local level = {
                     trigger="false"
                 },
                 rigidbody={
-                    position="0,0,0",
                     static="false",
                     density="1000"
                 },
@@ -112,7 +190,7 @@ local level = {
                     lifefactor="0.05"
                 },
                 jugador={
-                    speed="500"
+                    speed="2500"
                 },
                 lookatMouse={
                     test="false"
