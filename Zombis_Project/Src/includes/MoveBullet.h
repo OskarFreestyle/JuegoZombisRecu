@@ -1,7 +1,7 @@
 #pragma once
 #include "Componente.h"
 #include "SceneManager.h"
-#include "utils\Vectola3D.h"
+#include "Vectola3D.h"
 class InputManager;
 class Entidad;
 class Transform;
