@@ -24,6 +24,18 @@ local level = {
                 }
             }
         }, 
+		{
+            name="MainMusic",
+            id=6,
+            components={
+                audioSource={
+					audioFileName="GameMusicShort.mp3",
+					channel="0",
+					loop="true",
+					startOnPlay="true"
+				}
+            }
+        }, 
         {
 			name="BackGroundImage",
             id=1,
@@ -37,7 +49,6 @@ local level = {
 					dimensionY="1"
 				}
             }
-            
         },
 		{
             name="BotonOptions",
@@ -55,6 +66,12 @@ local level = {
 					dimensionY="0.35",
 					type="CHANGE_SCENE",
 					nextScene="newOptions.lua"
+				},
+				audioSource={
+					audioFileName="click.mp3",
+					channel="1",
+					loop="false",
+					startOnPlay="false"
 				}
             }
         },
@@ -74,6 +91,12 @@ local level = {
 					dimensionY="0.35",
 					type="EXIT",
 					nextScene=""
+				},
+				audioSource={
+					audioFileName="click.mp3",
+					channel="1",
+					loop="false",
+					startOnPlay="false"
 				}
             }
 		},
@@ -93,6 +116,12 @@ local level = {
 					dimensionY="0.35",
 					type="CHANGE_SCENE",
 					nextScene="NewPlayScene.lua"
+				},
+				audioSource={
+					audioFileName="click.mp3",
+					channel="1",
+					loop="false",
+					startOnPlay="false"
 				}
             }
 		}

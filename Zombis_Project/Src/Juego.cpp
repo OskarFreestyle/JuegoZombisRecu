@@ -50,32 +50,12 @@ void RegistryGameComponents() {
 #endif
 }
 
-void loadMusic() {
-	try {
-		// Se crea una entidad para la musica
-		//SceneManager::GetInstance()->addEntity(new Entidad("music", 1));
-		//Singleton<EntidadManager>::instance()->addEntidad("music", 1);
-		AudioManager::GetInstance()->loadMusic(0, LoadResources::GetInstance()->aud("GameMusicShort.mp3").c_str());
-		AudioManager::GetInstance()->playMusic(0, true);
-		AudioManager::GetInstance()->loadMusic(1, LoadResources::GetInstance()->aud("click.mp3").c_str());
-		AudioManager::GetInstance()->loadMusic(2, LoadResources::GetInstance()->aud("disparo_1.mp3").c_str());
-		AudioManager::GetInstance()->loadMusic(3, LoadResources::GetInstance()->aud("golpes_1.mp3").c_str());//Para colision entre zombi y jugador
-		AudioManager::GetInstance()->loadMusic(4, LoadResources::GetInstance()->aud("walkingsound.mp3").c_str());
-		AudioManager::GetInstance()->loadMusic(5, LoadResources::GetInstance()->aud("zombieSound.mp3").c_str());
-	}
-	catch (...) {
-		std::cerr << "ERROR AL INICIAR LA MUSICA DEL JUEGO\n";
-	}
-}
-
 int LoadGame() {
 #if (defined _DEBUG)
 	std::cout << "---------- TRYING LOAD GAME ----------\n";
 #endif
-
 	// Se registran los componentes
 	RegistryGameComponents();
-	//loadMusic();
 
 	// Se crea el game manager
 	GameManager::Init();
@@ -84,14 +64,7 @@ int LoadGame() {
 	std::cout << "GAME MANAGER CORRECTO\n";
 #endif
 
-	GameManager::GetInstance()->setPoints(100);
-	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
-	SceneManager::GetInstance()->newScene("newEndState.lua");
-	//SceneManager::GetInstance()->loadEntities();
-	//SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->setTexto(SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->getTexto()+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText","ScorePanel");
-	
-	// Probar a quitar luego a ver que pasa
-	//SceneManager::GetInstance()->loadEntities();
+	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
 
 #if (defined _DEBUG)
 	std::cout << "GAME LOAD CORRECTLY\n";

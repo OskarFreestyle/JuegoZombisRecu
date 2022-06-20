@@ -11,11 +11,6 @@
 void RegistryGameComponents();
 
 /// <summary>
-/// Carga la musica de fondo del juego
-/// </summary>
-void loadMusic();
-
-/// <summary>
 /// FUNCIÓN PRINCIPAL PARA CARGAR EL JUEGO, LOS JUEGOS NECESITARÁN ESTA FUNCION OBLIGATORIAMENTE PARA QUE EL MOTOR PUEDA LLAMAR A LA LIBRERÍA DINÁMICA
 /// </summary>
 extern "C" JUEGO_API int LoadGame();

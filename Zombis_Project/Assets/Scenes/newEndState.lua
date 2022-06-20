@@ -55,6 +55,12 @@ local level = {
 					dimensionY="0.35",
 					type="CHANGE_SCENE",
 					nextScene="NewMainMenu.lua"
+				},
+				audioSource={
+					audioFileName="click.mp3",
+					channel="1",
+					loop="false",
+					startOnPlay="false"
 				}
             }
         },
