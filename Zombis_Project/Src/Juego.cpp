@@ -15,7 +15,6 @@
 // Juego
 #include "Juego.h"
 #include "GameManager.h"
-#include "EndState.h"
 
 // Componentes
 #include "MoveBullet.h"
@@ -25,9 +24,11 @@
 #include "LookatMouse.h"
 #include "zombieMove.h"
 #include "SpawnZombis.h"
+#include "SaveRecord.h"
 
 #include "Entidad.h"
-#include "TextComponent.h"
+#include "ScoreTextComponent.h"
+
 
 void RegistryGameComponents() {
 	try {
@@ -38,6 +39,8 @@ void RegistryGameComponents() {
 		ComponenteRegistro::ComponenteRegistro<ZombieMove>("zombieMove");
 		ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatMouse");
 		ComponenteRegistro::ComponenteRegistro<SpawnZombis>("spawnZombis");
+		ComponenteRegistro::ComponenteRegistro<ScoreTextComponent>("scoreText");
+		ComponenteRegistro::ComponenteRegistro<SaveRecord>("saveRecord");
 	}
 	catch (...) {
 		std::cerr << "ERROR CARGANDO LOS COMPONENTES DEL JUEGO\n";
@@ -81,12 +84,11 @@ int LoadGame() {
 	std::cout << "GAME MANAGER CORRECTO\n";
 #endif
 
-	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
+	GameManager::GetInstance()->setPoints(100);
 	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
 	SceneManager::GetInstance()->newScene("newEndState.lua");
-	SceneManager::GetInstance()->loadEntities();
-	GameManager::GetInstance()->setPoints(100);
-	SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->setTexto(SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->getTexto()+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText","ScorePanel");
+	//SceneManager::GetInstance()->loadEntities();
+	//SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->setTexto(SceneManager::GetInstance()->getEntityByName("Score")->getComponent<TextComponent>()->getTexto()+std::to_string(GameManager::GetInstance()->getPoints()),"ScoreText","ScorePanel");
 	
 	// Probar a quitar luego a ver que pasa
 	//SceneManager::GetInstance()->loadEntities();

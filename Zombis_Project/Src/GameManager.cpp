@@ -2,7 +2,6 @@
 #include "OverlayManager.h"
 #include <string>
 #include "SceneManager.h"
-#include "EndState.h"
 #include "Entidad.h"
 
 GameManager* GameManager::_singleton = nullptr;
@@ -118,6 +117,6 @@ void GameManager::endGame()
 	OverlayManager::GetInstance()->clear();
 
 	// Cambia al estado de fin
-	EndState* e = new EndState();
+	SceneManager::GetInstance()->newScene("newEndState.lua");
 }
 

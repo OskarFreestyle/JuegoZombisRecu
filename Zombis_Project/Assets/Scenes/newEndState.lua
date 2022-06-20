@@ -79,10 +79,10 @@ local level = {
 			name="Score",
             id=3,
             components={
-				texto={
+				scoreText={
 					positionX="0.1",
 					positionY="0.2",
-					texto="YOUR SCORE is: ",
+					texto="YOUR SCORE IS: ",
 					nombreTexto="ScoreText",
 					tamLetra="0.1",
 					nombrePanel="ScorePanel",
@@ -91,8 +91,33 @@ local level = {
 					color="Red"
 				}
             }
+		},
+		{
+			name="saveRecordEntity",
+            id=4,
+            components={
+				saveRecord={
+					recordsFileName="../../Exes/Assets/maxScore.txt"
+				}
+            }
+		},
+		{
+			name="SaveRecordText",
+            id=5,
+            components={
+				texto={
+					positionX="0.1",
+					positionY="0.35",
+					texto="YOUR NAME: ",
+					nombreTexto="RecordText",
+					tamLetra="0.07",
+					nombrePanel="RecordPanel",
+					dimensionX="0.8",
+					dimensionY="0.3",
+					color="Red"
+				}
+            }
 		}
-		
     }
 }
 

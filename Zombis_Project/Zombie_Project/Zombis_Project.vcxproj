@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\includes\EndState.h" />
     <ClInclude Include="..\Src\includes\framework.h" />
     <ClInclude Include="..\Src\includes\GameManager.h" />
     <ClInclude Include="..\Src\includes\Juego.h" />
@@ -28,13 +27,14 @@
     <ClInclude Include="..\Src\includes\MoveBullet.h" />
     <ClInclude Include="..\Src\includes\pch.h" />
     <ClInclude Include="..\Src\includes\Personaje.h" />
+    <ClInclude Include="..\Src\includes\SaveRecord.h" />
+    <ClInclude Include="..\Src\includes\ScoreTextComponent.h" />
     <ClInclude Include="..\Src\includes\Shoot.h" />
     <ClInclude Include="..\Src\includes\SpawnZombis.h" />
     <ClInclude Include="..\Src\includes\zombieMove.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\dllmain.cpp" />
-    <ClCompile Include="..\Src\EndState.cpp" />
     <ClCompile Include="..\Src\GameManager.cpp" />
     <ClCompile Include="..\Src\Juego.cpp" />
     <ClCompile Include="..\Src\Jugador.cpp" />
@@ -42,6 +42,8 @@
     <ClCompile Include="..\Src\MoveBullet.cpp" />
     <ClCompile Include="..\Src\pch.cpp" />
     <ClCompile Include="..\Src\Personaje.cpp" />
+    <ClCompile Include="..\Src\SaveRecord.cpp" />
+    <ClCompile Include="..\Src\ScoreTextComponent.cpp" />
     <ClCompile Include="..\Src\Shoot.cpp" />
     <ClCompile Include="..\Src\SpawnZombis.cpp" />
     <ClCompile Include="..\Src\zombieMove.cpp" />
