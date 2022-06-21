@@ -20,25 +20,26 @@ void SpawnZombis::update()
 		lastZombie = auxc;
 
 		Entidad* zombie = Entidad::instantiate("Zombie.prefab");
-		AudioManager::GetInstance()->playMusic(5, false);
 
 		// Los zombis se generan en las 4 esquinas de manera aleatoria
 		int x = POS_ZOMBIS_X;
-		int z = POS_ZOMBIS_Y;
+		int z = POS_ZOMBIS_Z;
 
-		int mx = rand() % MARGIN - MARGIN / 2;
-		int mz = rand() % MARGIN - MARGIN / 2;
+		//int mx = rand() % MARGIN - MARGIN / 2;
+		//int mz = rand() % MARGIN - MARGIN / 2;
 
 		if (rand() % 2 == 1) {
 			x = -x;
-			x += mx;
+			//x += mx;
 		}
 
 		if (rand() % 2 == 1) {
 			z = -z;
-			z += mz;
+			//z += mz;
 		}
 
-		zombie->getComponent<Transform>()->setPosition(zombie->getComponent<Transform>()->getPosition() + Vectola3D(x, 0, z));
+		std::cout << "New zombis spawn at " << x << ", " << z << "\n";
+
+		zombie->getComponent<Transform>()->setPosition(zombie->getComponent<Transform>()->getPosition() + Vectola3D(x, POS_ZOMBIS_Y, z));
 	}
 }

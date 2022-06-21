@@ -57,14 +57,14 @@ int LoadGame() {
 	// Se registran los componentes
 	RegistryGameComponents();
 
-	// Se crea el game manager
+	// Se crea el game manager, lo cual arranca el menu principal
 	GameManager::Init();
 
 #if (defined _DEBUG)
 	std::cout << "GAME MANAGER CORRECTO\n";
 #endif
 
-	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
+	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
 
 #if (defined _DEBUG)
 	std::cout << "GAME LOAD CORRECTLY\n";

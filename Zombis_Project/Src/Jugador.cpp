@@ -96,7 +96,7 @@ void Jugador::onCollisionStart(Entidad* other)
 {
 	if (other->getName() == "Zombie" && clock() > lastZombieContact + TIME_TO_ANOTHER_ZOMBIE_CONTACT) {
 		// Pierde una vida
-		GameManager::GetInstance()->removeLives(1);
+		GameManager::GetInstance()->removeLive();
 
 		// Pone un tiempo para evitar que pierda varias vidas de un solo golpe
 		lastZombieContact = clock();

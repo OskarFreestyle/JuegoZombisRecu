@@ -3,8 +3,9 @@
 
 typedef long clock_t;
 
-const int POS_ZOMBIS_X = 1150;
-const int POS_ZOMBIS_Y = 750;
+const int POS_ZOMBIS_X = 1000;
+const int POS_ZOMBIS_Y = 1;
+const int POS_ZOMBIS_Z = 1000;
 const int MARGIN = 100;
 const clock_t TIME_TO_SPAWN = 400;
 

@@ -4,6 +4,11 @@ const int INIT_LIVES = 3;
 
 class GameManager {
 public:
+	// Tipos de escenas en las que podemos encontrarnos
+	typedef enum class GameScene {
+		MAIN_MENU, PLAY_SCENE, PAUSE, OPTIONS, END_SCENE 
+	} GameScene;
+
 	~GameManager() {}
 
 	/// <summary>
@@ -17,33 +22,38 @@ public:
 	/// </summary>
 	static bool Init();
 
-	/// <summary>
-	/// Inicia una nueva partida y pone el interfaz
-	/// </summary>
-	void initGame();
+	// Getters
+	inline int getLives() const { return _lives; }
+	inline int getPoints() const { return _points; }
+	inline int getLastGamePoints() const { return _lastGamePoints; }
 
-	// Funciones de puntos
-	void updatePointsText();
-	int getPoints();
-	void setPoints(int totalPoints);
-	void addPoints(int pointsToAdd);
-	void removePoints(int pointsToRemove);
+	// Setters
+	void setLives(const int l) { _lives = l; }
+	void setPoints(const int p) { _points = p; }
+	void setLastGamePoints(const int p) { _lastGamePoints = p; }
 
-	// Funciones de live
-	void updateLiveText();
-	int getLives();
-	void setLives(int totalLives);
-	void addLives(int livesToAdd);
-	void removeLives(int livesToRemove);
-
-	/// <summary>
-	/// Manda borrar las entidades de la escena al acabar la partida
-	/// </summary>
-	void endGame();
+	void removeLive();
 
 protected:
 	static GameManager* _singleton;
 
-	int points = 0;
-	int lives = INIT_LIVES;
+	GameManager();
+
+private:
+	// Current points during the game
+	int _points = 0;
+
+	// Points at the end of the game
+	int _lastGamePoints = 0;
+
+	// Current lives during the game
+	int _lives = INIT_LIVES;
+
+	// Current zombis killed during the game 
+	int _zombiesKilled = 0;
+
+	// Zombis killed at the end of the game
+	int _lastGameZombiesKilled = 0;
+
+	GameScene currScene;
 };

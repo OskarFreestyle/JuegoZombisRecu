@@ -12,111 +12,38 @@ GameManager* GameManager::GetInstance() {
 
 bool GameManager::Init() {
 	if (_singleton != nullptr) return false;
-	_singleton = new GameManager(); return true;
+
+	_singleton = new GameManager(); 
+	return true;
 }
 
-void GameManager::initGame()
-{	
-	// Crea un texto de puntuacion y un fondo
-	points = 0;
-	OverlayManager::GetInstance()->creaPanel(0.0f, 0.0f, "PuntosPanel", "Blanco", 0.25f, 0.08f);
-	OverlayManager::GetInstance()->creaTexto(0.0f, -0.08f, "POINTS:", "PuntosTexto", 0.05f, "PuntosTextoPanel", 0.25f, 0.25f);
-
-	// Guarda el texto de puntuacion para que luego sea más facil obtenerlo
-	Ogre::TextAreaOverlayElement* p = OverlayManager::GetInstance()->getTexto("PuntosTextoPanel", "PuntosTexto");
-
-	// Si encuentra el texto
-	if (p != nullptr) p->setCaption("POINTS: " + std::to_string(points));
-
-	// Crea un texto de puntuacion y un fondo
-	lives = INIT_LIVES;
-	OverlayManager::GetInstance()->creaPanel(0.75f, 0.0f, "VidasPanel", "Blanco", 0.25f, 0.08f);
-	OverlayManager::GetInstance()->creaTexto(0.75f, -0.08f, "LIVES:", "VidasTexto", 0.05f, "VidasTextoPanel", 0.25f, 0.25f);
-
-	// Guarda el texto de puntuacion para que luego sea más facil obtenerlo
-	Ogre::TextAreaOverlayElement* v = OverlayManager::GetInstance()->getTexto("VidasTextoPanel", "VidasTexto");
-
-	// Si encuentra el texto
-	if (v != nullptr) v->setCaption("VIDAS: " + std::to_string(lives));
-
-}
-
-int GameManager::getPoints()
+GameManager::GameManager()
 {
-	return points;
+	currScene = GameScene::MAIN_MENU;
+	// Inicia el juego en el menu principal
+	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
+	_points = 0;
 }
 
-void GameManager::updatePointsText()
+void GameManager::removeLive()
 {
-	Ogre::TextAreaOverlayElement* p = OverlayManager::GetInstance()->getTexto("PuntosTextoPanel", "PuntosTexto");
-	if (p != nullptr) p->setCaption("POINTS: " + std::to_string(points));
-}
+	_lives--;
+	std::cout << "Te quedan " << _lives << " vidas\n";
 
-void GameManager::setPoints(int totalPoints)
-{
-	points = totalPoints;
-	updatePointsText();
-}
+	// Si te quedas sin vidas
+	if (_lives <= 0) {
+		// Guarda los puntos
+		_lastGamePoints = _points;
+		_points = 0;
 
-void GameManager::addPoints(int pointsToAdd)
-{
-	points += pointsToAdd;
-	updatePointsText();
-}
+		// Guarda los zombis muertos
+		_lastGameZombiesKilled = _zombiesKilled;
+		_zombiesKilled = 0;
 
-void GameManager::removePoints(int pointsToRemove)
-{
-	points -= pointsToRemove;
-	updatePointsText();
-}
+		// Reinicia las vidas
+		_lives = INIT_LIVES;
 
-void GameManager::updateLiveText()
-{
-	Ogre::TextAreaOverlayElement* v = OverlayManager::GetInstance()->getTexto("VidasTextoPanel", "VidasTexto");
-	if (v != nullptr) v->setCaption("VIDAS: " + std::to_string(lives));
-
-	// Se comprueba si se han perdido todas las vidas
-	if (lives <= 0) endGame();
-}
-
-int GameManager::getLives()
-{
-	return lives;
-}
-
-void GameManager::setLives(int totalLives)
-{
-	lives = totalLives;
-	updateLiveText();
-}
-
-void GameManager::addLives(int livesToAdd)
-{
-	lives += livesToAdd;
-	updateLiveText();
-}
-
-void GameManager::removeLives(int livesToRemove)
-{
-	lives -= livesToRemove;
-	updateLiveText();
-}
-
-void GameManager::endGame()
-{
-	// Manda borrar todas las entidades
-	std::vector<Entidad*>* currEntities = SceneManager::GetInstance()->getEntities();
-	auto it = currEntities->begin();
-	while (it != currEntities->end()) {
-		Entidad* e = (*it);
-		it++;
-		SceneManager::GetInstance()->addEntityToRemove(e);
+		// Cambia a la escena post-game
+		SceneManager::GetInstance()->newScene("newEndState.lua");
 	}
-
-	// Borra los paneles
-	OverlayManager::GetInstance()->clear();
-
-	// Cambia al estado de fin
-	SceneManager::GetInstance()->newScene("newEndState.lua");
 }
-

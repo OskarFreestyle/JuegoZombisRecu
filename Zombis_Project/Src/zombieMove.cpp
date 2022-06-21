@@ -28,7 +28,7 @@ bool ZombieMove::init(const std::map<std::string, std::string>& mapa)
 void ZombieMove::onCollisionStart(Entidad* other) {
 	if (other->getName() == "Bala") {
 		// Sumar punto
-		GameManager::GetInstance()->addPoints(10);
+		GameManager::GetInstance()->setPoints(GameManager::GetInstance()->getPoints() + 10);
 		// Destruir bala
 		other->setActive(false);
 		// Destruir zombi
@@ -39,7 +39,7 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 void ZombieMove::update()
 {
 	// Busca la entidad del jugador
-	if (!_player) _player = SceneManager::GetInstance()->getEntityByID(0);
+	if (!_player) _player = SceneManager::GetInstance()->getEntityByName("Player");
 
 	Vectola3D aux = _entity->getComponent<Transform>()->getPosition();
 
