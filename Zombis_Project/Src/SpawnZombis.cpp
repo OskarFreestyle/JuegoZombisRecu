@@ -3,6 +3,7 @@
 #include "InputManager.h"
 #include "Entidad.h"
 #include "SceneManager.h"
+#include "GameManager.h"
 #include "Transform.h"
 #include <time.h>
 #include "AudioManager.h"
@@ -16,9 +17,7 @@ void SpawnZombis::update()
 {
 	clock_t auxc = clock();
 	if(auxc > lastZombie + TIME_TO_SPAWN){
-
 		lastZombie = auxc;
-
 		Entidad* zombie = Entidad::instantiate("Zombie.prefab");
 
 		// Los zombis se generan en las 4 esquinas de manera aleatoria
@@ -38,8 +37,8 @@ void SpawnZombis::update()
 			//z += mz;
 		}
 
-		std::cout << "New zombis spawn at " << x << ", " << z << "\n";
-
 		zombie->getComponent<Transform>()->setPosition(zombie->getComponent<Transform>()->getPosition() + Vectola3D(x, POS_ZOMBIS_Y, z));
+
+		GameManager::GetInstance()->increaseNumZombies();
 	}
 }

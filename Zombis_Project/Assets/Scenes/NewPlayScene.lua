@@ -199,6 +199,21 @@ local level = {
 					shootTime="500"
 				}
             }
+        },
+        {
+            name="SpanwZombies",
+            id=0,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,0,0",
+                    rotation="0,0,0",
+                    scale="1,1,1"
+                },
+                spawnZombis={
+                    null="",
+                }
+            }
         }
     }
 }

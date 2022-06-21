@@ -42,7 +42,6 @@ void Jugador::update() {
 		else if (ih().iskeyContinuos(SDL_SCANCODE_D) && !ih().iskeyContinuos(SDL_SCANCODE_A)) v.setX(1);
 		else v.setX(0);
 
-
 		Vectola3D mov = v.normalize() * speed_;
 
 		// CINEMATIC

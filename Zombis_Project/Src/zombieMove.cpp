@@ -22,13 +22,19 @@ bool ZombieMove::init(const std::map<std::string, std::string>& mapa)
 	std::string s = mapa.at("speed");
 	_speed = stof(s);
 
+	//s = mapa.at("pointsOnDead");
+	//_pointsOnDead = stof(s);
+
+	//s = mapa.at("pointsOnDead");
+	//_pointsOnDead = stof(s);
+
 	return true;
 }
 
 void ZombieMove::onCollisionStart(Entidad* other) {
 	if (other->getName() == "Bala") {
 		// Sumar punto
-		GameManager::GetInstance()->setPoints(GameManager::GetInstance()->getPoints() + 10);
+		GameManager::GetInstance()->onZombieKilled();
 		// Destruir bala
 		other->setActive(false);
 		// Destruir zombi

@@ -32,7 +32,11 @@ public:
 	void setPoints(const int p) { _points = p; }
 	void setLastGamePoints(const int p) { _lastGamePoints = p; }
 
+
+	// Other functions
 	void removeLive();
+	void onZombieKilled();
+	void increaseNumZombies();
 
 protected:
 	static GameManager* _singleton;
@@ -40,6 +44,10 @@ protected:
 	GameManager();
 
 private:
+	// Rounds
+	int _round = 1;
+	int _lastGameRound = 1;
+
 	// Current points during the game
 	int _points = 0;
 
@@ -48,6 +56,10 @@ private:
 
 	// Current lives during the game
 	int _lives = INIT_LIVES;
+
+	int _zombiesSpawnThisRound = 0;
+	int _zombiesKilledThisRound = 0;
+	int _maxRoundZombies = 2;
 
 	// Current zombis killed during the game 
 	int _zombiesKilled = 0;

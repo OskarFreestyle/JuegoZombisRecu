@@ -3,6 +3,7 @@
 #include <string>
 #include "SceneManager.h"
 #include "Entidad.h"
+#include "SpawnZombis.h"
 
 GameManager* GameManager::_singleton = nullptr;
 
@@ -19,8 +20,6 @@ bool GameManager::Init() {
 
 GameManager::GameManager()
 {
-	//currScene = GameScene::MAIN_MENU;
-
 	// Inicia el juego en el menu principal
 	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
 	_points = 0;
@@ -28,6 +27,7 @@ GameManager::GameManager()
 	_zombiesKilled = 0;
 	_lastGameZombiesKilled = 0;
 	_lives = INIT_LIVES;
+	_round = 0;
 }
 
 void GameManager::removeLive()
@@ -37,6 +37,10 @@ void GameManager::removeLive()
 
 	// Si te quedas sin vidas
 	if (_lives <= 0) {
+		// Guarda la ronda a la que se llegó
+		_lastGameRound = _round;
+		_round = 1;
+
 		// Guarda los puntos
 		_lastGamePoints = _points;
 		_points = 0;
@@ -50,5 +54,34 @@ void GameManager::removeLive()
 
 		// Cambia a la escena post-game
 		SceneManager::GetInstance()->newScene("newEndState.lua");
+	}
+}
+
+void GameManager::onZombieKilled()
+{
+	// Se aumenta en 1 el numero de zombis que se matan
+	_zombiesKilled++;
+	_zombiesKilledThisRound++;
+	// Feisimo
+	_points += 10;
+
+	if (_zombiesKilledThisRound >= _maxRoundZombies) {
+		// Busca el SpawnZombies y lo vuelve a activar
+		SceneManager::GetInstance()->getEntityByName("SpanwZombies")->getComponent<SpawnZombis>()->setActive(true);
+		_maxRoundZombies += 2;
+		_zombiesKilledThisRound = 0;
+		_zombiesSpawnThisRound = 0;
+		_round++;
+	}
+}
+
+void GameManager::increaseNumZombies()
+{
+	// Incrementa en 1 el numero de zombis esta ronda
+	_zombiesSpawnThisRound++;
+
+	// Si ya han spawneado todos los zombis de esta ronda devuelve true y pausa el spawn
+	if (_zombiesSpawnThisRound >= _maxRoundZombies) {
+		SceneManager::GetInstance()->getEntityByName("SpanwZombies")->getComponent<SpawnZombis>()->setActive(false);
 	}
 }

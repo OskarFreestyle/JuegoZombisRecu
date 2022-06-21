@@ -17,5 +17,7 @@ public:
 private:
 	Entidad* _player;
 	int _speed;
+	//int _shootsToDie;
+	//int _pointsOnDead;
 };
 
