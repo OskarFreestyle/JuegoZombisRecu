@@ -11,7 +11,7 @@ cd ../..
 :: Despues tiene que generar Game.dll y Game.lib
 echo BUILDING GAME
 msbuild Zombis_Project.sln -p:Configuration=Debug
-msbuild Zombis_Project.sln -p:Configuration=Release
+::msbuild Zombis_Project.sln -p:Configuration=Release
 echo BUILDING DONE
 
 :: Ahora hay que mover Juego.dll a Motor-Ola/MotorOla_Solution/GameToLoad

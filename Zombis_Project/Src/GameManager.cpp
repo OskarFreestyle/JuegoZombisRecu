@@ -4,6 +4,7 @@
 #include "SceneManager.h"
 #include "Entidad.h"
 #include "SpawnZombis.h"
+#include "ImageComponent.h"
 
 GameManager* GameManager::_singleton = nullptr;
 
@@ -32,6 +33,8 @@ GameManager::GameManager()
 
 void GameManager::removeLive()
 {
+	SceneManager::GetInstance()->getEntityByName("Heart" + std::to_string(_lives))->getComponent<ImageComponent>()->setActive(false);
+
 	_lives--;
 	std::cout << "Te quedan " << _lives << " vidas\n";
 

@@ -36,7 +36,7 @@ bool ScoreTextComponent::init(const std::map<std::string, std::string>& mapa)
 	s = mapa.at("color");
 	color = s;
 
-	texto += std::to_string(GameManager::GetInstance()->getPoints());
+	texto += std::to_string(GameManager::GetInstance()->getLastGamePoints());
 
 	OverlayManager::GetInstance()->creaTexto(posX, posY, texto, nombreTexto, tamLetra, nombrePanel, dimX, dimY);
 	OverlayManager::GetInstance()->changeTextColor(nombrePanel, nombreTexto, color);

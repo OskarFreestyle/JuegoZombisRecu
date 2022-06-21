@@ -201,6 +201,48 @@ local level = {
             }
         },
         {
+			name="Heart1",
+            id=1,
+            components={
+				image={
+					positionX="0.05",
+					positionY="0.05",
+					nombrePanel="Heart1",
+					material="Corazon",
+					dimensionX="0.1",
+					dimensionY="0.1"
+				}
+            }
+        },
+        {
+			name="Heart2",
+            id=1,
+            components={
+				image={
+					positionX="0.05",
+					positionY="0.15",
+					nombrePanel="Heart2",
+					material="Corazon",
+					dimensionX="0.1",
+					dimensionY="0.1"
+				}
+            }
+        },
+        {
+			name="Heart3",
+            id=1,
+            components={
+				image={
+					positionX="0.05",
+					positionY="0.25",
+					nombrePanel="Heart3",
+					material="Corazon",
+					dimensionX="0.1",
+					dimensionY="0.1"
+				}
+            }
+        },
+        {
             name="SpanwZombies",
             id=0,
             components={
