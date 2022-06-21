@@ -34,7 +34,13 @@ local level = {
                 rigidbody={
                     position="0,0,0",
                     static="false",
-                    density="1000"
+                    density="1000",
+                    lockPosX = "false",
+                    lockPosY = "false",
+                    lockPosZ = "false",
+                    lockRotX = "true",
+                    lockRotY = "false",
+                    lockRotZ = "true"
                 },
                 personaje={
                     maxHealth="3",

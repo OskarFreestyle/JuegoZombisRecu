@@ -190,7 +190,7 @@ local level = {
                     lifefactor="0.05"
                 },
                 jugador={
-                    speed="2500"
+                    speed="500"
                 },
                 lookatMouse={
                     test="false"
@@ -198,21 +198,6 @@ local level = {
 				shoot={
 					shootTime="500"
 				}
-            }
-        },
-        {
-            name="SpanwZombies",
-            id=8,
-            components={
-                transform={
-                    parent="-1",
-                    position="0,0,0",
-                    rotation="0,0,0",
-                    scale="1,1,1"
-                },
-                spawnZombis={
-                    null="",
-                }
             }
         }
     }

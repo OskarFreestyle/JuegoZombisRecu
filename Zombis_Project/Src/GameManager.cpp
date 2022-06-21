@@ -19,10 +19,15 @@ bool GameManager::Init() {
 
 GameManager::GameManager()
 {
-	currScene = GameScene::MAIN_MENU;
+	//currScene = GameScene::MAIN_MENU;
+
 	// Inicia el juego en el menu principal
 	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
 	_points = 0;
+	_lastGamePoints = 0;
+	_zombiesKilled = 0;
+	_lastGameZombiesKilled = 0;
+	_lives = INIT_LIVES;
 }
 
 void GameManager::removeLive()
