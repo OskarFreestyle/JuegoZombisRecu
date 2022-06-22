@@ -59,7 +59,6 @@ int LoadGame() {
 
 	// Se crea el game manager, lo cual arranca el menu principal
 	GameManager::Init();
-	if(GameManager::GetInstance())delete GameManager::GetInstance();
 
 #if (defined _DEBUG)
 	std::cout << "GAME MANAGER CORRECTO\n";
@@ -71,4 +70,9 @@ int LoadGame() {
 	std::cout << "GAME LOAD CORRECTLY\n";
 #endif
 	return 0;
+}
+
+void deleteGame()
+{
+	if (GameManager::GetInstance())delete GameManager::GetInstance();
 }

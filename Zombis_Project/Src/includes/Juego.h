@@ -14,6 +14,7 @@ void RegistryGameComponents();
 /// FUNCIÓN PRINCIPAL PARA CARGAR EL JUEGO, LOS JUEGOS NECESITARÁN ESTA FUNCION OBLIGATORIAMENTE PARA QUE EL MOTOR PUEDA LLAMAR A LA LIBRERÍA DINÁMICA
 /// </summary>
 extern "C" JUEGO_API int LoadGame();
+extern "C" JUEGO_API void deleteGame();
 
 
 
