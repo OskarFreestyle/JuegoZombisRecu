@@ -6,7 +6,7 @@ class Entidad;
 class ZombieMove : public Componente
 {
 public:
-	ZombieMove();
+	ZombieMove() {};
 	virtual ~ZombieMove();
 
 	bool init(const std::map<std::string, std::string>& mapa);
@@ -16,8 +16,7 @@ public:
 	void update();
 private:
 	Entidad* _player=nullptr;
+	int _life;
 	int _speed;
-	//int _shootsToDie;
-	//int _pointsOnDead;
 };
 

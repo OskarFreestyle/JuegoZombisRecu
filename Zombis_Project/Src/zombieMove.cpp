@@ -6,41 +6,35 @@
 #include "SceneManager.h"
 #include "GameManager.h"
 
-ZombieMove::ZombieMove()
-{
-}
-
 ZombieMove::~ZombieMove()
 {
 }
 
 bool ZombieMove::init(const std::map<std::string, std::string>& mapa)
 {
-	if (mapa.find("speed") == mapa.end())
+	if (mapa.find("life") == mapa.end() || mapa.find("speed") == mapa.end())
 		return false;
 
-	std::string s = mapa.at("speed");
-	_speed = stof(s);
+	std::string auxString = mapa.at("life");
+	_life = stof(auxString);
 
-	//s = mapa.at("pointsOnDead");
-	//_pointsOnDead = stof(s);
-
-	//s = mapa.at("pointsOnDead");
-	//_pointsOnDead = stof(s);
+	auxString = mapa.at("speed");
+	_speed = stof(auxString);
 
 	return true;
 }
 
 void ZombieMove::onCollisionStart(Entidad* other) {
 	if (other->getName() == "Bala") {
-		// Sumar punto
-		GameManager::GetInstance()->onZombieKilled();
 		// Destruir bala
-		//other->setActive(false);
 		SceneManager::GetInstance()->addEntityToRemove(other);
-		// Destruir zombi
-		//_entity->setActive(false);
-		SceneManager::GetInstance()->addEntityToRemove(_entity);
+		_life--;
+		if (_life <= 0) {
+			// Sumar punto
+			GameManager::GetInstance()->onZombieKilled();
+			// Destruir zombi
+			SceneManager::GetInstance()->addEntityToRemove(_entity);
+		}
 	}
 }
 

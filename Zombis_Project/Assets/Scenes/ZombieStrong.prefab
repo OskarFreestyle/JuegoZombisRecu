@@ -10,12 +10,12 @@ local prefab = {
         },
         mesh={
             mesh="ogrehead.mesh",
-            material="",
+            material="Naranja",
             visible="true"
         },
         zombieMove={
-            life="1",
-            speed="180"
+            life="3",
+            speed="150"
         },  
         collider={
             type="box",
