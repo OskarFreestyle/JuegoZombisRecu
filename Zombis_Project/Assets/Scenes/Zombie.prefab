@@ -1,7 +1,6 @@
 local prefab = { 
     name="Zombie",
-    id=1,
-    cursor=0,
+    id=21,
     components={
         transform={
             parent="-1",

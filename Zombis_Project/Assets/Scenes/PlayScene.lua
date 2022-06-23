@@ -1,17 +1,167 @@
 local level = {
-    backgroundColor="0.79,0.52,1.0",
     ambient="1.0,1.0,1.0",
-    gravity="0.0,0.0,0.0",
-    camera = {
-        nearClipDistance="1",
-        farClipDistance="10000",
-        camPosition="0,2500,0",
-        camRotation="0.0,0.0,0.0"
-    },
+    gravity="0.0,-9.8,0.0",
     entidades = {
         {
-            name="Player",
+            name="Camera",
             id=0,
+            components={
+                transform={
+                    position="0,3000,0",
+                    rotation="-90,0,0",
+                    scale="1,1,1",
+                    parent="-1"
+                },
+                camera={
+                    near="0.1",
+                    far="5000",
+                    autoaspect="true",
+                    aspect="1.78",
+                    fov="50",
+                    proyection="1",
+                    viewport="0,0,1,1",
+                    color="0.2,0.2,0"
+                }
+            }
+        },
+        {
+            name="Floor",
+            id=2,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,0,0",
+                    rotation="0,0,0",
+                    scale="25.0,1.0,25.0"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Rojo",
+                    visible="true"
+                },
+                collider={
+                    type="box",
+                    x="10.0",
+                    y="1.0",
+                    z="10.0",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
+                }
+            }
+        },
+        {
+            name="Wall1",
+            id=2,
+            components={
+                transform={
+                    parent="-1",
+                    position="-1250,0.0,0",
+                    rotation="0,0,0",
+                    scale="1.0,5.0,25.0"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Azul",
+                    visible="true"
+                },
+                collider={
+                    type="box",
+                    x="1.0",
+                    y="1.0",
+                    z="1.0",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
+                }
+            }
+        },
+        {
+            name="Wall2",
+            id=2,
+            components={
+                transform={
+                    parent="-1",
+                    position="1250,0.0,0",
+                    rotation="0,0,0",
+                    scale="1.0,5.0,25.0"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Azul",
+                    visible="true"
+                },
+                collider={
+                    type="box",
+                    x="1.0",
+                    y="1.0",
+                    z="1.0",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
+                }
+            }
+        },
+        {
+            name="Wall3",
+            id=2,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,0,1250",
+                    rotation="0,0,0",
+                    scale="25.0,5.0,1.0"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Azul",
+                    visible="true"
+                },
+                collider={
+                    type="box",
+                    x="1.0",
+                    y="1.0",
+                    z="1.0",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
+                }
+            }
+        },
+        {
+            name="Wall4",
+            id=2,
+            components={
+                transform={
+                    parent="-1",
+                    position="0,0,-1250",
+                    rotation="0,0,0",
+                    scale="25.0,5.0,1.0"
+                },
+                mesh={
+                    mesh="cube.mesh",
+                    material="Azul",
+                    visible="true"
+                },
+                collider={
+                    type="box",
+                    x="1.0",
+                    y="1.0",
+                    z="1.0",
+                    trigger="false"
+                },
+                rigidbody={
+                    static="true"
+                }
+            }
+        },
+        {
+            name="Player",
+            id=1,
             components={
                 transform={
                     parent="-1",
@@ -26,21 +176,14 @@ local level = {
                 },
                 collider={
                     type="box",
-                    x="50.0",
-                    y="50.0",
-                    z="50.0",
+                    x="1.0",
+                    y="1.0",
+                    z="1.0",
                     trigger="false"
                 },
                 rigidbody={
-                    position="0,0,0",
                     static="false",
-                    density="1000",
-                    lockPosX = "false",
-                    lockPosY = "false",
-                    lockPosZ = "false",
-                    lockRotX = "true",
-                    lockRotY = "false",
-                    lockRotZ = "true"
+                    density="1000"
                 },
                 personaje={
                     maxHealth="3",
@@ -54,6 +197,48 @@ local level = {
                 },
 				shoot={
 					shootTime="500"
+				}
+            }
+        },
+        {
+			name="Heart1",
+            id=1,
+            components={
+				image={
+					positionX="0.05",
+					positionY="0.05",
+					nombrePanel="Heart1",
+					material="Corazon",
+					dimensionX="0.1",
+					dimensionY="0.1"
+				}
+            }
+        },
+        {
+			name="Heart2",
+            id=1,
+            components={
+				image={
+					positionX="0.05",
+					positionY="0.15",
+					nombrePanel="Heart2",
+					material="Corazon",
+					dimensionX="0.1",
+					dimensionY="0.1"
+				}
+            }
+        },
+        {
+			name="Heart3",
+            id=1,
+            components={
+				image={
+					positionX="0.05",
+					positionY="0.25",
+					nombrePanel="Heart3",
+					material="Corazon",
+					dimensionX="0.1",
+					dimensionY="0.1"
 				}
             }
         },
@@ -82,4 +267,3 @@ end
 function pruebaTexto()
     print('Im Working YESS')
 end
-

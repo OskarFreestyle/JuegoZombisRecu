@@ -1,7 +1,6 @@
 local prefab = { 
     name="Bala",
-    id=1,
-    cursor=0,
+    id=20,
     components={
         transform={
             parent="-1",
@@ -25,7 +24,6 @@ local prefab = {
         },
         rigidbody={
             static="false",
-            -- velocity="-100 0 0",
             density="1000"
         }
     }

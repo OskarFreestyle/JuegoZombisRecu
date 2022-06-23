@@ -14,15 +14,7 @@ MoveBullet::~MoveBullet()
 
 bool MoveBullet::init(const std::map<std::string, std::string>& mapa)
 {
-	if (mapa.find("direction") == mapa.end() || mapa.find("velocity") == mapa.end()) return false;
-	std::string::size_type sz = 0, sa = 0;
-
-	std::string posString = mapa.at("direction");
-	float a = stof(posString, &sz);
-	std::string temp = posString.substr(sz + 1);
-	float b = stof(temp, &sa);
-	float c = stof(posString.substr(sz + sa + 2));
-	dir = { a, b, c };
+	if (mapa.find("velocity") == mapa.end()) return false;
 
 	std::string velocityString = mapa.at("velocity");
 	vel = stof(velocityString);

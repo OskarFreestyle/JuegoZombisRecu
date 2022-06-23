@@ -54,7 +54,7 @@ local level = {
 					dimensionX="0.25",
 					dimensionY="0.35",
 					type="CHANGE_SCENE",
-					nextScene="NewMainMenu.lua"
+					nextScene="MainMenuScene.lua"
 				}
             }
         },
