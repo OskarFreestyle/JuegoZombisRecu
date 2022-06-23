@@ -25,6 +25,7 @@ GameManager::GameManager()
 	//SceneManager::GetInstance()->newScene("NewPlayScene.lua");
 	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
 	//SceneManager::GetInstance()->newScene("PruebaVacia.lua");
+	//SceneManager::GetInstance()->newScene("newEndState.lua");
 	_points = 0;
 	_lastGamePoints = 0;
 	_zombiesKilled = 0;

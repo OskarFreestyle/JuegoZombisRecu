@@ -24,7 +24,7 @@ bool SaveRecord::init(const std::map<std::string, std::string>& mapa)
 	// Lee el archivo de records
 	readFile();
 	// Guarda el record actual para compararlo con los demas
-	p.second = GameManager::GetInstance()->getPoints();
+	p.second = GameManager::GetInstance()->getLastGamePoints();
 	
 	_inicializado = true;
 

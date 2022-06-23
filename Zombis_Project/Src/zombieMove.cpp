@@ -37,8 +37,10 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 		GameManager::GetInstance()->onZombieKilled();
 		// Destruir bala
 		other->setActive(false);
+		SceneManager::GetInstance()->addEntityToRemove(other);
 		// Destruir zombi
 		_entity->setActive(false);
+		SceneManager::GetInstance()->addEntityToRemove(_entity);
 	}
 }
 
