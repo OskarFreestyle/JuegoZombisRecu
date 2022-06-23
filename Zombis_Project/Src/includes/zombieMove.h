@@ -15,7 +15,7 @@ public:
 
 	void update();
 private:
-	Entidad* _player;
+	Entidad* _player=nullptr;
 	int _speed;
 	//int _shootsToDie;
 	//int _pointsOnDead;

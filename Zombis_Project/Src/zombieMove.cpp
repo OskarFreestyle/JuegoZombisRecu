@@ -45,7 +45,7 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 void ZombieMove::update()
 {
 	// Busca la entidad del jugador
-	if (!_player) _player = SceneManager::GetInstance()->getEntityByName("Player");
+	if (_player==nullptr) _player = SceneManager::GetInstance()->getEntityByName("Player");
 
 	Vectola3D aux = _entity->getComponent<Transform>()->getPosition();
 

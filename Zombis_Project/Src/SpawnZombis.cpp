@@ -19,6 +19,7 @@ void SpawnZombis::update()
 	if(auxc > lastZombie + TIME_TO_SPAWN){
 		lastZombie = auxc;
 		Entidad* zombie = Entidad::instantiate("Zombie.prefab");
+		//SceneManager::GetInstance()->addEntity(zombie);
 
 		// Los zombis se generan en las 4 esquinas de manera aleatoria
 		int x = POS_ZOMBIS_X;
