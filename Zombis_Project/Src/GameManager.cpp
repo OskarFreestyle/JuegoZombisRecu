@@ -23,8 +23,8 @@ GameManager::GameManager()
 {
 	// Inicia el juego en el menu principal
 	//SceneManager::GetInstance()->newScene("NewPlayScene.lua");
-	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
-	//SceneManager::GetInstance()->newScene("PruebaVacia.lua");
+	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
+	SceneManager::GetInstance()->newScene("PruebaVacia.lua");
 	//SceneManager::GetInstance()->newScene("newEndState.lua");
 	_points = 0;
 	_lastGamePoints = 0;
