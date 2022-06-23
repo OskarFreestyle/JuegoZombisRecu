@@ -4,10 +4,6 @@
 #include "Motor.h"
 #include "InputManager.h"
 
-MoveBullet::MoveBullet()
-{
-}
-
 MoveBullet::~MoveBullet()
 {
 }
@@ -18,38 +14,29 @@ bool MoveBullet::init(const std::map<std::string, std::string>& mapa)
 
 	std::string velocityString = mapa.at("velocity");
 	vel = stof(velocityString);
-
-	_inicializado = true;
 	
+	_inicializado = true;
     return true;
 }
 
-void MoveBullet::setVelocity(float v)
-{
-	vel = v;
-}
+void MoveBullet::setDireccion() {
+	//std::cout << "EntityPos: " << _entity->getComponent<Transform>()->getPosition().getX() << ", " << _entity->getComponent<Transform>()->getPosition().getZ() << "\n";
+	//std::cout << "MousePos: " << ih().getMousePos().first << ", " << ih().getMousePos().second << "\n";
 
-void MoveBullet::setDireccion(Vectola3D d)
-{
-	dir = d;
+	Vectola3D aux = { (ih().getMousePos().first) - _entity->getComponent<Transform>()->getPosition().getX(),
+				 0,
+				 ((ih().getMousePos().second) - _entity->getComponent<Transform>()->getPosition().getZ()) };
+
+	dir = aux.normalize();
+	isDirCalculated = true;
 }
 
 void MoveBullet::update()
 {
-	if (isDirCalculated == false) {
-		Vectola3D aux = { (SCALE_X*ih().getMousePosInGame().first) - _entity->getComponent<Transform>()->getPosition().getX(),
-						 0,
-						 ((SCALE_Z *ih().getMousePosInGame().second) - _entity->getComponent<Transform>()->getPosition().getZ())};
-		
-		setDireccion(aux);
-		dir = dir.normalize();
-		isDirCalculated = true;
+	if (!isDirCalculated) {
+		setDireccion();
 	}
 
 	Vectola3D mov = { dir * vel * Motor::GetInstance()->getDeltaTime() };
 	_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition() + mov);
-	
-	if (_entity->getComponent<Transform>()->getPosition().getX() > LIMIT_X || _entity->getComponent<Transform>()->getPosition().getX()< -LIMIT_X || _entity->getComponent<Transform>()->getPosition().getZ() > LIMIT_Z ||  _entity->getComponent<Transform>()->getPosition().getZ() < -LIMIT_Z) {
-		_entity->setActive(false);
-	}
 }

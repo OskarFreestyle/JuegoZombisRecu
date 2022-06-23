@@ -61,7 +61,7 @@ int LoadGame() {
 	GameManager::Init();
 
 #if (defined _DEBUG)
-	std::cout << "GAME MANAGER CORRECTO\n";
+	std::cout << "---------- GAME MANAGER LEIDO ----------\n";
 #endif
 
 	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
