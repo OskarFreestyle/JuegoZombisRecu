@@ -27,10 +27,11 @@ bool MoveBullet::init(const std::map<std::string, std::string>& mapa)
 void MoveBullet::setDireccion()
 {
 	std::cout <<"MOUSE: "<< ih().getMousePosInGame().first << " " << ih().getMousePosInGame().second << "\n";
-	Vectola3D aux = { (SCALE_WITH_CAM * ih().getMousePosInGame().first) - _entity->getComponent<Transform>()->getPosition().getX(),
-						 0,
-					((SCALE_WITH_CAM * ih().getMousePosInGame().second) - _entity->getComponent<Transform>()->getPosition().getZ()) };
-	dir = aux;
+	float camScale = SCALE_WITH_CAM * SceneManager::GetInstance()->getEntityByName("Camera")->getComponent<Transform>()->getPosition().getY();
+
+	dir = { camScale * ih().getMousePosInGame().first - _entity->getComponent<Transform>()->getPosition().getX(),
+			0,
+			(camScale * ih().getMousePosInGame().second - _entity->getComponent<Transform>()->getPosition().getZ()) };
 
 	std::cout << "Entidad: " << _entity->getComponent<Transform>()->getPosition().getX()<<","<< _entity->getComponent<Transform>()->getPosition().getY()<<","<< _entity->getComponent<Transform>()->getPosition().getZ() << "\n";
 	dir = dir.normalize();

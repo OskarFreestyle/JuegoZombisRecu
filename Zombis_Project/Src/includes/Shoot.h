@@ -1,5 +1,6 @@
 #pragma once
 #include "Componente.h"
+
 const float DISTANCE_TO_FLOOR=100;
 typedef long clock_t;
 

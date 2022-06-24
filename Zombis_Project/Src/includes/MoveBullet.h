@@ -6,10 +6,7 @@ class InputManager;
 class Entidad;
 class Transform;
 
-const float SCALE_X= 1270.0 / 320;
-const float SCALE_Z= 940.0 / 240;
-const float SCALE_WITH_CAM = 3000.0 / 630;
-
+const float SCALE_WITH_CAM = 1 / 630.0;
 
 class MoveBullet : public Componente
 {
