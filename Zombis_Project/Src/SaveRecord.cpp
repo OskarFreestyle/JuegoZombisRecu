@@ -49,7 +49,7 @@ void SaveRecord::update() {
 		if (e) e->getComponent<TextComponent>()->setTexto("YOUR NAME: " + p.first, "RecordText", "RecordPanel");
 	}
 
-	if (ih().isKeyUp(SDL_SCANCODE_J) || ih().isKeyDown(SDL_SCANCODE_K) || ih().isKeyDown(SDL_SCANCODE_L)) {
+	if (ih().isKeyUp(SDL_SCANCODE_J) || ih().isKeyUp(SDL_SCANCODE_K) || ih().isKeyUp(SDL_SCANCODE_L)) {
 		keyUse = false;
 	}
 

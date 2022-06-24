@@ -39,10 +39,11 @@ void Shoot::update()
 
             // Se instancia la bala
             Vectola3D pos = _entity->getComponent<Transform>()->getPosition();
-            pos.setY(170);
+           
+            pos.setY(DISTANCE_TO_FLOOR); //Distancia para que no choque con el suelo
 
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
-            //AudioManager::GetInstance()->playMusic(2, false);
+           
         }
     }
 }

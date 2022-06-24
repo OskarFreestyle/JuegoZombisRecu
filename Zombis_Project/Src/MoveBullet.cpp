@@ -24,32 +24,34 @@ bool MoveBullet::init(const std::map<std::string, std::string>& mapa)
     return true;
 }
 
-void MoveBullet::setVelocity(float v)
+void MoveBullet::setDireccion()
 {
-	vel = v;
-}
+	std::cout <<"MOUSE: "<< ih().getMousePosInGame().first << " " << ih().getMousePosInGame().second << "\n";
+	Vectola3D aux = { (SCALE_WITH_CAM * ih().getMousePosInGame().first) - _entity->getComponent<Transform>()->getPosition().getX(),
+						 0,
+					((SCALE_WITH_CAM * ih().getMousePosInGame().second) - _entity->getComponent<Transform>()->getPosition().getZ()) };
+	dir = aux;
 
-void MoveBullet::setDireccion(Vectola3D d)
-{
-	dir = d;
+	std::cout << "Entidad: " << _entity->getComponent<Transform>()->getPosition().getX()<<","<< _entity->getComponent<Transform>()->getPosition().getY()<<","<< _entity->getComponent<Transform>()->getPosition().getZ() << "\n";
+	dir = dir.normalize();
+	isDirCalculated = true;
 }
 
 void MoveBullet::update()
 {
-	if (isDirCalculated == false) {
-		Vectola3D aux = { (SCALE_X*ih().getMousePosInGame().first) - _entity->getComponent<Transform>()->getPosition().getX(),
-						 0,
-						 ((SCALE_Z *ih().getMousePosInGame().second) - _entity->getComponent<Transform>()->getPosition().getZ())};
-		
-		setDireccion(aux);
-		dir = dir.normalize();
-		isDirCalculated = true;
+	if (!isDirCalculated) {
+		setDireccion();
 	}
 
 	Vectola3D mov = { dir * vel * Motor::GetInstance()->getDeltaTime() };
 	_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition() + mov);
 	
-	if (_entity->getComponent<Transform>()->getPosition().getX() > LIMIT_X || _entity->getComponent<Transform>()->getPosition().getX()< -LIMIT_X || _entity->getComponent<Transform>()->getPosition().getZ() > LIMIT_Z ||  _entity->getComponent<Transform>()->getPosition().getZ() < -LIMIT_Z) {
-		_entity->setActive(false);
+}
+void MoveBullet::onCollisionStart(Entidad* other) {
+	if (other->getName() == "Player") {
+		return;
+	}
+	else {
+		SceneManager::GetInstance()->addEntityToRemove(_entity);
 	}
 }

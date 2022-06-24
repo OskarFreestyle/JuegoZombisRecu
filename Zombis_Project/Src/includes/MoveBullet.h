@@ -8,8 +8,8 @@ class Transform;
 
 const float SCALE_X= 1270.0 / 320;
 const float SCALE_Z= 940.0 / 240;
-const float LIMIT_X = 1370.0f;
-const float LIMIT_Z = 1040.0f;
+const float SCALE_WITH_CAM = 3000.0 / 630;
+
 
 class MoveBullet : public Componente
 {
@@ -17,14 +17,11 @@ public:
     MoveBullet();
     ~MoveBullet();
     bool init(const std::map<std::string, std::string>& mapa);
-    void setVelocity(float v);
-    void setDireccion(Vectola3D d);
+   
+    void setDireccion();
     void update();
 
-    virtual void onCollisionStart(Entidad* other) override {
-        std::cout << "Bala choca\n";
-        SceneManager::GetInstance()->addEntityToRemove(_entity);
-    };
+    void onCollisionStart(Entidad* other);
 
 private:
     float vel;

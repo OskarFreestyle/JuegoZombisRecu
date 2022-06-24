@@ -6,7 +6,7 @@ local prefab = {
             parent="-1",
             position="0,0,0",
             rotation="0,0,0",
-            scale="1.5,1.5,1.5"
+            scale="1.0,1.0,1.0"
         },
         mesh={
             mesh="ogrehead.mesh",
@@ -15,7 +15,7 @@ local prefab = {
         },
         zombieMove={
             life="1",
-            speed="300"
+            speed="400"
         },  
         collider={
             type="box",

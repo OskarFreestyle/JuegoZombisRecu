@@ -14,7 +14,6 @@ local prefab = {
             visible="true"
         },
 		moveBullet={
-			direction="0,0,0",
 			velocity="3000"
 		},  
         collider={
