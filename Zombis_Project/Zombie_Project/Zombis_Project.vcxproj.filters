@@ -40,6 +40,9 @@
     <ClCompile Include="..\Src\SaveRecord.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
+    <ClCompile Include="..\Src\ScoreInGameText.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Src\includes\framework.h">
@@ -79,6 +82,9 @@
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\includes\SaveRecord.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Src\includes\ScoreInGameText.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,6 +5,7 @@
 #include "Entidad.h"
 #include "SpawnZombis.h"
 #include "ImageComponent.h"
+#include "ScoreInGameText.h"
 
 GameManager* GameManager::_singleton = nullptr;
 
@@ -22,7 +23,8 @@ bool GameManager::Init() {
 GameManager::GameManager()
 {
 	// Inicia el juego en el menu principal
-	SceneManager::GetInstance()->newScene("NewMainMenu.lua");
+	SceneManager::GetInstance()->newScene("MainMenuScene.lua");
+	
 	_points = 0;
 	_lastGamePoints = 0;
 	_zombiesKilled = 0;
@@ -47,7 +49,7 @@ void GameManager::removeLive()
 		// Guarda los puntos
 		_lastGamePoints = _points;
 		_points = 0;
-
+		
 		// Guarda los zombis muertos
 		_lastGameZombiesKilled = _zombiesKilled;
 		_zombiesKilled = 0;
@@ -56,7 +58,7 @@ void GameManager::removeLive()
 		_lives = INIT_LIVES;
 
 		// Cambia a la escena post-game
-		SceneManager::GetInstance()->newScene("newEndState.lua");
+		SceneManager::GetInstance()->newScene("EndScene.lua");
 	}
 }
 
@@ -67,6 +69,9 @@ void GameManager::onZombieKilled()
 	_zombiesKilledThisRound++;
 	// Feisimo
 	_points += 10;
+	Entidad* e = SceneManager::GetInstance()->getEntityByName("Score");
+	if (e)
+		e->getComponent<ScoreInGameText>()->setTexto(e->getComponent<ScoreInGameText>()->getTextoIni() + std::to_string(_points), "ScoreText", "ScorePanel");
 
 	if (_zombiesKilledThisRound >= _maxRoundZombies) {
 		// Busca el SpawnZombies y lo vuelve a activar

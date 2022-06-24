@@ -28,6 +28,7 @@
     <ClInclude Include="..\Src\includes\pch.h" />
     <ClInclude Include="..\Src\includes\Personaje.h" />
     <ClInclude Include="..\Src\includes\SaveRecord.h" />
+    <ClInclude Include="..\Src\includes\ScoreInGameText.h" />
     <ClInclude Include="..\Src\includes\ScoreTextComponent.h" />
     <ClInclude Include="..\Src\includes\Shoot.h" />
     <ClInclude Include="..\Src\includes\SpawnZombis.h" />
@@ -43,6 +44,7 @@
     <ClCompile Include="..\Src\pch.cpp" />
     <ClCompile Include="..\Src\Personaje.cpp" />
     <ClCompile Include="..\Src\SaveRecord.cpp" />
+    <ClCompile Include="..\Src\ScoreInGameText.cpp" />
     <ClCompile Include="..\Src\ScoreTextComponent.cpp" />
     <ClCompile Include="..\Src\Shoot.cpp" />
     <ClCompile Include="..\Src\SpawnZombis.cpp" />

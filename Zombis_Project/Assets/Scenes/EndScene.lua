@@ -38,7 +38,6 @@ local level = {
 				}
             }
 		},
-        
 		{
             name="BotonBack",
             id=1,
@@ -54,7 +53,7 @@ local level = {
 					dimensionX="0.25",
 					dimensionY="0.35",
 					type="CHANGE_SCENE",
-					nextScene="MainMenu.lua"
+					nextScene="MainMenuScene.lua"
 				},
 				audioSource={
 					audioFileName="click.mp3",
@@ -82,16 +81,16 @@ local level = {
             }
 		},
 		{
-			name="Score",
+			name="ScoreEnd",
             id=3,
             components={
 				scoreText={
 					positionX="0.1",
 					positionY="0.2",
 					texto="YOUR SCORE IS: ",
-					nombreTexto="ScoreText",
+					nombreTexto="ScoreTextEnd",
 					tamLetra="0.1",
-					nombrePanel="ScorePanel",
+					nombrePanel="ScorePanelEnd",
 					dimensionX="0.8",
 					dimensionY="0.3",
 					color="Red"

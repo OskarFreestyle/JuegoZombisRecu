@@ -1,14 +1,14 @@
-#include "ScoreTextComponent.h"
+#include "ScoreInGameText.h"
 #include "OverlayManager.h"
 #include "GameManager.h"
 #include "Entidad.h"
 #include <string>
 
-ScoreTextComponent::~ScoreTextComponent()
+ScoreInGameText::~ScoreInGameText()
 {
 }
 
-bool ScoreTextComponent::init(const std::map<std::string, std::string>& mapa)
+bool ScoreInGameText::init(const std::map<std::string, std::string>& mapa)
 {
 	if (mapa.find("positionX") == mapa.end() || mapa.find("positionY") == mapa.end() || mapa.find("texto") == mapa.end() || mapa.find("nombreTexto") == mapa.end() ||
 		mapa.find("tamLetra") == mapa.end() || mapa.find("nombrePanel") == mapa.end() || mapa.find("dimensionX") == mapa.end() || mapa.find("dimensionY") == mapa.end() ||
@@ -21,6 +21,7 @@ bool ScoreTextComponent::init(const std::map<std::string, std::string>& mapa)
 
 	s = mapa.at("texto");
 	texto = s;
+	textoIni = texto;
 
 	s = mapa.at("nombreTexto");
 	nombreTexto = s;
@@ -36,7 +37,7 @@ bool ScoreTextComponent::init(const std::map<std::string, std::string>& mapa)
 	s = mapa.at("color");
 	color = s;
 
-	texto += std::to_string(GameManager::GetInstance()->getLastGamePoints());
+	texto += std::to_string(GameManager::GetInstance()->getPoints());
 
 	OverlayManager::GetInstance()->creaTexto(posX, posY, texto, nombreTexto, tamLetra, nombrePanel, dimX, dimY);
 	OverlayManager::GetInstance()->changeTextColor(nombrePanel, nombreTexto, color);
@@ -46,14 +47,19 @@ bool ScoreTextComponent::init(const std::map<std::string, std::string>& mapa)
 	return _inicializado;
 }
 
-std::string ScoreTextComponent::getTexto()
+std::string ScoreInGameText::getTexto()
 {
 	return texto;
 }
 
+std::string ScoreInGameText::getTextoIni()
+{
+	return textoIni;
+}
 
 
-void ScoreTextComponent::setTexto(const std::string& s, const std::string& textName, const std::string& panelName)
+
+void ScoreInGameText::setTexto(const std::string& s, const std::string& textName, const std::string& panelName)
 {
 	texto = s;
 	Ogre::TextAreaOverlayElement* t = OverlayManager::GetInstance()->getTexto(panelName, textName);

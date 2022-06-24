@@ -256,7 +256,24 @@ local level = {
                     null="",
                 }
             }
-        }
+        },
+		{
+			name="Score",
+            id=10,
+            components={
+				scoreInGameText={
+					positionX="0.9",
+					positionY="0.02",
+					texto="Score: ",
+					nombreTexto="ScoreText",
+					tamLetra="0.05",
+					nombrePanel="ScorePanel",
+					dimensionX="0.05",
+					dimensionY="0.05",
+					color="Black"
+				}
+            }
+		}
     }
 }
 

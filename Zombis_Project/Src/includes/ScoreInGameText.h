@@ -1,14 +1,15 @@
 #pragma once
 #include "Componente.h"
 
-class ScoreTextComponent :public Componente
+class ScoreInGameText :public Componente
 {
 public:
-	ScoreTextComponent() {};
-	~ScoreTextComponent();
+	ScoreInGameText() {};
+	~ScoreInGameText();
 	bool init(const std::map<std::string, std::string>& mapa) override;
 	std::string getTexto();
-	
+	std::string getTextoIni();
+
 	void setTexto(const std::string& s, const std::string& textName, const std::string& panelName);
 
 
@@ -16,6 +17,7 @@ private:
 	float posX;
 	float posY;
 	std::string texto;
+	std::string textoIni;
 	std::string nombreTexto;
 	float tamLetra;
 	std::string nombrePanel;
