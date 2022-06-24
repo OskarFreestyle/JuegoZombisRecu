@@ -26,6 +26,7 @@ public:
 	inline int getLives() const { return _lives; }
 	inline int getPoints() const { return _points; }
 	inline int getLastGamePoints() const { return _lastGamePoints; }
+	inline int getRound()const { return _round; }
 
 	// Setters
 	void setLives(const int l) { _lives = l; }

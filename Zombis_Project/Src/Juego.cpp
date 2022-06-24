@@ -29,6 +29,7 @@
 #include "Entidad.h"
 #include "ScoreTextComponent.h"
 #include "ScoreInGameText.h"
+#include "RoundText.h"
 
 
 void RegistryGameComponents() {
@@ -43,6 +44,7 @@ void RegistryGameComponents() {
 		ComponenteRegistro::ComponenteRegistro<ScoreTextComponent>("scoreText");
 		ComponenteRegistro::ComponenteRegistro<SaveRecord>("saveRecord");
 		ComponenteRegistro::ComponenteRegistro<ScoreInGameText>("scoreInGameText");
+		ComponenteRegistro::ComponenteRegistro<RoundText>("roundText");
 	}
 	catch (...) {
 		std::cerr << "ERROR CARGANDO LOS COMPONENTES DEL JUEGO\n";

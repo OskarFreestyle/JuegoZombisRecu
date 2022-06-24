@@ -27,6 +27,7 @@
     <ClInclude Include="..\Src\includes\MoveBullet.h" />
     <ClInclude Include="..\Src\includes\pch.h" />
     <ClInclude Include="..\Src\includes\Personaje.h" />
+    <ClInclude Include="..\Src\includes\RoundText.h" />
     <ClInclude Include="..\Src\includes\SaveRecord.h" />
     <ClInclude Include="..\Src\includes\ScoreInGameText.h" />
     <ClInclude Include="..\Src\includes\ScoreTextComponent.h" />
@@ -43,6 +44,7 @@
     <ClCompile Include="..\Src\MoveBullet.cpp" />
     <ClCompile Include="..\Src\pch.cpp" />
     <ClCompile Include="..\Src\Personaje.cpp" />
+    <ClCompile Include="..\Src\RoundText.cpp" />
     <ClCompile Include="..\Src\SaveRecord.cpp" />
     <ClCompile Include="..\Src\ScoreInGameText.cpp" />
     <ClCompile Include="..\Src\ScoreTextComponent.cpp" />

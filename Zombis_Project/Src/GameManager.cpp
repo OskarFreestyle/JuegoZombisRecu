@@ -6,6 +6,7 @@
 #include "SpawnZombis.h"
 #include "ImageComponent.h"
 #include "ScoreInGameText.h"
+#include "RoundText.h"
 
 GameManager* GameManager::_singleton = nullptr;
 
@@ -30,7 +31,7 @@ GameManager::GameManager()
 	_zombiesKilled = 0;
 	_lastGameZombiesKilled = 0;
 	_lives = INIT_LIVES;
-	_round = 0;
+	_round = 1;
 }
 
 void GameManager::removeLive()
@@ -80,6 +81,9 @@ void GameManager::onZombieKilled()
 		_zombiesKilledThisRound = 0;
 		_zombiesSpawnThisRound = 0;
 		_round++;
+		Entidad* e = SceneManager::GetInstance()->getEntityByName("Round");
+		if (e)
+			e->getComponent<RoundText>()->setTexto(e->getComponent<RoundText>()->getTextoIni() + std::to_string(_round), "RoundText", "RoundPanel");
 	}
 }
 

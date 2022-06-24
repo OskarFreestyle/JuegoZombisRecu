@@ -273,6 +273,23 @@ local level = {
 					color="Black"
 				}
             }
+		},
+		{
+			name="Round",
+            id=11,
+            components={
+				roundText={
+					positionX="0.5",
+					positionY="0.02",
+					texto="Round ",
+					nombreTexto="RoundText",
+					tamLetra="0.05",
+					nombrePanel="RoundPanel",
+					dimensionX="0.05",
+					dimensionY="0.05",
+					color="Red"
+				}
+            }
 		}
     }
 }
