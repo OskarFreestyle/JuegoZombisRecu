@@ -36,7 +36,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Rojo",
+                    material="Grass",
                     visible="true"
                 },
                 collider={
@@ -63,7 +63,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Azul",
+                    material="Walls",
                     visible="true"
                 },
                 collider={
@@ -90,7 +90,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Azul",
+                    material="Walls",
                     visible="true"
                 },
                 collider={
@@ -117,7 +117,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Azul",
+                    material="Walls",
                     visible="true"
                 },
                 collider={
@@ -144,7 +144,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Azul",
+                    material="Walls",
                     visible="true"
                 },
                 collider={
@@ -197,6 +197,12 @@ local level = {
                 },
 				shoot={
 					shootTime="500"
+				},
+				audioSource={
+					audioFileName="walkingsound.mp3",
+					channel="2",
+					loop="false",
+					startOnPlay="false"
 				}
             }
         },

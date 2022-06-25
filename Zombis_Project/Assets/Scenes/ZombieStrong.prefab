@@ -34,7 +34,13 @@ local prefab = {
             lockRotX = "true",
             lockRotY = "false",
             lockRotZ = "true"
-        }
+        },
+		audioSource={
+			audioFileName="zombieSound.mp3",
+			channel="4",
+			loop="false",
+			startOnPlay="false"
+		}
     }
 }
 

@@ -3,6 +3,7 @@
 #include "Transform.h"
 #include "Motor.h"
 #include "InputManager.h"
+#include "AudioSource.h"
 
 MoveBullet::MoveBullet()
 {
@@ -14,10 +15,12 @@ MoveBullet::~MoveBullet()
 
 bool MoveBullet::init(const std::map<std::string, std::string>& mapa)
 {
+
 	if (mapa.find("velocity") == mapa.end()) return false;
 
 	std::string velocityString = mapa.at("velocity");
 	vel = stof(velocityString);
+	
 
 	_inicializado = true;
 	

@@ -4,7 +4,7 @@
 #include "SceneManager.h"
 #include "Transform.h"
 #include <time.h>
-#include "AudioManager.h"
+#include "AudioSource.h"
 
 Shoot::Shoot() : shootTime(), cont(), lastBullet()
 {
@@ -41,8 +41,10 @@ void Shoot::update()
             Vectola3D pos = _entity->getComponent<Transform>()->getPosition();
            
             pos.setY(DISTANCE_TO_FLOOR); //Distancia para que no choque con el suelo
+           
 
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
+            bala->getComponent<AudioSource>()->play();
            
         }
     }

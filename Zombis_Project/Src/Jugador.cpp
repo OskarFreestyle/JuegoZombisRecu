@@ -4,9 +4,9 @@
 #include "Entidad.h"
 #include "InputManager.h"
 #include "OgreVector3.h"
-#include "AudioManager.h"
 #include "RigidBody.h"
 #include "GameManager.h"
+#include "AudioSource.h"
 #include <time.h>
 
 // Tiempo para que te pueda volver a pegar un zombie
@@ -34,21 +34,36 @@ void Jugador::update() {
 	Vectola3D aux = _entity->getComponent<Transform>()->getPosition();
 
 	if (_active) {
-		if (ih().iskeyContinuos(SDL_SCANCODE_W) && !ih().iskeyContinuos(SDL_SCANCODE_S)) v.setZ(-1);
-		else if (ih().iskeyContinuos(SDL_SCANCODE_S) && !ih().iskeyContinuos(SDL_SCANCODE_W)) v.setZ(1);
+		if (ih().iskeyContinuos(SDL_SCANCODE_W) && !ih().iskeyContinuos(SDL_SCANCODE_S)) {
+			v.setZ(-1);
+			_entity->getComponent<AudioSource>()->play();
+		}
+		else if (ih().iskeyContinuos(SDL_SCANCODE_S) && !ih().iskeyContinuos(SDL_SCANCODE_W)) {
+			v.setZ(1);
+			_entity->getComponent<AudioSource>()->play();
+		}
 		else v.setZ(0);
 
-		if (ih().iskeyContinuos(SDL_SCANCODE_A) && !ih().iskeyContinuos(SDL_SCANCODE_D)) v.setX(-1);
-		else if (ih().iskeyContinuos(SDL_SCANCODE_D) && !ih().iskeyContinuos(SDL_SCANCODE_A)) v.setX(1);
+		if (ih().iskeyContinuos(SDL_SCANCODE_A) && !ih().iskeyContinuos(SDL_SCANCODE_D)) { 
+			v.setX(-1); 
+			_entity->getComponent<AudioSource>()->play();
+		}
+		else if (ih().iskeyContinuos(SDL_SCANCODE_D) && !ih().iskeyContinuos(SDL_SCANCODE_A)) {
+			v.setX(1);
+			_entity->getComponent<AudioSource>()->play();
+		}
 		else v.setX(0);
 
 		Vectola3D mov = v.normalize() * speed_;
+		
+
 
 		// CINEMATIC
 		//_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition() + mov * 0.01f);
 
 		// PHYSICS
 		_entity->getComponent<RigidBody>()->setVelocity(physx::PxVec3(mov.getX(), mov.getY(), mov.getZ()));
+		_entity->getComponent<AudioSource>()->stop();
 	}
 }
 

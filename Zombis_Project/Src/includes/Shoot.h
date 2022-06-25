@@ -1,7 +1,7 @@
 #pragma once
 #include "Componente.h"
 
-const float DISTANCE_TO_FLOOR=100;
+const float DISTANCE_TO_FLOOR=110;
 typedef long clock_t;
 
 class Shoot : public Componente

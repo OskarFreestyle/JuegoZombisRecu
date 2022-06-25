@@ -8,6 +8,7 @@
 #include "ScoreInGameText.h"
 #include "RoundText.h"
 
+
 GameManager* GameManager::_singleton = nullptr;
 
 GameManager* GameManager::GetInstance() {

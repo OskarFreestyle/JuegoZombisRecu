@@ -24,7 +24,14 @@ local prefab = {
         rigidbody={
             static="false",
             density="1000"
-        }
+        },
+		audioSource={
+			audioFileName="disparo_1.mp3",
+			channel="3",
+			loop="false",
+			startOnPlay="false"
+				}
+	
     }
 }
 

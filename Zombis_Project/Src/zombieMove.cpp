@@ -5,6 +5,7 @@
 #include "RigidBody.h"
 #include "SceneManager.h"
 #include "GameManager.h"
+#include "AudioSource.h"
 
 ZombieMove::~ZombieMove()
 {
@@ -21,6 +22,7 @@ bool ZombieMove::init(const std::map<std::string, std::string>& mapa)
 	auxString = mapa.at("speed");
 	_speed = stof(auxString);
 
+
 	return true;
 }
 
@@ -29,7 +31,9 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 		// Destruir bala
 		//SceneManager::GetInstance()->addEntityToRemove(other);
 		_life--;
+		
 		if (_life <= 0) {
+			_entity->getComponent<AudioSource>()->play();
 			// Sumar punto
 			GameManager::GetInstance()->onZombieKilled();
 			// Destruir zombi
