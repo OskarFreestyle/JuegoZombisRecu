@@ -33,7 +33,44 @@ bool SaveRecord::init(const std::map<std::string, std::string>& mapa)
 
 void SaveRecord::update() {
 	if (!keyUse) {
-		if (ih().isKeyDown(SDL_SCANCODE_J)) {
+		if (ih().isKeyDown(SDL_SCANCODE_A)) {
+			p.first += "A";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_B)) {
+			p.first += "B";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_C)) {
+			p.first += "C";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_D)) {
+			p.first += "D";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_E)) {
+			p.first += "E";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_F)) {
+			p.first += "F";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_G)) {
+			p.first += "G";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_H)) {
+			p.first += "H";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_I)) {
+			p.first += "I";
+			keyUse = true;
+		}
+
+		else if (ih().isKeyDown(SDL_SCANCODE_J)) {
 			p.first += "J";
 			keyUse = true;
 		}
@@ -45,11 +82,72 @@ void SaveRecord::update() {
 			p.first += "L";
 			keyUse = true;
 		}
+		else if (ih().isKeyDown(SDL_SCANCODE_M)) {
+			p.first += "M";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_N)) {
+			p.first += "N";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_O)) {
+			p.first += "O";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_P)) {
+			p.first += "P";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_Q)) {
+			p.first += "Q";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_R)) {
+			p.first += "R";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_S)) {
+			p.first += "S";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_T)) {
+			p.first += "T";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_U)) {
+			p.first += "U";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_V)) {
+			p.first += "V";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_W)) {
+			p.first += "W";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_X)) {
+			p.first += "X";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_Y)) {
+			p.first += "Y";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_Z)) {
+		p.first += "Z";
+		keyUse = true;
+		}
 		Entidad* e = SceneManager::GetInstance()->getEntityByName("SaveRecordText");
 		if (e) e->getComponent<TextComponent>()->setTexto("YOUR NAME: " + p.first, "RecordText", "RecordPanel");
 	}
 
-	if (ih().isKeyUp(SDL_SCANCODE_J) || ih().isKeyUp(SDL_SCANCODE_K) || ih().isKeyUp(SDL_SCANCODE_L)) {
+	if (ih().isKeyUp(SDL_SCANCODE_A)|| ih().isKeyUp(SDL_SCANCODE_B) || ih().isKeyUp(SDL_SCANCODE_C) || ih().isKeyUp(SDL_SCANCODE_D) || ih().isKeyUp(SDL_SCANCODE_E) ||
+		ih().isKeyUp(SDL_SCANCODE_F) || ih().isKeyUp(SDL_SCANCODE_G) || ih().isKeyUp(SDL_SCANCODE_H) || ih().isKeyUp(SDL_SCANCODE_I) || ih().isKeyUp(SDL_SCANCODE_J) || 
+		ih().isKeyUp(SDL_SCANCODE_K) || ih().isKeyUp(SDL_SCANCODE_L)|| ih().isKeyUp(SDL_SCANCODE_M) || ih().isKeyUp(SDL_SCANCODE_N) || ih().isKeyUp(SDL_SCANCODE_O) ||
+		ih().isKeyUp(SDL_SCANCODE_P) || ih().isKeyUp(SDL_SCANCODE_Q) || ih().isKeyUp(SDL_SCANCODE_R) || ih().isKeyUp(SDL_SCANCODE_S) || ih().isKeyUp(SDL_SCANCODE_T) ||
+		ih().isKeyUp(SDL_SCANCODE_U) || ih().isKeyUp(SDL_SCANCODE_V) || ih().isKeyUp(SDL_SCANCODE_W) || ih().isKeyUp(SDL_SCANCODE_X) || ih().isKeyUp(SDL_SCANCODE_Y) ||
+		ih().isKeyUp(SDL_SCANCODE_Z)) {
 		keyUse = false;
 	}
 
