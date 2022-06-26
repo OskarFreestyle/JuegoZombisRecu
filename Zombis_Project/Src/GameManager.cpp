@@ -58,7 +58,9 @@ void GameManager::removeLive()
 		// Guarda los zombis muertos
 		_lastGameZombiesKilled = _zombiesKilled;
 		_zombiesKilled = 0;
-
+		_maxRoundZombies = 2;
+		_zombiesKilledThisRound = 0;
+		_zombiesSpawnThisRound = 0;
 		// Reinicia las vidas
 		_lives = INIT_LIVES;
 		AudioManager::GetInstance()->stopAllChannels();
