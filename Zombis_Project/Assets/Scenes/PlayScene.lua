@@ -24,6 +24,18 @@ local level = {
                 }
             }
         },
+		{
+            name="MainMusicPlayScene",
+            id=6,
+            components={
+                audioSource={
+					audioFileName="musicPlayScene.mp3",
+					channel="0",
+					loop="true",
+					startOnPlay="true"
+				}
+            }
+        }, 
         {
             name="Floor",
             id=2,
@@ -200,7 +212,7 @@ local level = {
 				},
 				audioSource={
 					audioFileName="walkingsound.mp3",
-					channel="2",
+					channel="9",
 					loop="false",
 					startOnPlay="false"
 				}
@@ -260,7 +272,13 @@ local level = {
                 },
                 spawnZombis={
                     null="",
-                }
+                },
+				audioSource={
+					audioFileName="golpeado.mp3",
+					channel="11",
+					loop="false",
+					startOnPlay="false"
+				}
             }
         },
 		{

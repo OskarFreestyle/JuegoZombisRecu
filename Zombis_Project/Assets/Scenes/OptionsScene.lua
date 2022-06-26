@@ -55,6 +55,12 @@ local level = {
 					dimensionY="0.35",
 					type="CHANGE_SCENE",
 					nextScene="MainMenuScene.lua"
+				},
+				audioSource={
+					audioFileName="click.mp3",
+					channel="1",
+					loop="false",
+					startOnPlay="false"
 				}
             }
         },
@@ -74,6 +80,12 @@ local level = {
 					dimensionY="0.25",
 					type="VOLUME",
 					nextScene=" "
+				},
+				audioSource={
+					audioFileName="click.mp3",
+					channel="1",
+					loop="false",
+					startOnPlay="false"
 				}
             }
 		}

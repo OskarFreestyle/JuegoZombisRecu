@@ -36,23 +36,29 @@ void Jugador::update() {
 	if (_active) {
 		if (ih().iskeyContinuos(SDL_SCANCODE_W) && !ih().iskeyContinuos(SDL_SCANCODE_S)) {
 			v.setZ(-1);
-			_entity->getComponent<AudioSource>()->play();
+			//_entity->getComponent<AudioSource>()->play();
 		}
 		else if (ih().iskeyContinuos(SDL_SCANCODE_S) && !ih().iskeyContinuos(SDL_SCANCODE_W)) {
 			v.setZ(1);
-			_entity->getComponent<AudioSource>()->play();
+			//_entity->getComponent<AudioSource>()->play();
 		}
-		else v.setZ(0);
+		else {
+			v.setZ(0);
+			//_entity->getComponent<AudioSource>()->stop();
+		}
 
 		if (ih().iskeyContinuos(SDL_SCANCODE_A) && !ih().iskeyContinuos(SDL_SCANCODE_D)) { 
 			v.setX(-1); 
-			_entity->getComponent<AudioSource>()->play();
+			//_entity->getComponent<AudioSource>()->play();
 		}
 		else if (ih().iskeyContinuos(SDL_SCANCODE_D) && !ih().iskeyContinuos(SDL_SCANCODE_A)) {
 			v.setX(1);
-			_entity->getComponent<AudioSource>()->play();
+			//_entity->getComponent<AudioSource>()->play();
 		}
-		else v.setX(0);
+		else {
+			v.setX(0);
+			//_entity->getComponent<AudioSource>()->stop();
+		}
 
 		Vectola3D mov = v.normalize() * speed_;
 		
@@ -63,7 +69,14 @@ void Jugador::update() {
 
 		// PHYSICS
 		_entity->getComponent<RigidBody>()->setVelocity(physx::PxVec3(mov.getX(), mov.getY(), mov.getZ()));
-		_entity->getComponent<AudioSource>()->stop();
+		//if (_entity->getComponent<RigidBody>()->getVelocity().x == 0 && _entity->getComponent<RigidBody>()->getVelocity().y == 0 && _entity->getComponent<RigidBody>()->getVelocity().z == 0) {
+		//	std::cout << "Entra No velocidad\n";
+		//	_entity->getComponent<AudioSource>()->stopMusicComponent();
+		//}
+		//else {
+		//	_entity->getComponent<AudioSource>()->play();
+		//}
+		////_entity->getComponent<AudioSource>()->stop();
 	}
 }
 

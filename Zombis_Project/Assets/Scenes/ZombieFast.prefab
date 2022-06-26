@@ -37,7 +37,7 @@ local prefab = {
         },
 		audioSource={
 			audioFileName="zombieSound.mp3",
-			channel="4",
+			channel="5",
 			loop="false",
 			startOnPlay="false"
 		}

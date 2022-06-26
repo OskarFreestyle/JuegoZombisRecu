@@ -7,6 +7,8 @@
 #include "ImageComponent.h"
 #include "ScoreInGameText.h"
 #include "RoundText.h"
+#include "AudioSource.h"
+#include "AudioManager.h"
 
 
 GameManager* GameManager::_singleton = nullptr;
@@ -41,6 +43,7 @@ void GameManager::removeLive()
 
 	_lives--;
 	std::cout << "Te quedan " << _lives << " vidas\n";
+	SceneManager::GetInstance()->getEntityByName("SpanwZombies")->getComponent<AudioSource>()->play();
 
 	// Si te quedas sin vidas
 	if (_lives <= 0) {
@@ -58,6 +61,7 @@ void GameManager::removeLive()
 
 		// Reinicia las vidas
 		_lives = INIT_LIVES;
+		AudioManager::GetInstance()->stopAllChannels();
 
 		// Cambia a la escena post-game
 		SceneManager::GetInstance()->newScene("EndScene.lua");

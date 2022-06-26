@@ -25,6 +25,18 @@ local level = {
             }
         }, 
 		{
+            name="MainMusicEndScene",
+            id=6,
+            components={
+                audioSource={
+					audioFileName="musicEndScene.mp3",
+					channel="0",
+					loop="true",
+					startOnPlay="true"
+				}
+            }
+        },
+		{
 			name="BackGroundImage",
             id=1,
             components={
