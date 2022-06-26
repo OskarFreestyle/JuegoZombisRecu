@@ -43,7 +43,8 @@ void GameManager::removeLive()
 
 	_lives--;
 	std::cout << "Te quedan " << _lives << " vidas\n";
-	SceneManager::GetInstance()->getEntityByName("SpanwZombies")->getComponent<AudioSource>()->play();
+	if(!AudioManager::GetInstance()->getMute())
+		SceneManager::GetInstance()->getEntityByName("SpanwZombies")->getComponent<AudioSource>()->play();
 
 	// Si te quedas sin vidas
 	if (_lives <= 0) {

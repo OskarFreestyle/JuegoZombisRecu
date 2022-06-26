@@ -6,6 +6,7 @@
 #include "SceneManager.h"
 #include "GameManager.h"
 #include "AudioSource.h"
+#include "AudioManager.h"
 
 ZombieMove::~ZombieMove()
 {
@@ -33,7 +34,8 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 		_life--;
 		
 		if (_life <= 0) {
-			_entity->getComponent<AudioSource>()->play();
+			if (!AudioManager::GetInstance()->getMute())
+				_entity->getComponent<AudioSource>()->play();
 			// Sumar punto
 			GameManager::GetInstance()->onZombieKilled();
 			// Destruir zombi

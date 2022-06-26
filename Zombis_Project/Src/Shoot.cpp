@@ -5,6 +5,7 @@
 #include "Transform.h"
 #include <time.h>
 #include "AudioSource.h"
+#include "AudioManager.h"
 
 Shoot::Shoot() : shootTime(), cont(), lastBullet()
 {
@@ -44,7 +45,8 @@ void Shoot::update()
            
 
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
-            bala->getComponent<AudioSource>()->play();
+            if (!AudioManager::GetInstance()->getMute())
+                bala->getComponent<AudioSource>()->play();
            
         }
     }
