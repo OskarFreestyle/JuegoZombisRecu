@@ -25,6 +25,7 @@
 #include "zombieMove.h"
 #include "SpawnZombis.h"
 #include "SaveRecord.h"
+#include "MuteCross.h"
 
 #include "Entidad.h"
 #include "ScoreTextComponent.h"
@@ -34,17 +35,18 @@
 
 void RegistryGameComponents() {
 	try {
-		ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");
-		ComponenteRegistro::ComponenteRegistro<Shoot>("shoot");
-		ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
 		ComponenteRegistro::ComponenteRegistro<Jugador>("jugador");
-		ComponenteRegistro::ComponenteRegistro<ZombieMove>("zombieMove");
 		ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatMouse");
-		ComponenteRegistro::ComponenteRegistro<SpawnZombis>("spawnZombis");
-		ComponenteRegistro::ComponenteRegistro<ScoreTextComponent>("scoreText");
+		ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");
+		ComponenteRegistro::ComponenteRegistro<MuteCross>("muteCross");
+		ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
+		ComponenteRegistro::ComponenteRegistro<RoundText>("roundText");
 		ComponenteRegistro::ComponenteRegistro<SaveRecord>("saveRecord");
 		ComponenteRegistro::ComponenteRegistro<ScoreInGameText>("scoreInGameText");
-		ComponenteRegistro::ComponenteRegistro<RoundText>("roundText");
+		ComponenteRegistro::ComponenteRegistro<ScoreTextComponent>("scoreText");
+		ComponenteRegistro::ComponenteRegistro<Shoot>("shoot");
+		ComponenteRegistro::ComponenteRegistro<SpawnZombis>("spawnZombis");
+		ComponenteRegistro::ComponenteRegistro<ZombieMove>("zombieMove");
 	}
 	catch (...) {
 		std::cerr << "ERROR CARGANDO LOS COMPONENTES DEL JUEGO\n";

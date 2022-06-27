@@ -30,8 +30,7 @@ local prefab = {
 			channel="3",
 			loop="false",
 			startOnPlay="false"
-				}
-	
+        }
     }
 }
 

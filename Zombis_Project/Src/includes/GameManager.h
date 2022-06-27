@@ -33,7 +33,6 @@ public:
 	void setPoints(const int p) { _points = p; }
 	void setLastGamePoints(const int p) { _lastGamePoints = p; }
 
-
 	// Other functions
 	void removeLive();
 	void onZombieKilled();

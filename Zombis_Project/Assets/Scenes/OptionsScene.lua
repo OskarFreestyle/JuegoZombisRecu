@@ -90,8 +90,24 @@ local level = {
 					startOnPlay="false"
 				}
             }
+		},
+		{
+			name="MuteCross",
+            id=4,
+            components={
+				image={
+					positionX="0.2",
+					positionY="0.2",
+					nombrePanel="CrossPanel",
+					material="CrossMaterial",
+					dimensionX="0.25",
+					dimensionY="0.25"
+				},
+				muteCross={
+					null=""
+				}
+            }
 		}
-		
     }
 }
 
