@@ -35,7 +35,7 @@ public:
 
 	// Other functions
 	void removeLive();
-	void onZombieKilled();
+	void onZombieKilled(int pointsToAdd);
 	void increaseNumZombies();
 	void onFinishGame();
 	int calculateZombies();

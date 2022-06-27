@@ -135,19 +135,23 @@ void SaveRecord::update() {
 			keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_Z)) {
-		p.first += "Z";
-		keyUse = true;
+			p.first += "Z";
+			keyUse = true;
+		}
+		else if (ih().isKeyDown(SDL_SCANCODE_BACKSPACE)) {
+			if(!p.first.empty()) p.first.pop_back();
+			keyUse = true;
 		}
 		Entidad* e = SceneManager::GetInstance()->getEntityByName("SaveRecordText");
 		if (e) e->getComponent<TextComponent>()->setTexto("YOUR NAME: " + p.first, "RecordText", "RecordPanel");
 	}
 
-	if (ih().isKeyUp(SDL_SCANCODE_A)|| ih().isKeyUp(SDL_SCANCODE_B) || ih().isKeyUp(SDL_SCANCODE_C) || ih().isKeyUp(SDL_SCANCODE_D) || ih().isKeyUp(SDL_SCANCODE_E) ||
+	if (ih().isKeyUp(SDL_SCANCODE_A) || ih().isKeyUp(SDL_SCANCODE_B) || ih().isKeyUp(SDL_SCANCODE_C) || ih().isKeyUp(SDL_SCANCODE_D) || ih().isKeyUp(SDL_SCANCODE_E) ||
 		ih().isKeyUp(SDL_SCANCODE_F) || ih().isKeyUp(SDL_SCANCODE_G) || ih().isKeyUp(SDL_SCANCODE_H) || ih().isKeyUp(SDL_SCANCODE_I) || ih().isKeyUp(SDL_SCANCODE_J) || 
-		ih().isKeyUp(SDL_SCANCODE_K) || ih().isKeyUp(SDL_SCANCODE_L)|| ih().isKeyUp(SDL_SCANCODE_M) || ih().isKeyUp(SDL_SCANCODE_N) || ih().isKeyUp(SDL_SCANCODE_O) ||
+		ih().isKeyUp(SDL_SCANCODE_K) || ih().isKeyUp(SDL_SCANCODE_L) || ih().isKeyUp(SDL_SCANCODE_M) || ih().isKeyUp(SDL_SCANCODE_N) || ih().isKeyUp(SDL_SCANCODE_O) ||
 		ih().isKeyUp(SDL_SCANCODE_P) || ih().isKeyUp(SDL_SCANCODE_Q) || ih().isKeyUp(SDL_SCANCODE_R) || ih().isKeyUp(SDL_SCANCODE_S) || ih().isKeyUp(SDL_SCANCODE_T) ||
 		ih().isKeyUp(SDL_SCANCODE_U) || ih().isKeyUp(SDL_SCANCODE_V) || ih().isKeyUp(SDL_SCANCODE_W) || ih().isKeyUp(SDL_SCANCODE_X) || ih().isKeyUp(SDL_SCANCODE_Y) ||
-		ih().isKeyUp(SDL_SCANCODE_Z)) {
+		ih().isKeyUp(SDL_SCANCODE_Z) || ih().isKeyUp(SDL_SCANCODE_BACKSPACE)) {
 		keyUse = false;
 	}
 

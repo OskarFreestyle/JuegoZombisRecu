@@ -14,17 +14,20 @@ ZombieMove::~ZombieMove()
 
 bool ZombieMove::init(const std::map<std::string, std::string>& mapa)
 {
-	if (mapa.find("life") == mapa.end() || mapa.find("speed") == mapa.end())
+	if (mapa.find("life") == mapa.end() || mapa.find("speed") == mapa.end() || mapa.find("pointsOnDead") == mapa.end())
 		return false;
 
 	std::string auxString = mapa.at("life");
 	_life = stof(auxString);
 
 	auxString = mapa.at("speed");
-	_speed = stof(auxString);
+	_speed = stof(auxString);	
+	
+	auxString = mapa.at("pointsOnDead");
+	_pointsOnDead = stoi(auxString);
 
-
-	return true;
+	_inicializado = true;
+	return _inicializado;
 }
 
 void ZombieMove::onCollisionStart(Entidad* other) {
@@ -35,7 +38,7 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 		if (_life <= 0) {
 			_entity->getComponent<AudioSource>()->play();
 			// Sumar punto
-			GameManager::GetInstance()->onZombieKilled();
+			GameManager::GetInstance()->onZombieKilled(_pointsOnDead);
 			// Destruir zombi
 			SceneManager::GetInstance()->addEntityToRemove(_entity);
 		}

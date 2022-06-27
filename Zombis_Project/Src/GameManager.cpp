@@ -57,14 +57,14 @@ void GameManager::removeLive()
 	}
 }
 
-void GameManager::onZombieKilled()
+void GameManager::onZombieKilled(int pointsToAdd)
 {
 	// Se aumenta en 1 el numero de zombis que se matan
 	_zombiesKilled++;
 	_zombiesKilledThisRound++;
 
-	// Feisimo
-	_points += 10;
+	// Se añaden los puntos correspondientes segun el tipo de zombie
+	_points += pointsToAdd;
 	_lastGamePoints = _points;
 
 	Entidad* e = SceneManager::GetInstance()->getEntityByName("Score");
