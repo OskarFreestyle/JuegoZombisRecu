@@ -115,7 +115,7 @@ local level = {
             id=4,
             components={
 				saveRecord={
-					recordsFileName="../../Exes/Assets/maxScore.txt"
+					recordsFileName="./maxScore.txt"
 				}
             }
 		},
