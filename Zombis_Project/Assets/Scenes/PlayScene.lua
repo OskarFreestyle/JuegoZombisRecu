@@ -30,7 +30,7 @@ local level = {
             components={
                 audioSource={
 					audioFileName="musicPlayScene.mp3",
-					channel="0",
+					channel="15",
 					loop="true",
 					startOnPlay="true"
 				}
