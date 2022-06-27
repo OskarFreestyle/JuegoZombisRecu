@@ -11,13 +11,22 @@
 
 bool SpawnZombis::init(const std::map<std::string, std::string>& mapa)
 {
+	if (mapa.find("newZombiesDelay") == mapa.end()) return false;
+
+	std::string auxString = mapa.at("newZombiesDelay");
+	timeToSpawn = stof(auxString);
+
+
+	_inicializado = true;
+
+	return true;
 	return true;
 }
 
 void SpawnZombis::update()
 {
 	clock_t auxc = clock();
-	if(auxc > lastZombie + TIME_TO_SPAWN){
+	if(auxc > lastZombie + timeToSpawn){
 		lastZombie = auxc;
 
 		// Determina el tipo de zombie que va a crearse

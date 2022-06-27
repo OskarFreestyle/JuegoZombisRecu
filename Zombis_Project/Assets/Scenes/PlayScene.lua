@@ -271,7 +271,7 @@ local level = {
                     scale="1,1,1"
                 },
                 spawnZombis={
-                    null="",
+                    newZombiesDelay="800",
                 },
 				audioSource={
 					audioFileName="golpeado.mp3",
