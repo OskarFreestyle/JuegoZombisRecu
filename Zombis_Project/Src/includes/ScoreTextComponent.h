@@ -11,7 +11,6 @@ public:
 	
 	void setTexto(const std::string& s, const std::string& textName, const std::string& panelName);
 
-
 private:
 	float posX;
 	float posY;

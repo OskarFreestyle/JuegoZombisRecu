@@ -48,23 +48,9 @@ void GameManager::removeLive()
 
 	// Si te quedas sin vidas
 	if (_lives <= 0) {
-		// Guarda la ronda a la que se llegó
-		_lastGameRound = _round;
-		_round = 1;
 
-		// Guarda los puntos
-		_lastGamePoints = _points;
-		_points = 0;
-		
-		// Guarda los zombis muertos
-		_lastGameZombiesKilled = _zombiesKilled;
-		_zombiesKilled = 0;
-		_maxRoundZombies = 2;
-		_zombiesKilledThisRound = 0;
-		_zombiesSpawnThisRound = 0;
-		// Reinicia las vidas
-		_lives = INIT_LIVES;
-		AudioManager::GetInstance()->stopAllChannels();
+		// Actualiza las variables al terminar el juego
+		onFinishGame();
 
 		// Cambia a la escena post-game
 		SceneManager::GetInstance()->newScene("EndScene.lua");
@@ -76,8 +62,11 @@ void GameManager::onZombieKilled()
 	// Se aumenta en 1 el numero de zombis que se matan
 	_zombiesKilled++;
 	_zombiesKilledThisRound++;
+
 	// Feisimo
 	_points += 10;
+	_lastGamePoints = _points;
+
 	Entidad* e = SceneManager::GetInstance()->getEntityByName("Score");
 	if (e)
 		e->getComponent<ScoreInGameText>()->setTexto(e->getComponent<ScoreInGameText>()->getTextoIni() + std::to_string(_points), "ScoreText", "ScorePanel");
@@ -104,4 +93,26 @@ void GameManager::increaseNumZombies()
 	if (_zombiesSpawnThisRound >= _maxRoundZombies) {
 		SceneManager::GetInstance()->getEntityByName("SpanwZombies")->getComponent<SpawnZombis>()->setActive(false);
 	}
+}
+
+void GameManager::onFinishGame()
+{
+	// Guarda la ronda a la que se llegó
+	_lastGameRound = _round;
+	_round = 1;
+
+	// Guarda los puntos
+	_lastGamePoints = _points;
+	_points = 0;
+
+	// Guarda los zombis muertos
+	_lastGameZombiesKilled = _zombiesKilled;
+	_zombiesKilled = 0;
+	_maxRoundZombies = 2;
+	_zombiesKilledThisRound = 0;
+	_zombiesSpawnThisRound = 0;
+
+	// Reinicia las vidas
+	_lives = INIT_LIVES;
+	AudioManager::GetInstance()->stopAllChannels();
 }

@@ -18,5 +18,6 @@ private:
 	Entidad* _player=nullptr;
 	int _life;
 	int _speed;
+	int _pointsOnDead;
 };
 

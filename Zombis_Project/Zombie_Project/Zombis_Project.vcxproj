@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Src\includes\ExitOnPlay.h" />
     <ClInclude Include="..\Src\includes\framework.h" />
     <ClInclude Include="..\Src\includes\GameManager.h" />
     <ClInclude Include="..\Src\includes\Juego.h" />
@@ -38,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\dllmain.cpp" />
+    <ClCompile Include="..\Src\ExitOnPlay.cpp" />
     <ClCompile Include="..\Src\GameManager.cpp" />
     <ClCompile Include="..\Src\Juego.cpp" />
     <ClCompile Include="..\Src\Jugador.cpp" />

@@ -19,6 +19,7 @@
 // Componentes
 #include "MoveBullet.h"
 #include "Shoot.h"
+#include "ExitOnPlay.h"
 #include "Personaje.h"
 #include "Jugador.h"
 #include "LookatMouse.h"
@@ -35,6 +36,7 @@
 
 void RegistryGameComponents() {
 	try {
+		ComponenteRegistro::ComponenteRegistro<ExitOnPlay>("exitOnPlay");
 		ComponenteRegistro::ComponenteRegistro<Jugador>("jugador");
 		ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatMouse");
 		ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");

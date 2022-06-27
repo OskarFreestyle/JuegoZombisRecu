@@ -37,6 +37,7 @@ public:
 	void removeLive();
 	void onZombieKilled();
 	void increaseNumZombies();
+	void onFinishGame();
 
 protected:
 	static GameManager* _singleton;

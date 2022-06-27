@@ -57,8 +57,6 @@ std::string ScoreInGameText::getTextoIni()
 	return textoIni;
 }
 
-
-
 void ScoreInGameText::setTexto(const std::string& s, const std::string& textName, const std::string& panelName)
 {
 	texto = s;

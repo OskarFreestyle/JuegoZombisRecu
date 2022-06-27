@@ -163,6 +163,16 @@ void SaveRecord::update() {
 			SceneManager::GetInstance()->getEntityByName("SaveRecordText")->getComponent<TextComponent>()->setTexto("SORRY " + p.first + "\nYOUR RECORD HASN'T BEEN SAVED", "RecordText", "RecordPanel");
 		}
 
+		// Mostramos el Top 5
+		std::string top5text = "";
+		
+		for (int i = 0; i < maxPoints.size(); i++)
+		{
+			top5text += to_string(i + 1) + "." + maxPoints[i].first + " - " + to_string(maxPoints[i].second) + "\n";
+		}
+
+		SceneManager::GetInstance()->getEntityByName("Top5Text")->getComponent<TextComponent>()->setTexto(top5text, "TopText", "TopPanel");
+
 		// Mandamos borrar esta entidad
 		SceneManager::GetInstance()->addEntityToRemove(_entity);
 	}

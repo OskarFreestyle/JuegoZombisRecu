@@ -20,7 +20,7 @@ local level = {
                     fov="50",
                     proyection="1",
                     viewport="0,0,1,1",
-                    color="0.2,0.2,0"
+                    color="0.317,0.819,0.964"
                 }
             }
         },
@@ -223,7 +223,7 @@ local level = {
             id=1,
             components={
 				image={
-					positionX="0.05",
+					positionX="0.01",
 					positionY="0.05",
 					nombrePanel="Heart1",
 					material="Corazon",
@@ -237,7 +237,7 @@ local level = {
             id=1,
             components={
 				image={
-					positionX="0.05",
+					positionX="0.01",
 					positionY="0.15",
 					nombrePanel="Heart2",
 					material="Corazon",
@@ -251,7 +251,7 @@ local level = {
             id=1,
             components={
 				image={
-					positionX="0.05",
+					positionX="0.01",
 					positionY="0.25",
 					nombrePanel="Heart3",
 					material="Corazon",
@@ -286,9 +286,9 @@ local level = {
             id=10,
             components={
 				scoreInGameText={
-					positionX="0.9",
-					positionY="0.02",
-					texto="Score: ",
+					positionX="0.913",
+					positionY="0.8",
+					texto="SCORE\n",
 					nombreTexto="ScoreText",
 					tamLetra="0.05",
 					nombrePanel="ScorePanel",
@@ -303,9 +303,9 @@ local level = {
             id=11,
             components={
 				roundText={
-					positionX="0.5",
-					positionY="0.02",
-					texto="Round ",
+					positionX="0.037",
+					positionY="0.8",
+					texto="ROUND\n",
 					nombreTexto="RoundText",
 					tamLetra="0.05",
 					nombrePanel="RoundPanel",
@@ -314,7 +314,33 @@ local level = {
 					color="Black"
 				}
             }
-		}
+		},
+        {
+            name="Exit",
+            id=2,
+            components={
+				exitOnPlay={
+					positionX="0.88",
+					positionY="0.00",
+					texto="",
+					nombrePanel="ExitPanel",
+					nombreTexto="ExitTexto",
+					tamLetra="0.05",
+					material="ExitMaterial",
+					dimensionX="0.12",
+					dimensionY="0.06",
+					type="CHANGE_SCENE",
+					nextScene="EndScene.lua",
+					clickDelay="300"
+				},
+				audioSource={
+					audioFileName="click.mp3",
+					channel="1",
+					loop="false",
+					startOnPlay="false"
+				}
+            }
+        }
     }
 }
 

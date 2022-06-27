@@ -109,6 +109,25 @@ material CrossMaterial
 	}
 }
 
+material ExitMaterial
+{
+	technique
+	{
+		pass
+		{
+			diffuse		0.5 0.5 0.5
+			ambient		1.0 1.0 1.0
+			specular	0.8 0.8 0.8 68
+			scene_blend alpha_blend
+			texture_unit
+			{
+				texture Exit.png
+				colour_op modulate
+			}
+		}
+	}
+}
+
 material Corazon
 {
 	technique

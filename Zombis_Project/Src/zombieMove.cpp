@@ -29,8 +29,7 @@ bool ZombieMove::init(const std::map<std::string, std::string>& mapa)
 
 void ZombieMove::onCollisionStart(Entidad* other) {
 	if (other->getName() == "Bala") {
-		// Destruir bala
-		//SceneManager::GetInstance()->addEntityToRemove(other);
+
 		_life--;
 		
 		if (_life <= 0) {

@@ -9,11 +9,12 @@ material Player
 			specular 0.0 0.0 0.0 0.0
 			texture_unit
 			{
-			  colour_op_ex source1 src_manual src_current 0.0 0.745 0.878
+			  colour_op_ex source1 src_manual src_current 0.062 0.156 0.945
 			}
 		}
 	}
 }
+
 material ZombieStrong
 {
 	technique
@@ -30,6 +31,7 @@ material ZombieStrong
 		}
 	}
 }
+
 material ZombieFast
 {
 	technique

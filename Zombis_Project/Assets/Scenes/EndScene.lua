@@ -135,6 +135,23 @@ local level = {
 					color="Red"
 				}
             }
+		},
+		{
+			name="Top5Text",
+            id=6,
+            components={
+				texto={
+					positionX="0.1",
+					positionY="0.5",
+					texto="",
+					nombreTexto="TopText",
+					tamLetra="0.07",
+					nombrePanel="TopPanel",
+					dimensionX="0.8",
+					dimensionY="0.3",
+					color="Red"
+				}
+            }
 		}
     }
 }
