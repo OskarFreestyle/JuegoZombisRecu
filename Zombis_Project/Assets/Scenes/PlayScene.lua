@@ -75,7 +75,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Walls",
+                    material="WallsL",
                     visible="true"
                 },
                 collider={
@@ -102,7 +102,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Walls",
+                    material="WallsL",
                     visible="true"
                 },
                 collider={
@@ -129,7 +129,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Walls",
+                    material="WallsL",
                     visible="true"
                 },
                 collider={
@@ -156,7 +156,7 @@ local level = {
                 },
                 mesh={
                     mesh="cube.mesh",
-                    material="Walls",
+                    material="WallsL",
                     visible="true"
                 },
                 collider={
@@ -183,7 +183,7 @@ local level = {
                 },
                 mesh={
                     mesh="ninja.mesh",
-                    material="",
+                    material="Player",
                     visible="true"
                 },
                 collider={
@@ -311,7 +311,7 @@ local level = {
 					nombrePanel="RoundPanel",
 					dimensionX="0.05",
 					dimensionY="0.05",
-					color="Red"
+					color="Black"
 				}
             }
 		}
