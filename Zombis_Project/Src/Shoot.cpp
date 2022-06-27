@@ -43,10 +43,9 @@ void Shoot::update()
            
             pos.setY(DISTANCE_TO_FLOOR); //Distancia para que no choque con el suelo
            
-
             Entidad* bala = Entidad::instantiate("Bala.prefab", pos);
-            if (!AudioManager::GetInstance()->getMute())
-                bala->getComponent<AudioSource>()->play();
+
+            if(bala) bala->getComponent<AudioSource>()->play();
            
         }
     }

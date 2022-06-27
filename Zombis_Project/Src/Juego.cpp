@@ -35,6 +35,14 @@
 
 
 void RegistryGameComponents() {
+
+}
+
+int LoadGame() {
+#if (defined _DEBUG)
+	std::cout << "---------- TRYING LOAD GAME ----------\n";
+#endif
+	// Se registran los componentes
 	try {
 		ComponenteRegistro::ComponenteRegistro<ExitOnPlay>("exitOnPlay");
 		ComponenteRegistro::ComponenteRegistro<Jugador>("jugador");
@@ -53,29 +61,16 @@ void RegistryGameComponents() {
 	catch (...) {
 		std::cerr << "ERROR CARGANDO LOS COMPONENTES DEL JUEGO\n";
 	}
+
 #if (defined _DEBUG)
 	std::cout << "---------- GAME COMPONENTES CARGADOS ----------\n";
 #endif
-}
-
-int LoadGame() {
-#if (defined _DEBUG)
-	std::cout << "---------- TRYING LOAD GAME ----------\n";
-#endif
-	// Se registran los componentes
-	RegistryGameComponents();
 
 	// Se crea el game manager, lo cual arranca el menu principal
 	GameManager::Init();
 
 #if (defined _DEBUG)
-	std::cout << "GAME MANAGER CORRECTO\n";
-#endif
-
-	//SceneManager::GetInstance()->newScene("NewMainMenu.lua");
-
-#if (defined _DEBUG)
-	std::cout << "GAME LOAD CORRECTLY\n";
+	std::cout << "---------- GAME MANAGER CORRECTLY ----------\n";
 #endif
 	return 0;
 }

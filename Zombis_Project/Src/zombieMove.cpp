@@ -33,8 +33,7 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 		_life--;
 		
 		if (_life <= 0) {
-			if (!AudioManager::GetInstance()->getMute())
-				_entity->getComponent<AudioSource>()->play();
+			_entity->getComponent<AudioSource>()->play();
 			// Sumar punto
 			GameManager::GetInstance()->onZombieKilled();
 			// Destruir zombi

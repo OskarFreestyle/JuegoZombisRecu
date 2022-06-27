@@ -38,6 +38,7 @@ public:
 	void onZombieKilled();
 	void increaseNumZombies();
 	void onFinishGame();
+	int calculateZombies();
 
 protected:
 	static GameManager* _singleton;

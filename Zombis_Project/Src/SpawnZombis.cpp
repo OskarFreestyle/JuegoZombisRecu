@@ -33,8 +33,6 @@ void SpawnZombis::update()
 		Entidad* zombie = nullptr;
 		float zombieChance = (rand() % 100) / 100.0f;
 
-		std::cout << "Zombie tipo: " << zombieChance << "\n";
-
 		// Comprueba el zombie que tiene que hacer
 		if (zombieChance <= ZOMBIE_FAST_CHANCE) zombie = Entidad::instantiate("ZombieFast.prefab");
 		else if (zombieChance > ZOMBIE_FAST_CHANCE && zombieChance <= (ZOMBIE_FAST_CHANCE + ZOMBIE_STRONG_CHANCE)) zombie = Entidad::instantiate("ZombieStrong.prefab");

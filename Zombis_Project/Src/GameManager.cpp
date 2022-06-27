@@ -10,6 +10,8 @@
 #include "AudioSource.h"
 #include "AudioManager.h"
 
+// Componentes del juego
+
 
 GameManager* GameManager::_singleton = nullptr;
 
@@ -42,13 +44,11 @@ void GameManager::removeLive()
 	SceneManager::GetInstance()->getEntityByName("Heart" + std::to_string(_lives))->getComponent<ImageComponent>()->setActive(false);
 
 	_lives--;
-	std::cout << "Te quedan " << _lives << " vidas\n";
-	if(!AudioManager::GetInstance()->getMute())
-		SceneManager::GetInstance()->getEntityByName("SpanwZombies")->getComponent<AudioSource>()->play();
+
+	SceneManager::GetInstance()->getEntityByName("SpanwZombies")->getComponent<AudioSource>()->play();
 
 	// Si te quedas sin vidas
 	if (_lives <= 0) {
-
 		// Actualiza las variables al terminar el juego
 		onFinishGame();
 
@@ -68,19 +68,23 @@ void GameManager::onZombieKilled()
 	_lastGamePoints = _points;
 
 	Entidad* e = SceneManager::GetInstance()->getEntityByName("Score");
-	if (e)
-		e->getComponent<ScoreInGameText>()->setTexto(e->getComponent<ScoreInGameText>()->getTextoIni() + std::to_string(_points), "ScoreText", "ScorePanel");
+	if (e) e->getComponent<ScoreInGameText>()->setTexto(e->getComponent<ScoreInGameText>()->getTextoIni() + std::to_string(_points), "ScoreText", "ScorePanel");
 
+	// Cuando se pasa una ronda
 	if (_zombiesKilledThisRound >= _maxRoundZombies) {
-		// Busca el SpawnZombies y lo vuelve a activar
-		SceneManager::GetInstance()->getEntityByName("SpanwZombies")->getComponent<SpawnZombis>()->setActive(true);
-		_maxRoundZombies += 2;
+		_round++;
 		_zombiesKilledThisRound = 0;
 		_zombiesSpawnThisRound = 0;
-		_round++;
+
+		// Busca el SpawnZombies y lo vuelve a activar
+		SceneManager::GetInstance()->getEntityByName("SpanwZombies")->getComponent<SpawnZombis>()->setActive(true);
+
+		// Calcula los zombies de la nueva ronda 
+		_maxRoundZombies = calculateZombies();
+
+		// Actualiza el texto de la ronda
 		Entidad* e = SceneManager::GetInstance()->getEntityByName("Round");
-		if (e)
-			e->getComponent<RoundText>()->setTexto(e->getComponent<RoundText>()->getTextoIni() + std::to_string(_round), "RoundText", "RoundPanel");
+		if (e) e->getComponent<RoundText>()->setTexto(e->getComponent<RoundText>()->getTextoIni() + std::to_string(_round), "RoundText", "RoundPanel");
 	}
 }
 
@@ -108,11 +112,30 @@ void GameManager::onFinishGame()
 	// Guarda los zombis muertos
 	_lastGameZombiesKilled = _zombiesKilled;
 	_zombiesKilled = 0;
-	_maxRoundZombies = 2;
+	_maxRoundZombies = calculateZombies();
 	_zombiesKilledThisRound = 0;
 	_zombiesSpawnThisRound = 0;
 
 	// Reinicia las vidas
 	_lives = INIT_LIVES;
 	AudioManager::GetInstance()->stopAllChannels();
+}
+
+// Similar a Fibonacci
+int GameManager::calculateZombies()
+{
+	int a = 1;
+	int b = 1;
+	int c = 2;
+
+	for (int i = 1; i <= _round; i++)
+	{
+		c = a + b;
+		a = b;
+		b = c;
+	}
+
+	std::cout << "ZOMBIES num: " << c << "\n";
+
+	return c;
 }
