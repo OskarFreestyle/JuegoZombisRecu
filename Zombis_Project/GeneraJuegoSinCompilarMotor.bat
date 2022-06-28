@@ -25,4 +25,5 @@ xcopy /Y /s /i Assets "./Motor-Ola-Recu/MotorOla_Solution/Exes/Assets/"
 echo ASSETS MOVIDOS
 
 :: Pausa para ver que ha ocurrido
+echo PULSA CUALQUIER BOTON PARA CONTINUAR
 PAUSE >nul

@@ -1,18 +1,20 @@
 #include "GameManager.h"
-#include "OverlayManager.h"
 #include <string>
+
+// Managers del motor
+#include "OverlayManager.h"
 #include "SceneManager.h"
+#include "AudioManager.h"
+
+// Componentes
 #include "Entidad.h"
 #include "SpawnZombis.h"
 #include "ImageComponent.h"
 #include "ScoreInGameText.h"
 #include "RoundText.h"
 #include "AudioSource.h"
-#include "AudioManager.h"
 
 // Componentes del juego
-
-
 GameManager* GameManager::_singleton = nullptr;
 
 GameManager* GameManager::GetInstance() {

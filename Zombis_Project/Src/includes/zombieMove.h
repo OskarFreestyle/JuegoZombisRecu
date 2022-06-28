@@ -15,6 +15,7 @@ public:
 
 	void update();
 private:
+
 	Entidad* _player=nullptr;
 	int _life;
 	int _speed;

@@ -1,12 +1,9 @@
 #include "zombieMove.h"
-#include "Entidad.h"
-#include <iostream>
 #include "Transform.h"
 #include "RigidBody.h"
 #include "SceneManager.h"
 #include "GameManager.h"
 #include "AudioSource.h"
-#include "AudioManager.h"
 
 ZombieMove::~ZombieMove()
 {
@@ -18,13 +15,13 @@ bool ZombieMove::init(const std::map<std::string, std::string>& mapa)
 		return false;
 
 	std::string auxString = mapa.at("life");
-	_life = stof(auxString);
+	_life = std::stof(auxString);
 
 	auxString = mapa.at("speed");
-	_speed = stof(auxString);	
+	_speed = std::stof(auxString);	
 	
 	auxString = mapa.at("pointsOnDead");
-	_pointsOnDead = stoi(auxString);
+	_pointsOnDead = std::stoi(auxString);
 
 	_inicializado = true;
 	return _inicializado;
@@ -48,7 +45,7 @@ void ZombieMove::onCollisionStart(Entidad* other) {
 void ZombieMove::update()
 {
 	// Busca la entidad del jugador
-	if (_player==nullptr) _player = SceneManager::GetInstance()->getEntityByName("Player");
+	if (!_player) _player = SceneManager::GetInstance()->getEntityByName("Player");
 
 	Vectola3D aux = _entity->getComponent<Transform>()->getPosition();
 

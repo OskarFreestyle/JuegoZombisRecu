@@ -1,5 +1,4 @@
 #pragma once
-#include "Componente.h"
 #include "Button.h"
 
 class ExitOnPlay : public Button

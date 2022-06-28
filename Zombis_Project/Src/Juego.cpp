@@ -3,33 +3,25 @@
 #include <limits.h>
 #include <iostream>
 
-// Motor
-#include <Transform.h>
-#include "ComponenteRegistro.h"
-#include "Entidad.h"
-#include "SceneManager.h"
-#include "AudioManager.h"
-#include "LoadResources.h"
-
 // Juego
 #include "Juego.h"
 #include "GameManager.h"
 
 // Componentes
-#include "MoveBullet.h"
-#include "Shoot.h"
+#include "ComponenteRegistro.h"
 #include "ExitOnPlay.h"
 #include "Jugador.h"
 #include "LookatMouse.h"
-#include "zombieMove.h"
-#include "SpawnZombis.h"
-#include "SaveRecord.h"
+#include "MoveBullet.h"
 #include "MuteCross.h"
-
-#include "Entidad.h"
-#include "ScoreTextComponent.h"
-#include "ScoreInGameText.h"
 #include "RoundText.h"
+#include "SaveRecord.h"
+#include "ScoreInGameText.h"
+#include "ScoreTextComponent.h"
+#include "Shoot.h"
+#include "SpawnZombis.h"
+#include "zombieMove.h"
+
 
 int LoadGame() {
 #if (defined _DEBUG)

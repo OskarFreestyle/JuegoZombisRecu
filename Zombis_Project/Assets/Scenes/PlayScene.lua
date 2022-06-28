@@ -198,7 +198,7 @@ local level = {
                     density="1000"
                 },
                 jugador={
-                    speed="500"
+                    speed="30000"
                 },
                 lookatMouse={
                     test="false"

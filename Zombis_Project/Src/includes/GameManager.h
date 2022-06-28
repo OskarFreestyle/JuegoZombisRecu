@@ -4,11 +4,6 @@ const int INIT_LIVES = 3;
 
 class GameManager {
 public:
-	// Tipos de escenas en las que podemos encontrarnos
-	typedef enum class GameScene {
-		MAIN_MENU, PLAY_SCENE, PAUSE, OPTIONS, END_SCENE 
-	} GameScene;
-
 	~GameManager() {}
 
 	/// <summary>
@@ -68,6 +63,4 @@ private:
 
 	// Zombis killed at the end of the game
 	int _lastGameZombiesKilled = 0;
-
-	GameScene currScene;
 };

@@ -1,13 +1,12 @@
 #include "Jugador.h"
-#include <iostream>
-#include "Transform.h"
-#include "Entidad.h"
 #include "InputManager.h"
+#include "Transform.h"
 #include "OgreVector3.h"
 #include "RigidBody.h"
 #include "GameManager.h"
 #include "AudioSource.h"
 #include <time.h>
+#include "Entidad.h"
 
 // Tiempo para que te pueda volver a pegar un zombie
 const clock_t TIME_TO_ANOTHER_ZOMBIE_CONTACT = 2000;
@@ -34,49 +33,20 @@ void Jugador::update() {
 	Vectola3D aux = _entity->getComponent<Transform>()->getPosition();
 
 	if (_active) {
-		if (ih().iskeyContinuos(SDL_SCANCODE_W) && !ih().iskeyContinuos(SDL_SCANCODE_S)) {
-			v.setZ(-1);
-			//_entity->getComponent<AudioSource>()->play();
-		}
-		else if (ih().iskeyContinuos(SDL_SCANCODE_S) && !ih().iskeyContinuos(SDL_SCANCODE_W)) {
-			v.setZ(1);
-			//_entity->getComponent<AudioSource>()->play();
-		}
-		else {
-			v.setZ(0);
-			//_entity->getComponent<AudioSource>()->stop();
-		}
+		// Movimiento Arriba-Abajo
+		if (ih().iskeyContinuos(SDL_SCANCODE_W) && !ih().iskeyContinuos(SDL_SCANCODE_S)) v.setZ(-1);
+		else if (ih().iskeyContinuos(SDL_SCANCODE_S) && !ih().iskeyContinuos(SDL_SCANCODE_W)) v.setZ(1);
+		else v.setZ(0);
 
-		if (ih().iskeyContinuos(SDL_SCANCODE_A) && !ih().iskeyContinuos(SDL_SCANCODE_D)) { 
-			v.setX(-1); 
-			//_entity->getComponent<AudioSource>()->play();
-		}
-		else if (ih().iskeyContinuos(SDL_SCANCODE_D) && !ih().iskeyContinuos(SDL_SCANCODE_A)) {
-			v.setX(1);
-			//_entity->getComponent<AudioSource>()->play();
-		}
-		else {
-			v.setX(0);
-			//_entity->getComponent<AudioSource>()->stop();
-		}
+		// Movimiento Izquierda-Derecha
+		if (ih().iskeyContinuos(SDL_SCANCODE_A) && !ih().iskeyContinuos(SDL_SCANCODE_D)) v.setX(-1);
+		else if (ih().iskeyContinuos(SDL_SCANCODE_D) && !ih().iskeyContinuos(SDL_SCANCODE_A)) v.setX(1);
+		else v.setX(0);
 
-		Vectola3D mov = v.normalize() * speed_;
-		
-
-
-		// CINEMATIC
-		//_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition() + mov * 0.01f);
+		Vectola3D mov = v.normalize() * speed_ * Motor::GetInstance()->getDeltaTime();
 
 		// PHYSICS
 		_entity->getComponent<RigidBody>()->setVelocity(physx::PxVec3(mov.getX(), mov.getY(), mov.getZ()));
-		//if (_entity->getComponent<RigidBody>()->getVelocity().x == 0 && _entity->getComponent<RigidBody>()->getVelocity().y == 0 && _entity->getComponent<RigidBody>()->getVelocity().z == 0) {
-		//	std::cout << "Entra No velocidad\n";
-		//	_entity->getComponent<AudioSource>()->stopMusicComponent();
-		//}
-		//else {
-		//	_entity->getComponent<AudioSource>()->play();
-		//}
-		////_entity->getComponent<AudioSource>()->stop();
 	}
 }
 
