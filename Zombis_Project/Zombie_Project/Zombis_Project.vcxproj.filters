@@ -28,9 +28,6 @@
     <ClCompile Include="..\Src\zombieMove.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\Personaje.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
     <ClCompile Include="..\Src\Jugador.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
@@ -73,9 +70,6 @@
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\includes\LookatMouse.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\includes\Personaje.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\includes\zombieMove.h">

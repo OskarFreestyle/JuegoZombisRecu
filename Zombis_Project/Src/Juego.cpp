@@ -4,7 +4,6 @@
 #include <iostream>
 
 // Motor
-//#include <Motor.h>
 #include <Transform.h>
 #include "ComponenteRegistro.h"
 #include "Entidad.h"
@@ -20,7 +19,6 @@
 #include "MoveBullet.h"
 #include "Shoot.h"
 #include "ExitOnPlay.h"
-#include "Personaje.h"
 #include "Jugador.h"
 #include "LookatMouse.h"
 #include "zombieMove.h"
@@ -49,7 +47,6 @@ int LoadGame() {
 		ComponenteRegistro::ComponenteRegistro<LookatMouse>("lookatMouse");
 		ComponenteRegistro::ComponenteRegistro<MoveBullet>("moveBullet");
 		ComponenteRegistro::ComponenteRegistro<MuteCross>("muteCross");
-		ComponenteRegistro::ComponenteRegistro<Personaje>("personaje");
 		ComponenteRegistro::ComponenteRegistro<RoundText>("roundText");
 		ComponenteRegistro::ComponenteRegistro<SaveRecord>("saveRecord");
 		ComponenteRegistro::ComponenteRegistro<ScoreInGameText>("scoreInGameText");
