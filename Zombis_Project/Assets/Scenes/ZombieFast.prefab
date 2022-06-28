@@ -15,7 +15,7 @@ local prefab = {
         },
         zombieMove={
             life="1",
-            speed="460",
+            speed="27600",
             pointsOnDead="15"
         },  
         collider={

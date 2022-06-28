@@ -1,4 +1,5 @@
 #include "zombieMove.h"
+#include "Motor.h"
 #include "Transform.h"
 #include "RigidBody.h"
 #include "SceneManager.h"
@@ -54,7 +55,7 @@ void ZombieMove::update()
 		Vectola3D dir = _player->getComponent<Transform>()->getPosition() - _entity->getComponent<Transform>()->getPosition();
 
 		// Importante normalizar y añadir el speed
-		dir = dir.normalize() * _speed;
+		dir = dir.normalize() * _speed*Motor::GetInstance()->getDeltaTime();
 
 		// CINEMATIC
 		//_entity->getComponent<Transform>()->setPosition(_entity->getComponent<Transform>()->getPosition() + dir);
