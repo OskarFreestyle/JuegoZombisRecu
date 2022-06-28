@@ -197,10 +197,6 @@ local level = {
                     static="false",
                     density="1000"
                 },
-                personaje={
-                    maxHealth="3",
-                    lifefactor="0.05"
-                },
                 jugador={
                     speed="500"
                 },

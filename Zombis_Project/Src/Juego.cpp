@@ -31,11 +31,6 @@
 #include "ScoreInGameText.h"
 #include "RoundText.h"
 
-
-void RegistryGameComponents() {
-
-}
-
 int LoadGame() {
 #if (defined _DEBUG)
 	std::cout << "---------- TRYING LOAD GAME ----------\n";
@@ -74,5 +69,5 @@ int LoadGame() {
 
 void deleteGame()
 {
-	if (GameManager::GetInstance())delete GameManager::GetInstance();
+	if (GameManager::GetInstance()) delete GameManager::GetInstance();
 }
