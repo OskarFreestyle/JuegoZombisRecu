@@ -137,7 +137,5 @@ int GameManager::calculateZombies()
 		b = c;
 	}
 
-	std::cout << "ZOMBIES num: " << c << "\n";
-
 	return c;
 }
