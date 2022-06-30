@@ -4,7 +4,8 @@
 :: Primero tiene que construir el Motor
 echo BUILDING MOTOR
 cd Motor-Ola-Recu/MotorOla_Solution
-call MotorOla.bat
+call CompilarMotorOla.bat
+call GenerarMotoOla.bat
 cd ../..
 
 :: Despues tiene que generar Game.dll y Game.lib
