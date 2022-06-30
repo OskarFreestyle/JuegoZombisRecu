@@ -35,29 +35,37 @@ El menú de inicio del juego consistirá en una pantalla donde se observarán lo
 ### 2.2.- Interfaz durante el *gameplay*
 El HUD en pantalla estará compuesto por los siguientes elementos:
 
-- **Vida:** muestra la vida restante del jugador. 
+- **Vida:** muestra los corazones que le quedan al jugador. Pierde al quedarse sin ninguno.
 - **Puntuación:** indica los puntos obtenidos hasta el momento.
-- **Número de oleada:** presenta el número de oleadas superadas hasta el momento.
-- **Contador de muertes:** indica el número de enemigos derrotados.
+- **Ronda:** presenta el número de la ronda actual.
+- **Salir:** acaba la partida con el mismo efecto que si hubieras muerto.
 
-### 2.3.- Menú de pausa
-Este menú se podra acceder al pulsar la tecla "Escape" del teclado y tendra los siguientes botones:
+<p align="center">
+  <img src="https://github.com/OskarFreestyle/JuegoZombisRecu/blob/main/ImagenesMarkdown/Play.png">
+</p>
 
-- **Continuar:** se sale del menú de pausa y se continua la partida.
-- **Guardar Partida:** se guarda la partida y se regresa al menú principal.
-- **Ajustes:** se muestra la pantalla de opciones donde se podrá ajustar el sonido del juego.
-- **Salir:** se regresa al menú principal sin guardar la partida.
+### 2.3.- Menú de opciones
+A este menú se podra acceder al desde el menú principal, dando al botón de opciones. Tiene los siguientes elementos:
 
-![Pausa](https://github.com/GDV-Proyectos3/JuegoZombis/blob/main/imagenes/MenuPausa.png)
+- **Volumen:** botón que activa/desactiva el audio del juego.
+- **Atrás:** se regresa al menú principal.
+
+<p align="center">
+  <img src="https://github.com/OskarFreestyle/JuegoZombisRecu/blob/main/ImagenesMarkdown/Opciones.png">
+</p>
 
 ### 2.4.- Fin de la partida
-Aqui se mostrará la puntuacion que ha obtenido el jugador en la partida y la puntuacion record del momento. Abajo hay un boton para regresar al menú principal.
+Aqui se mostrará la puntuacion que ha obtenido el jugador en la partida y el top 5 records. El jugador podrá introducir 3 letras para guardar el record bajo un pseudónimo. Abajo hay un boton para regresar al menú principal.
 
-![FinPartida](https://github.com/GDV-Proyectos3/JuegoZombis/blob/main/imagenes/FinPartida.png)
+<p align="center">
+  <img src="https://github.com/OskarFreestyle/JuegoZombisRecu/blob/main/ImagenesMarkdown/Records.png">
+</p>
 
 ### 2.5.- Diagrama de flujo de pantallas
 
-![FlujoMenus](https://github.com/GDV-Proyectos3/JuegoZombis/blob/main/imagenes/FlujoPantallas.png)
+<p align="center">
+  <img src="https://github.com/OskarFreestyle/JuegoZombisRecu/blob/main/ImagenesMarkdown/FlujoPantallas.png">
+</p>
 
 ## 3.- Jugabilidad
 La jugabilidad nos permitirá movernos en las 8 direcciones, disparando mientras tanto a cualquier otra dirección y las balas serán infinitas. Los zombis que matemos tendrán la posiblilidad de dejar caer power-ups que recogeremos al pasar por encima y estos tendrán efectos únicos.
