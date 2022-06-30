@@ -6,7 +6,7 @@
 #include "AudioSource.h"
 
 
-Shoot::Shoot() : shootTime(), cont(), lastBullet()
+Shoot::Shoot() : _shootTime(), _cont(), _lastBullet()
 {
 }
 
@@ -19,7 +19,7 @@ bool Shoot::init(const std::map<std::string, std::string>& mapa)
     if (mapa.find("shootTime") == mapa.end()) return false;
     std::string::size_type sz = 0, sa = 0;
     std::string shootTimeString = mapa.at("shootTime");
-    shootTime = stoi(shootTimeString);
+    _shootTime = stoi(shootTimeString);
     _inicializado = true;
    
     return true;
@@ -30,12 +30,12 @@ void Shoot::update()
     clock_t auxc = clock();
 
     // Primero compueba que haya pasado el tiempo necesario para disparar una bala
-    if (auxc > lastBullet + shootTime) {
+    if (auxc > _lastBullet + _shootTime) {
 
         // Luego si está pulsado el boton izquierdo del ratón se dispara
         if (ih().getMouseButtonState(ih().LEFT)) {
             // Actualiza el tiempo
-            lastBullet = auxc;
+            _lastBullet = auxc;
 
             // Se instancia la bala
             Vectola3D pos = _entity->getComponent<Transform>()->getPosition();

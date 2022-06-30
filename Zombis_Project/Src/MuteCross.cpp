@@ -13,8 +13,8 @@ bool MuteCross::init(const std::map<std::string, std::string>& mapa)
     if (!_entity->getComponent<ImageComponent>()->getInitialized()) return false;
 
     // Activa o no la imagen segun el estado del sonido del juego (muteado o no)
-    isMute = AudioManager::GetInstance()->getMute();
-    _entity->getComponent<ImageComponent>()->setActive(isMute);
+    _isMute = AudioManager::GetInstance()->getMute();
+    _entity->getComponent<ImageComponent>()->setActive(_isMute);
 
     _inicializado = true;
    
@@ -23,11 +23,11 @@ bool MuteCross::init(const std::map<std::string, std::string>& mapa)
 
 void MuteCross::update()
 {
-    lastState = isMute;
-    isMute = AudioManager::GetInstance()->getMute();
+    _lastState = _isMute;
+    _isMute = AudioManager::GetInstance()->getMute();
 
     // Solo manda activar/desactivar la imagen si hay un cambio en el mute
-    if (lastState != isMute) {
-        _entity->getComponent<ImageComponent>()->setActive(isMute);
+    if (_lastState != _isMute) {
+        _entity->getComponent<ImageComponent>()->setActive(_isMute);
     }
 }

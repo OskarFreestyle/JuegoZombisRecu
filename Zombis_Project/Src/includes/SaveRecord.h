@@ -4,6 +4,7 @@
 const int NUM_MAXRECORDS = 5;
 const int LONG_NAME = 3;
 
+// Componente para guardar el record
 class SaveRecord : public Componente
 {
 public:
@@ -13,15 +14,15 @@ public:
 	void update();
 
 private:
-	std::pair<std::string, int>p;
+	std::pair<std::string, int>_p;
 	//std::string name;
-	std::string recordsFileName;
+	std::string _recordsFileName;
 	// Almacena los records leidos del fichero
-	std::vector<std::pair<std::string, int>> maxPoints;
-	bool keyUse = false;
+	std::vector<std::pair<std::string, int>> _maxPoints;
+	bool _keyUse = false;
 
-	void readFile();
+	void readRecordsFile();
 	bool compYOrdMaxPoints(std::pair<std::string, int>p);
-	void writeFile();
+	void writeRecordsFile();
 };
 

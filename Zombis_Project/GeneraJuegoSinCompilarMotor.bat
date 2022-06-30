@@ -1,5 +1,8 @@
 
-:: Abrir Developer Command Prompt para ejecutar este .bat
+
+:: IMPORTANTE:
+:: Abrir Developer Command Prompt en Visual Studio para ejecutar este .bat
+
 
 :: Primero tiene que construir el Motor
 echo BUILDING MOTOR
@@ -26,5 +29,5 @@ xcopy /Y /s /i Assets "./Motor-Ola-Recu/MotorOla_Solution/Exes/Assets/"
 echo ASSETS MOVIDOS
 
 :: Pausa para ver que ha ocurrido
-echo PULSA CUALQUIER BOTON PARA CONTINUAR
-PAUSE >nul
+REM echo PULSA CUALQUIER BOTON PARA CONTINUAR
+REM PAUSE >nul

@@ -1,6 +1,5 @@
 #include "GameManager.h"
 
-
 // Managers del motor
 #include "SceneManager.h"
 #include "AudioManager.h"

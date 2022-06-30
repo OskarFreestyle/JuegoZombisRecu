@@ -1,7 +1,8 @@
 #pragma once
 #include "TextComponent.h"
 
-class ScoreTextComponent :public TextComponent
+// Muestra los puntos al acabar la partida
+class ScoreTextComponent : public TextComponent
 {
 public:
 	ScoreTextComponent() {};

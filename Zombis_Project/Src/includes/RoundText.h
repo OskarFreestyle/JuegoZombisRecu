@@ -1,6 +1,7 @@
 #pragma once
 #include "TextComponent.h"
 
+// Texto para indicar la ronda
 class RoundText :public TextComponent
 {
 public:

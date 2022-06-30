@@ -4,6 +4,7 @@
 class Entidad;
 class Transform;
 
+// Componente para el movimiento del Player
 class Jugador : public Componente {
 public:
 	Jugador();
@@ -16,13 +17,13 @@ public:
 	void onCollisionStart(Entidad* other) override;
 
 	//Metodo para cambiarle la velocidad al jugador
-	void setSpeed(float speed) { speed_ = speed; }
+	void setSpeed(float speed) { _speed = speed; }
 
 protected:
-	Transform* transform_;
-	float speed_;
-	Vectola3D v;
+	Transform* _transform;
+	float _speed;
+	Vectola3D _dir;
 
-	clock_t lastZombieContact = 0;
-	clock_t lastSound = 0;
+	clock_t _lastZombieContact = 0;
+	clock_t _lastSound = 0;
 };

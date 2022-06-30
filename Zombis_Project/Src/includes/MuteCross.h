@@ -1,6 +1,7 @@
 #pragma once
 #include "Componente.h"
 
+// Imagen que se desactiva/activa al mutear el juego
 class MuteCross : public Componente
 {
 public:
@@ -10,7 +11,7 @@ public:
     void update();
 
 private:
-    bool lastState = false;
-    bool isMute = false;
+    bool _lastState = false;
+    bool _isMute = false;
 };
 

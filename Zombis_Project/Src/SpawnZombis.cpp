@@ -10,7 +10,7 @@ bool SpawnZombis::init(const std::map<std::string, std::string>& mapa)
 	if (mapa.find("newZombiesDelay") == mapa.end()) return false;
 
 	std::string auxString = mapa.at("newZombiesDelay");
-	timeToSpawn = stof(auxString);
+	_timeToSpawn = stof(auxString);
 
 
 	_inicializado = true;
@@ -22,8 +22,8 @@ bool SpawnZombis::init(const std::map<std::string, std::string>& mapa)
 void SpawnZombis::update()
 {
 	clock_t auxc = clock();
-	if(auxc > lastZombie + timeToSpawn){
-		lastZombie = auxc;
+	if(auxc > _lastZombie + _timeToSpawn){
+		_lastZombie = auxc;
 
 		// Determina el tipo de zombie que va a crearse
 		Entidad* zombie = nullptr;

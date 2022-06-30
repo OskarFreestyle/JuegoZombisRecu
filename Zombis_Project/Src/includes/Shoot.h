@@ -1,9 +1,10 @@
 #pragma once
 #include "Componente.h"
-
-const float DISTANCE_TO_FLOOR=110;
+ 
+const float DISTANCE_TO_FLOOR = 110;
 typedef long clock_t;
 
+// Crea una bala 
 class Shoot : public Componente
 {
 public:
@@ -13,10 +14,9 @@ public:
     void update();
 
 private:
-    int shootTime = 0;
-    int cont = 0;
+    int _shootTime = 0;
+    int _cont = 0;
     
-    
-    clock_t lastBullet = 0;
+    clock_t _lastBullet = 0;
 };
 

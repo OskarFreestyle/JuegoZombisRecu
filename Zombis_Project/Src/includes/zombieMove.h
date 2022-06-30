@@ -3,6 +3,7 @@
 
 class Entidad;
 
+// Mueve al zombie en linea recta hacia el jugador
 class ZombieMove : public Componente
 {
 public:
@@ -14,8 +15,8 @@ public:
 	void onCollisionStart(Entidad* other);
 
 	void update();
-private:
 
+private:
 	Entidad* _player=nullptr;
 	int _life;
 	int _speed;

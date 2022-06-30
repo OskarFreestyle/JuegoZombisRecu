@@ -7,6 +7,7 @@ class Transform;
 
 const float SCALE_WITH_CAM = 1 / 630.0;
 
+// Movimiento de la bala en la direccion del ratón
 class MoveBullet : public Componente
 {
 public:
@@ -20,8 +21,8 @@ public:
     void onCollisionStart(Entidad* other);
 
 private:
-    float vel;
-    Vectola3D dir;
-    bool isDirCalculated = false;
+    float _vel;
+    Vectola3D _dir;
+    bool _isDirCalculated = false;
 };
 

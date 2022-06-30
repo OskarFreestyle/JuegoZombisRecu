@@ -10,7 +10,7 @@ const int MARGIN = 100;
 const float ZOMBIE_FAST_CHANCE = 0.1f;
 const float ZOMBIE_STRONG_CHANCE = 0.1f;
 
-
+// Spawnea un zombie de tipo aleatorio cada cierto tiempo hasta llegar al limite de la ronda
 class SpawnZombis : public Componente
 {
 public:
@@ -19,7 +19,7 @@ public:
     bool init(const std::map<std::string, std::string>& mapa);
     void update();
 private:
-    clock_t lastZombie = 0;
-    clock_t timeToSpawn = 0;
+    clock_t _lastZombie = 0;
+    clock_t _timeToSpawn = 0;
 };
 

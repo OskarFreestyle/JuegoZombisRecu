@@ -5,6 +5,7 @@
 
 class Transform;
 
+// Intenta hacer que se mire al ratón
 class LookatMouse : public Componente
 {
 public:
@@ -13,14 +14,13 @@ public:
 
 	bool init(const std::map<std::string, std::string>& mapa);
 
-	void debugMousePos();
 	void rotateToMouse2D();
 	void init() {};
 	void update();
 
 private:
-	bool test;
+	bool _test;
 	std::pair<double, double> MP;
-	Transform *tr_;
-	double angle = 0;
+	Transform *_transform;
+	double _angle = 0;
 };

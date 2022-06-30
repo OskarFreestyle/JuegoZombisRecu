@@ -1,24 +1,23 @@
 ﻿#include "LookatMouse.h"
 #include "InputManager.h"
 #include "Entidad.h"
-
 #include "Transform.h"
 
-
-LookatMouse::LookatMouse() : test(false)/*, tr_(nullptr)*/ {
+LookatMouse::LookatMouse() : _test(false) {
 }
 
 LookatMouse::~LookatMouse() {
-
 }
 
 bool LookatMouse::init(const std::map<std::string, std::string>& mapa)
 {	
-	if (mapa.find("test") == mapa.end())
-		return false;
+	if (mapa.find("test") == mapa.end()) return false;
 
-	tr_ = _entity->getComponent<Transform>();
-	if (tr_ == nullptr)
+	std::string staticString = mapa.at("test");
+	if (staticString == "true") _test = true;
+
+	_transform = _entity->getComponent<Transform>();
+	if (_transform == nullptr)
 		return false;
 
 	_inicializado = true;
@@ -26,29 +25,14 @@ bool LookatMouse::init(const std::map<std::string, std::string>& mapa)
 	return true;
 }
 
-
-void LookatMouse::debugMousePos()
-{
-	//if (im != nullptr) {
-	//	std::cout << im->getMousePos().first << ", " << im->getMousePos().second; //creo que esta cogiendo algo vacio
-	//}
-	//else {
-	//	std::cout << "INPUT MANAGER POINTER NULL IN LOOKATMOUSE";
-	//}
-	//std::cout << Singleton<InputManager>::instance()->getMousePos().first << ", " << Singleton<InputManager>::instance()->getMousePos().second << "\n";
-}
-
 void LookatMouse::rotateToMouse2D()
 {
 	MP = InputManager::GetInstance()->getMousePosInGame();
 
-	float angle = atan2(MP.second - tr_->getPosition().getY(), MP.first - tr_->getPosition().getX());
+	float angle = atan2(MP.second - _transform->getPosition().getY(), MP.first - _transform->getPosition().getX());
 
-	
 	angle *= -180 / M_PI;
 	angle -= 90;
-
-	//std::cout << angle << std::endl;
 
 	Vectola3D v(0, angle, 0) ;
 	Quaterniola x = Quaterniola::Euler(v);
@@ -61,28 +45,7 @@ void LookatMouse::update()
 {
 	if (_entity->hasComponent<Transform>())
 	{
-		//debugMousePos();
 		rotateToMouse2D();
 	}
 
 }
-
-//Quaterniola LookatMouse::eulerToQuat(int yaw, int pitch, int roll)
-//{
-//	// Abbreviations for the various angular functions
-//	double cy = cos(yaw * 0.5);
-//	double sy = sin(yaw * 0.5);
-//	double cp = cos(pitch * 0.5);
-//	double sp = sin(pitch * 0.5);
-//	double cr = cos(roll * 0.5);
-//	double sr = sin(roll * 0.5);
-//
-//	Quaterniola q(cr * cp * cy + sr * sp * sy, sr * cp * cy - cr * sp * sy, cr * sp * cy + sr * cp * sy, cr * cp * sy - sr * sp * cy);
-//	//q.w = cr * cp * cy + sr * sp * sy;
-//	//q.x = sr * cp * cy - cr * sp * sy;
-//	//q.y = cr * sp * cy + sr * cp * sy;
-//	//q.z = cr * cp * sy - sr * sp * cy;
-//	std::cout << "<<<<<<<<<<<<<<<<<<";
-//
-//	return q;
-//}

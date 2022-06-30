@@ -16,12 +16,12 @@ bool SaveRecord::init(const std::map<std::string, std::string>& mapa)
 {
 	if (mapa.find("recordsFileName") == mapa.end()) return false;
 
-	recordsFileName = mapa.at("recordsFileName");
+	_recordsFileName = mapa.at("recordsFileName");
 
 	// Lee el archivo de records
-	readFile();
+	readRecordsFile();
 	// Guarda el record actual para compararlo con los demas
-	p.second = GameManager::GetInstance()->getLastGamePoints();
+	_p.second = GameManager::GetInstance()->getLastGamePoints();
 	
 	_inicializado = true;
 
@@ -29,118 +29,118 @@ bool SaveRecord::init(const std::map<std::string, std::string>& mapa)
 }
 
 void SaveRecord::update() {
-	if (!keyUse) {
+	// Queriamos haberte preguntado cuál es la solución para no tener que poner esta ristra de if else en la tutoría
+	if (!_keyUse) {
 		if (ih().isKeyDown(SDL_SCANCODE_A)) {
-			p.first += "A";
-			keyUse = true;
+			_p.first += "A";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_B)) {
-			p.first += "B";
-			keyUse = true;
+			_p.first += "B";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_C)) {
-			p.first += "C";
-			keyUse = true;
+			_p.first += "C";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_D)) {
-			p.first += "D";
-			keyUse = true;
+			_p.first += "D";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_E)) {
-			p.first += "E";
-			keyUse = true;
+			_p.first += "E";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_F)) {
-			p.first += "F";
-			keyUse = true;
+			_p.first += "F";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_G)) {
-			p.first += "G";
-			keyUse = true;
+			_p.first += "G";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_H)) {
-			p.first += "H";
-			keyUse = true;
+			_p.first += "H";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_I)) {
-			p.first += "I";
-			keyUse = true;
+			_p.first += "I";
+			_keyUse = true;
 		}
-
 		else if (ih().isKeyDown(SDL_SCANCODE_J)) {
-			p.first += "J";
-			keyUse = true;
+			_p.first += "J";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_K)) {
-			p.first += "K";
-			keyUse = true;
+			_p.first += "K";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_L)) {
-			p.first += "L";
-			keyUse = true;
+			_p.first += "L";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_M)) {
-			p.first += "M";
-			keyUse = true;
+			_p.first += "M";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_N)) {
-			p.first += "N";
-			keyUse = true;
+			_p.first += "N";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_O)) {
-			p.first += "O";
-			keyUse = true;
+			_p.first += "O";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_P)) {
-			p.first += "P";
-			keyUse = true;
+			_p.first += "P";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_Q)) {
-			p.first += "Q";
-			keyUse = true;
+			_p.first += "Q";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_R)) {
-			p.first += "R";
-			keyUse = true;
+			_p.first += "R";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_S)) {
-			p.first += "S";
-			keyUse = true;
+			_p.first += "S";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_T)) {
-			p.first += "T";
-			keyUse = true;
+			_p.first += "T";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_U)) {
-			p.first += "U";
-			keyUse = true;
+			_p.first += "U";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_V)) {
-			p.first += "V";
-			keyUse = true;
+			_p.first += "V";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_W)) {
-			p.first += "W";
-			keyUse = true;
+			_p.first += "W";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_X)) {
-			p.first += "X";
-			keyUse = true;
+			_p.first += "X";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_Y)) {
-			p.first += "Y";
-			keyUse = true;
+			_p.first += "Y";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_Z)) {
-			p.first += "Z";
-			keyUse = true;
+			_p.first += "Z";
+			_keyUse = true;
 		}
 		else if (ih().isKeyDown(SDL_SCANCODE_BACKSPACE)) {
-			if(!p.first.empty()) p.first.pop_back();
-			keyUse = true;
+			if(!_p.first.empty()) _p.first.pop_back();
+			_keyUse = true;
 		}
 		Entidad* e = SceneManager::GetInstance()->getEntityByName("SaveRecordText");
-		if (e) e->getComponent<TextComponent>()->setTexto("YOUR NAME: " + p.first);
+		if (e) e->getComponent<TextComponent>()->setTexto("YOUR NAME: " + _p.first);
 	}
 
 	if (ih().isKeyUp(SDL_SCANCODE_A) || ih().isKeyUp(SDL_SCANCODE_B) || ih().isKeyUp(SDL_SCANCODE_C) || ih().isKeyUp(SDL_SCANCODE_D) || ih().isKeyUp(SDL_SCANCODE_E) ||
@@ -149,27 +149,27 @@ void SaveRecord::update() {
 		ih().isKeyUp(SDL_SCANCODE_P) || ih().isKeyUp(SDL_SCANCODE_Q) || ih().isKeyUp(SDL_SCANCODE_R) || ih().isKeyUp(SDL_SCANCODE_S) || ih().isKeyUp(SDL_SCANCODE_T) ||
 		ih().isKeyUp(SDL_SCANCODE_U) || ih().isKeyUp(SDL_SCANCODE_V) || ih().isKeyUp(SDL_SCANCODE_W) || ih().isKeyUp(SDL_SCANCODE_X) || ih().isKeyUp(SDL_SCANCODE_Y) ||
 		ih().isKeyUp(SDL_SCANCODE_Z) || ih().isKeyUp(SDL_SCANCODE_BACKSPACE)) {
-		keyUse = false;
+		_keyUse = false;
 	}
 
 	// Cuando se ha escrito el nombre
-	if (p.first.size() >= LONG_NAME) {
+	if (_p.first.size() >= LONG_NAME) {
 		// Escribe el record si entra en el Top
-		if (compYOrdMaxPoints(p)) {
-			writeFile();
+		if (compYOrdMaxPoints(_p)) {
+			writeRecordsFile();
 			// Actualizamos el texto para dar feedback de que el record se ha guardado
-			SceneManager::GetInstance()->getEntityByName("SaveRecordText")->getComponent<TextComponent>()->setTexto("CONGRATULATIONS " + p.first + "\nYOUR RECORD HAS BEEN SAVED");
+			SceneManager::GetInstance()->getEntityByName("SaveRecordText")->getComponent<TextComponent>()->setTexto("CONGRATULATIONS " + _p.first + "\nYOUR RECORD HAS BEEN SAVED");
 		}
 		else {
-			SceneManager::GetInstance()->getEntityByName("SaveRecordText")->getComponent<TextComponent>()->setTexto("SORRY " + p.first + "\nYOUR RECORD HASN'T BEEN SAVED");
+			SceneManager::GetInstance()->getEntityByName("SaveRecordText")->getComponent<TextComponent>()->setTexto("SORRY " + _p.first + "\nYOUR RECORD HASN'T BEEN SAVED");
 		}
 
 		// Mostramos el Top 5
 		std::string top5text = "";
 		
-		for (int i = 0; i < maxPoints.size(); i++)
+		for (int i = 0; i < _maxPoints.size(); i++)
 		{
-			top5text += to_string(i + 1) + "." + maxPoints[i].first + " - " + to_string(maxPoints[i].second) + "\n";
+			top5text += to_string(i + 1) + "." + _maxPoints[i].first + " - " + to_string(_maxPoints[i].second) + "\n";
 		}
 
 		SceneManager::GetInstance()->getEntityByName("Top5Text")->getComponent<TextComponent>()->setTexto(top5text);
@@ -179,10 +179,10 @@ void SaveRecord::update() {
 	}
 }
 
-void SaveRecord::readFile()
+void SaveRecord::readRecordsFile()
 {
 	ifstream file;
-	file.open(recordsFileName.c_str());
+	file.open(_recordsFileName.c_str());
 	if (file.is_open()) {
 		string f;
 		while (getline(file, f)) {
@@ -196,7 +196,7 @@ void SaveRecord::readFile()
 			}
 			p.second = stoi(n);
 			//compYOrdMaxPoints(p);
-			maxPoints.push_back(p);
+			_maxPoints.push_back(p);
 		}
 	}
 	file.close();
@@ -209,18 +209,18 @@ bool sortPairs(const pair<string, int>& x, const pair<string, int>& y)
 
 bool SaveRecord::compYOrdMaxPoints(std::pair<std::string, int>p)
 {
-	if (maxPoints.size() < NUM_MAXRECORDS) {
-		maxPoints.push_back(p);
-		sort(maxPoints.begin(), maxPoints.end(), sortPairs);
+	if (_maxPoints.size() < NUM_MAXRECORDS) {
+		_maxPoints.push_back(p);
+		sort(_maxPoints.begin(), _maxPoints.end(), sortPairs);
 		return true;
 	}
 	else {
-		if (p.second > maxPoints[maxPoints.size() - 1].second) {
-			maxPoints.pop_back();
-			maxPoints.push_back(p);
-			sort(maxPoints.begin(), maxPoints.end(), sortPairs);
-			for (int i = 0; i < maxPoints.size(); i++) {
-				std::cout << maxPoints[i].first << " " << maxPoints[i].second << std::endl;
+		if (p.second > _maxPoints[_maxPoints.size() - 1].second) {
+			_maxPoints.pop_back();
+			_maxPoints.push_back(p);
+			sort(_maxPoints.begin(), _maxPoints.end(), sortPairs);
+			for (int i = 0; i < _maxPoints.size(); i++) {
+				std::cout << _maxPoints[i].first << " " << _maxPoints[i].second << std::endl;
 			}
 			return true;
 		}
@@ -228,15 +228,15 @@ bool SaveRecord::compYOrdMaxPoints(std::pair<std::string, int>p)
 	return false;
 }
 
-void SaveRecord::writeFile() {
+void SaveRecord::writeRecordsFile() {
 	ofstream file;
-	file.open(recordsFileName.c_str());
+	file.open(_recordsFileName.c_str());
 	if (!file.is_open()) {
 		std::cout << "Archivo no abierto" << std::endl;
 	}
 	else {
-		for (int i = 0; i < maxPoints.size(); i++) {
-			file << i + 1 << "." << maxPoints[i].first << "-" << maxPoints[i].second << "\n";
+		for (int i = 0; i < _maxPoints.size(); i++) {
+			file << i + 1 << "." << _maxPoints[i].first << "-" << _maxPoints[i].second << "\n";
 		}
 	}
 	file.close();

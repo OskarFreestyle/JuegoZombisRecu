@@ -2,6 +2,7 @@
 
 const int INIT_LIVES = 3;
 
+// Gestiona los datos del juego
 class GameManager {
 public:
 	~GameManager() {}
