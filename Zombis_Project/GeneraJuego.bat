@@ -8,7 +8,7 @@
 echo BUILDING MOTOR
 cd Motor-Ola-Recu/MotorOla_Solution
 call CompilarMotorOla.bat
-call GenerarMotoOla.bat
+call GenerarMotorOla.bat
 cd ../..
 
 :: Despues tiene que generar Game.dll y Game.lib
