@@ -1,11 +1,10 @@
 #include "Shoot.h"
 #include "InputManager.h"
 #include "Entidad.h"
-#include "SceneManager.h"
 #include "Transform.h"
 #include <time.h>
 #include "AudioSource.h"
-#include "AudioManager.h"
+
 
 Shoot::Shoot() : shootTime(), cont(), lastBullet()
 {

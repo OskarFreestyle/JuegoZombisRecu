@@ -1,7 +1,5 @@
 #pragma once
 #include "Componente.h"
-#include <string>
-#include <vector>
 
 const int NUM_MAXRECORDS = 5;
 const int LONG_NAME = 3;

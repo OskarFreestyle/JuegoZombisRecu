@@ -1,4 +1,5 @@
 #include "MoveBullet.h"
+#include "SceneManager.h"
 #include "Entidad.h"
 #include "Transform.h"
 #include "Motor.h"

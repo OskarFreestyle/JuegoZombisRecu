@@ -1,13 +1,9 @@
 ﻿#include "SpawnZombis.h"
-
-#include "InputManager.h"
 #include "Entidad.h"
-#include "SceneManager.h"
 #include "GameManager.h"
 #include "Transform.h"
 #include <time.h>
-#include "AudioManager.h"
-#include "TextComponent.h"
+
 
 bool SpawnZombis::init(const std::map<std::string, std::string>& mapa)
 {

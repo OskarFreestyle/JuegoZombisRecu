@@ -1,12 +1,9 @@
 #include "SaveRecord.h"
-#include "OverlayManager.h"
 #include "GameManager.h"
-#include "Entidad.h"
 #include "InputManager.h"
 #include "TextComponent.h"
 #include "SceneManager.h"
-#include <fstream>
-#include <algorithm>
+
 
 using namespace std;
 

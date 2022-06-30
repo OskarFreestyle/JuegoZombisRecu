@@ -1,8 +1,7 @@
 #include "RoundText.h"
 #include "OverlayManager.h"
 #include "GameManager.h"
-#include "Entidad.h"
-#include <string>
+
 
 RoundText::~RoundText()
 {

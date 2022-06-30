@@ -2,9 +2,8 @@
 #include "InputManager.h"
 #include "Entidad.h"
 
-#include <Transform.h>
-#include <OgreVector3.h>
-#include <tgmath.h>
+#include "Transform.h"
+
 
 LookatMouse::LookatMouse() : test(false)/*, tr_(nullptr)*/ {
 }

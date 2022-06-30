@@ -1,13 +1,11 @@
 #include "GameManager.h"
-#include <string>
+
 
 // Managers del motor
-#include "OverlayManager.h"
 #include "SceneManager.h"
 #include "AudioManager.h"
 
 // Componentes
-#include "Entidad.h"
 #include "SpawnZombis.h"
 #include "ImageComponent.h"
 #include "ScoreInGameText.h"

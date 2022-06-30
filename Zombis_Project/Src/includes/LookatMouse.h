@@ -1,7 +1,7 @@
 #pragma once
 #define _SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING
 #include "Componente.h"
-#include <SDL.h>
+
 
 class Transform;
 

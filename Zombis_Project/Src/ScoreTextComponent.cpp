@@ -1,8 +1,7 @@
 #include "ScoreTextComponent.h"
 #include "OverlayManager.h"
 #include "GameManager.h"
-#include "Entidad.h"
-#include <string>
+
 
 ScoreTextComponent::~ScoreTextComponent()
 {

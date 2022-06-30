@@ -1,10 +1,8 @@
 #include "Jugador.h"
 #include "InputManager.h"
 #include "Transform.h"
-#include "OgreVector3.h"
 #include "RigidBody.h"
 #include "GameManager.h"
-#include "AudioSource.h"
 #include <time.h>
 #include "Entidad.h"
 
