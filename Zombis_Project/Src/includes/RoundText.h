@@ -10,7 +10,7 @@ public:
 	std::string getTexto();
 	std::string getTextoIni();
 
-	void setTexto(const std::string& s, const std::string& textName, const std::string& panelName);
+	void setTexto(const std::string& s);
 
 
 private:

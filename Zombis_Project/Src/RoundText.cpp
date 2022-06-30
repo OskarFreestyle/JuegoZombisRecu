@@ -58,10 +58,10 @@ std::string RoundText::getTextoIni()
 
 
 
-void RoundText::setTexto(const std::string& s, const std::string& textName, const std::string& panelName)
+void RoundText::setTexto(const std::string& s)
 {
 	texto = s;
-	Ogre::TextAreaOverlayElement* t = OverlayManager::GetInstance()->getTexto(panelName, textName);
+	Ogre::TextAreaOverlayElement* t = OverlayManager::GetInstance()->getTexto(nombrePanel, nombreTexto);
 	if (t != nullptr)t->setCaption(texto);
 }
 

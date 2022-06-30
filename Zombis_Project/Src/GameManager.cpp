@@ -68,7 +68,7 @@ void GameManager::onZombieKilled(int pointsToAdd)
 	_lastGamePoints = _points;
 
 	Entidad* e = SceneManager::GetInstance()->getEntityByName("Score");
-	if (e) e->getComponent<ScoreInGameText>()->setTexto(e->getComponent<ScoreInGameText>()->getTextoIni() + std::to_string(_points), "ScoreText", "ScorePanel");
+	if (e) e->getComponent<ScoreInGameText>()->setTexto(e->getComponent<ScoreInGameText>()->getTextoIni() + std::to_string(_points));
 
 	// Cuando se pasa una ronda
 	if (_zombiesKilledThisRound >= _maxRoundZombies) {
@@ -84,7 +84,7 @@ void GameManager::onZombieKilled(int pointsToAdd)
 
 		// Actualiza el texto de la ronda
 		Entidad* e = SceneManager::GetInstance()->getEntityByName("Round");
-		if (e) e->getComponent<RoundText>()->setTexto(e->getComponent<RoundText>()->getTextoIni() + std::to_string(_round), "RoundText", "RoundPanel");
+		if (e) e->getComponent<RoundText>()->setTexto(e->getComponent<RoundText>()->getTextoIni() + std::to_string(_round));
 	}
 }
 

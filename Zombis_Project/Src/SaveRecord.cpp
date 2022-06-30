@@ -140,7 +140,7 @@ void SaveRecord::update() {
 			keyUse = true;
 		}
 		Entidad* e = SceneManager::GetInstance()->getEntityByName("SaveRecordText");
-		if (e) e->getComponent<TextComponent>()->setTexto("YOUR NAME: " + p.first, "RecordText", "RecordPanel");
+		if (e) e->getComponent<TextComponent>()->setTexto("YOUR NAME: " + p.first);
 	}
 
 	if (ih().isKeyUp(SDL_SCANCODE_A) || ih().isKeyUp(SDL_SCANCODE_B) || ih().isKeyUp(SDL_SCANCODE_C) || ih().isKeyUp(SDL_SCANCODE_D) || ih().isKeyUp(SDL_SCANCODE_E) ||
@@ -158,10 +158,10 @@ void SaveRecord::update() {
 		if (compYOrdMaxPoints(p)) {
 			writeFile();
 			// Actualizamos el texto para dar feedback de que el record se ha guardado
-			SceneManager::GetInstance()->getEntityByName("SaveRecordText")->getComponent<TextComponent>()->setTexto("CONGRATULATIONS " + p.first + "\nYOUR RECORD HAS BEEN SAVED", "RecordText", "RecordPanel");
+			SceneManager::GetInstance()->getEntityByName("SaveRecordText")->getComponent<TextComponent>()->setTexto("CONGRATULATIONS " + p.first + "\nYOUR RECORD HAS BEEN SAVED");
 		}
 		else {
-			SceneManager::GetInstance()->getEntityByName("SaveRecordText")->getComponent<TextComponent>()->setTexto("SORRY " + p.first + "\nYOUR RECORD HASN'T BEEN SAVED", "RecordText", "RecordPanel");
+			SceneManager::GetInstance()->getEntityByName("SaveRecordText")->getComponent<TextComponent>()->setTexto("SORRY " + p.first + "\nYOUR RECORD HASN'T BEEN SAVED");
 		}
 
 		// Mostramos el Top 5
@@ -172,7 +172,7 @@ void SaveRecord::update() {
 			top5text += to_string(i + 1) + "." + maxPoints[i].first + " - " + to_string(maxPoints[i].second) + "\n";
 		}
 
-		SceneManager::GetInstance()->getEntityByName("Top5Text")->getComponent<TextComponent>()->setTexto(top5text, "TopText", "TopPanel");
+		SceneManager::GetInstance()->getEntityByName("Top5Text")->getComponent<TextComponent>()->setTexto(top5text);
 
 		// Mandamos borrar esta entidad
 		SceneManager::GetInstance()->addEntityToRemove(_entity);
