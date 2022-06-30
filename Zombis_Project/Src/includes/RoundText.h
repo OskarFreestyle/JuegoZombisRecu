@@ -1,7 +1,7 @@
 #pragma once
-#include "Componente.h"
+#include "TextComponent.h"
 
-class RoundText :public Componente
+class RoundText :public TextComponent
 {
 public:
 	RoundText() {};
@@ -12,17 +12,5 @@ public:
 
 	void setTexto(const std::string& s);
 
-
-private:
-	float posX;
-	float posY;
-	std::string texto;
-	std::string textoIni;
-	std::string nombreTexto;
-	float tamLetra;
-	std::string nombrePanel;
-	float dimX;
-	float dimY;
-	std::string color;//Solo puede ser Red o Black
 };
 
