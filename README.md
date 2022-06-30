@@ -68,19 +68,13 @@ Aqui se mostrará la puntuacion que ha obtenido el jugador en la partida y el to
 </p>
 
 ## 3.- Jugabilidad
-La jugabilidad nos permitirá movernos en las 8 direcciones, disparando mientras tanto a cualquier otra dirección y las balas serán infinitas. Los zombis que matemos tendrán la posiblilidad de dejar caer power-ups que recogeremos al pasar por encima y estos tendrán efectos únicos.
+La jugabilidad nos permitirá movernos en las 8 direcciones, disparando mientras tanto a cualquier otra dirección y las balas serán infinitas. La partida acabará cuando al jugador no le queden vidas.
 
 ### 3.1.- Mecánicas
 - **Click izquierdo:** disparo de un proyectil en la dirección a la que apunte el ratón.
 - **WASD:** se utilizará para moverse, podrán combinarse para conseguir las 8 direcciones.
-- **Escape:** habilita el menú de pausa.
-
-### 3.2.- Flujo de juego
-
-![FlujoJuego](https://github.com/GDV-Proyectos3/JuegoZombis/blob/main/imagenes/FlujoJuego.png)
 
 ### 3.2.- Dinámicas
-
 #### 3.2.1.- Objetivo principal
 El objetivo consiste en sobrevivir el mayor número de oleadas posible y obtener la mejor puntuacion para batir el record anterior.
 
@@ -90,23 +84,19 @@ Solo es posible superar la puntuación máxima obtenida en partidas anteriores.
 
 ## 4.-Contenido
 ### 4.1.- Enemigos
-Los zombis tendran diferentes modelos pero seguirán siendo el mismo tipo de enemigo que perseguira al jugador hasta que logre matarle o que le elimine este, cuando muere cada zombi hay una posibilidad de que suelten un powerUp que tendrá que recoger el jugador para conseguir un efecto especial que le otorgará una ventaja.  
-Cuando el jugador elimina a todos los zombis de la oleada actual, este tendrá unos segundos de descanso hasta que empieze la siguiente oleada en la que aparecerán un número mayor de zombis que en la anterior ronda y estos tendrán más vida. 
+Los zombis tendran diferentes modelos pero seguirán siendo el mismo tipo de enemigo que perseguira al jugador hasta que logre matarle o que le elimine este. 
+Cuando el jugador elimina a todos los zombis de la oleada actual, comenzará la siguiente oleada en la que aparecerán un mayor número de zombis que en la anterior ronda.
+
+Hay 3 tipos de zombis:
+- **Zombie normal:** te persigue y te golpea. Muere de 1 disparo.
+- **Zombie rápido:** es más pequeño. Te persigue muy rápido y te golpea. Muere de 1 disparo.
+- **Zombie fuerte:** es más grande. Te persigue muy despacio y te golpea. Muere de 5 disparos.
 
 ### 4.2.- Escenarios
 
-El juego posee un único escenario, que consiste en una "habitación" de 4 paredes con un suelo sobre el cual se desarrolla la acción en 2D.  
-En este entorno se sitúan un número de obstáculos de forma aleatoria cada vez que se inicia el juego, que son obstáculos físicos para el jugador y sus enemigos.
+El juego posee un único escenario, que consiste en una "habitación" de 4 paredes con un suelo sobre el cual se desarrolla la acción.  
 
-### 4.3.- Potenciadores
-
-- Potenciador de daño:      aumenta el daño de los proyectiles del jugador
-- Potenciador de disparo:   aumenta la cadencia de tiro del jugador, lo cual permitirá que dispare balas mucho más rapido de lo normal
-- Potenciador de salud:     permite curar algo de salud al jugador
-- Puntos extra:             otorga una considerable cantidad de puntos de bonificación
-   
 ## 5.Referencias
-´´´
+
 * Call of Duty Dead Ops Arcade
 * Boxhead zombies
-´´´
