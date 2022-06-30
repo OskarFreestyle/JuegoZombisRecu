@@ -1,4 +1,4 @@
-# 'JuegoZombis'
+# ** ZOMBIES PROJECT **
 Este es el primer juego hecho en el Motor Ola
 
 ## Resumen
